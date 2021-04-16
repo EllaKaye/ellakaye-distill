@@ -3,7 +3,7 @@
   <channel>
     <title>Ella Kaye</title>
     <link>https://ellakaye.rbind.io/</link>
-    <atom:link href="https://ellakaye.rbind.io/index.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://ellakaye.rbind.io/posts.xml" rel="self" type="application/rss+xml"/>
     <description>Ella Kaye's personal website
 </description>
     <generator>Distill</generator>

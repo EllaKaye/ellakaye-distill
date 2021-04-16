@@ -7,8 +7,8 @@ theme: emk_theme.css
 base_url: https://ellakaye.rbind.io/
 navbar:
   right:
-    - text: "Home"
-      href: index.html
     - text: "About"
       href: about.html
+    - text: "Posts"
+      href: posts.html
 output: distill::distill_article
