@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-    <title>Tobi Burns</title>
+    <title>Ella Kaye</title>
 
     
           <!--radix_placeholder_navigation_in_header-->
@@ -736,6 +736,11 @@
             src: local('LEMONMILKPro-UltraLight'), url('/fonts/LEMONMILKPro-UltraLight.woff2') format('woff2'), url('/fonts/LEMONMILKPro-UltraLight.woff') format('woff');
           }
 
+          :root {
+            --color-background:   white;
+            --color-primary:      #D40067;
+            --color-secondary:    #0079D1;
+          }
 
           html {
             /*-- Main font sizes --*/
@@ -755,11 +760,6 @@
             --mono-font:       "Fira Code", monospace;
             --body-font:       "LEMONMILKPro-UltraLight", sans-serif;
             --navbar-font:     "LEMONMILKPro-Regular", sans-serif;  /* websites + blogs only */
-          }
-
-          h1, h2, h3 {
-            font-family: "LEMONMILKPro-Regular", sans-serif;
-            text-transform: uppercase;
           }
 
           /*-- ARTICLE METADATA --*/
@@ -789,17 +789,17 @@
 
           .distill-site-header {
             --title-size:       18px;
-            --text-color:       rgba(255, 255, 255, 0.8);
+            --text-color:       black; /*rgba(255, 255, 255, 0.8);*/
             --text-size:        15px;
-            --hover-color:      white;
-            --bkgd-color:       #0F2E3D;
+            --hover-color:      #D40067; /*white;*/
+            --bkgd-color:       white; /*#0F2E3D;*/
           }
 
           .distill-site-footer {
-            --text-color:       rgba(255, 255, 255, 0.8);
+            --text-color:       /*rgba(255, 255, 255, 0.8);*/
             --text-size:        15px;
-            --hover-color:      white;
-            --bkgd-color:       #0F2E3D;
+            --hover-color:      #D40067;
+            --bkgd-color:       white; /*#0F2E3D;*/
           }
 
           /*-- Additional custom styles --*/
@@ -807,7 +807,24 @@
 
           .distill-site-header {
             text-transform: uppercase;
-          }</style>
+          }
+
+          h1, h2, h3 {
+            font-family: "LEMONMILKPro-Regular", sans-serif;
+            text-transform: uppercase;
+          }
+
+          .btn-outline-dark {
+              background-color: #D40067;
+              color: white;
+              border: 10px;
+              font-family: "LEMONMILKPro-Regular", sans-serif;
+          }
+
+          .btn-outline-dark:hover {
+              background-color: #B9005B;
+          }
+          </style>
           <style type="text/css">
           /* base style */
 
@@ -991,7 +1008,7 @@
         <div class="col-12 text-center">
           <img src=tobi.jpg style="height:10rem" class="rounded-circle">
           <div class="mt-3">
-            <h1>Tobi Burns</h1>
+            <h1>Ella Kaye</h1>
           </div>
           <div class="row justify-content-center align-items-center">
             <div class="col-6 mt-3 text-center d-none d-sm-block">

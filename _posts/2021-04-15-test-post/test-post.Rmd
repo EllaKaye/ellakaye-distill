@@ -3,7 +3,7 @@ title: "Test Post"
 description: |
   A short description of the post.
 author:
-  - name: Nora Jones
+  - name: Ella Kaye
     url: https://example.com/norajones
 date: 04-15-2021
 output:
@@ -19,6 +19,8 @@ knitr::opts_chunk$set(echo = FALSE)
 Distill is a publication format for scientific and technical writing, native to the web.
 
 Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+Here is some `code, 2+2`, inline.
 
 ```{r echo = TRUE}
 x <- 1:4

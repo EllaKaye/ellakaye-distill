@@ -2139,6 +2139,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     src: local('LEMONMILKPro-UltraLight'), url('/fonts/LEMONMILKPro-UltraLight.woff2') format('woff2'), url('/fonts/LEMONMILKPro-UltraLight.woff') format('woff');
   }
 
+  :root {
+    --color-background:   white;
+    --color-primary:      #D40067;
+    --color-secondary:    #0079D1;
+  }
 
   html {
     /*-- Main font sizes --*/
@@ -2158,11 +2163,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --mono-font:       "Fira Code", monospace;
     --body-font:       "LEMONMILKPro-UltraLight", sans-serif;
     --navbar-font:     "LEMONMILKPro-Regular", sans-serif;  /* websites + blogs only */
-  }
-
-  h1, h2, h3 {
-    font-family: "LEMONMILKPro-Regular", sans-serif;
-    text-transform: uppercase;
   }
 
   /*-- ARTICLE METADATA --*/
@@ -2192,17 +2192,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       black; /*rgba(255, 255, 255, 0.8);*/
     --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
+    --hover-color:      #D40067; /*white;*/
+    --bkgd-color:       white; /*#0F2E3D;*/
   }
 
   .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       /*rgba(255, 255, 255, 0.8);*/
     --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
+    --hover-color:      #D40067;
+    --bkgd-color:       white; /*#0F2E3D;*/
   }
 
   /*-- Additional custom styles --*/
@@ -2210,7 +2210,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     text-transform: uppercase;
-  }</style>
+  }
+
+  h1, h2, h3 {
+    font-family: "LEMONMILKPro-Regular", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .btn-outline-dark {
+      background-color: #D40067;
+      color: white;
+      border: 10px;
+      font-family: "LEMONMILKPro-Regular", sans-serif;
+  }
+
+  .btn-outline-dark:hover {
+      background-color: #B9005B;
+  }
+  </style>
   <style type="text/css">
   /* base style */
 
@@ -2398,7 +2415,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="posts.html">Posts</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2551,9 +2567,7 @@ function init_posts_list() {
 <div class="dt-author">Nora Jones</div>
 </div>
 </div>
-<div class="thumbnail">
-<img/>
-</div>
+<div class="thumbnail"></div>
 <div class="description">
 <h2>Test Post</h2>
 <div class="dt-tags"></div>

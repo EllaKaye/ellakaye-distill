@@ -11,10 +11,10 @@
     ],
     "date": "2021-04-15",
     "categories": [],
-    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\nx <- 1:4\ny <- \"foo\"\npaste(y, x, sep = \"_\")\n\n\n[1] \"foo_1\" \"foo_2\" \"foo_3\" \"foo_4\"\n\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# from https://r4ds.had.co.nz\nnycflights13::flights %>%\n  mutate(\n    cancelled = is.na(dep_time),\n    sched_hour = sched_dep_time %/% 100,\n    sched_min = sched_dep_time %% 100,\n    sched_dep_time = sched_hour + sched_min /60) %>%\n  ggplot(mapping = aes(sched_dep_time)) +\n    geom_freqpoly(aes(colour = cancelled), binwidth = 1/4) +\n  labs(x = \"Scheduled Departure Time\")\n\n\n\n\n\nicon_link <- function(icon = NULL, text = NULL, url = NULL) {\n  if (!is.null(icon)) {\n    text <- make_icon_text(icon, text)\n  }\n  return(htmltools::a(href = url, text, class = \"icon-link\"))\n}\n\n\n\n\n\n# Converting multiple columns to numeric with column indexes:\nonline_shoppers_number <- online_shoppers_intention %>%\n  mutate_at((17:18), as.numeric)\n\n\n\n\n\n\n",
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\nHere is some code, 2+2, inline.\n\n\nx <- 1:4\ny <- \"foo\"\npaste(y, x, sep = \"_\")\n\n\n[1] \"foo_1\" \"foo_2\" \"foo_3\" \"foo_4\"\n\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# from https://r4ds.had.co.nz\nnycflights13::flights %>%\n  mutate(\n    cancelled = is.na(dep_time),\n    sched_hour = sched_dep_time %/% 100,\n    sched_min = sched_dep_time %% 100,\n    sched_dep_time = sched_hour + sched_min /60) %>%\n  ggplot(mapping = aes(sched_dep_time)) +\n    geom_freqpoly(aes(colour = cancelled), binwidth = 1/4) +\n  labs(x = \"Scheduled Departure Time\")\n\n\n\n\n\nicon_link <- function(icon = NULL, text = NULL, url = NULL) {\n  if (!is.null(icon)) {\n    text <- make_icon_text(icon, text)\n  }\n  return(htmltools::a(href = url, text, class = \"icon-link\"))\n}\n\n\n\n\n\n# Converting multiple columns to numeric with column indexes:\nonline_shoppers_number <- online_shoppers_intention %>%\n  mutate_at((17:18), as.numeric)\n\n\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-16T08:05:54+01:00",
-    "input_file": {}
+    "last_modified": "2021-04-16T14:35:02+01:00",
+    "input_file": "test-post.utf8.md"
   },
   {
     "path": "posts/welcome/",
