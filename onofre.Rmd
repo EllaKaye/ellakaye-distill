@@ -1,0 +1,24 @@
+---
+title: "Willkommen!"
+image: "images/ella_profile.jpeg"
+color1: "#D40067"
+color2: "#0079D1"
+angle: 130
+links:
+  - label: YouTube
+    url: "https://youtube.com/"
+  - label: Vimeo
+    url: "https://vimeo.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::onofre
+---
+ 
+György Herzl is a filmmaker and computational storyteller based in Leipzig,
+Germany. Their work has been featured at the Festival do Rio, Internationale
+Filmfestspiele Berlin, Kunsthalle Basel, and the New Museum of Contemporary Art
+in New York City. "ГУМ" is their latest project which examines the rise of
+consumerism in post-Soviet republics.

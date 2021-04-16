@@ -15,4 +15,6 @@ navbar:
       href: about.html
     - text: "Posts"
       href: posts.html
+    - text: "Onofre"
+      href: onofre.html
 output: distill::distill_article
