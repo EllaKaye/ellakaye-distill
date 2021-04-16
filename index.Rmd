@@ -1,5 +1,5 @@
 ---
-title: "Ella Kaye"
+title: "ELLA KAYE"
 image: "images/ella_profile.jpeg"
 favicon: images/favicon.png
 links:
