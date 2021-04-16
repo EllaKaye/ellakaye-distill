@@ -12,7 +12,15 @@
       <link>https://ellakaye.rbind.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Advent of Code</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/posts/2021-04-16-advent-of-code</link>
+      <description>My attempts at Advent of Code, 2020</description>
+      <guid>https://ellakaye.rbind.io/posts/2021-04-16-advent-of-code</guid>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Test Post</title>
       <dc:creator>Ella Kaye</dc:creator>

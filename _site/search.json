@@ -6,21 +6,21 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-16T15:08:56+01:00"
+      "last_modified": "2021-04-16T15:12:24+01:00"
     },
     {
       "path": "index.html",
       "title": "Ella Kaye",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          Ella Kaye\n          \n          \n          About\n          Posts\n          ☰\n          \n          \n      \n        \n          \n            Ella Kaye\n          \n          \n            \n              I am a classically trained data scientist living in the San Francisco Bay Area. Currently I work on the Oculus team at Facebook. I love talking about baseball, true crime podcasts, and causal inference.\n            \n            \n              I am a classically trained data scientist living in the San Francisco Bay Area. Currently I work on the Oculus team at Facebook. I love talking about baseball, true crime podcasts, and causal inference.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-04-16T15:08:56+01:00"
+      "last_modified": "2021-04-16T15:12:44+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-16T15:08:56+01:00"
+      "last_modified": "2021-04-16T15:12:24+01:00"
     }
   ],
   "collections": ["posts/posts.json"]
