@@ -1,6 +1,7 @@
 ---
 title: "Ella Kaye"
 image: "images/ella_profile.jpeg"
+favicon: images/favicon.png
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
