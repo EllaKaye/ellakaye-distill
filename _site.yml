@@ -4,8 +4,12 @@ description: |
   Ella Kaye's personal website
 output_dir: "_site"
 theme: emk_theme.css
+favicon: images/favicon.png
 base_url: https://ellakaye.rbind.io/
 navbar:
+  logo:
+    image: images/logo.svg
+    href: https://ellakaye.rbind.io
   right:
     - text: "About"
       href: about.html

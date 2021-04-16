@@ -6,11 +6,16 @@
     <atom:link href="https://ellakaye.rbind.io/posts.xml" rel="self" type="application/rss+xml"/>
     <description>Ella Kaye's personal website
 </description>
+    <image>
+      <title>Ella Kaye</title>
+      <url>https://ellakaye.rbind.io/images/favicon.png</url>
+      <link>https://ellakaye.rbind.io/</link>
+    </image>
     <generator>Distill</generator>
     <lastBuildDate>Thu, 15 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Test Post</title>
-      <dc:creator>Nora Jones</dc:creator>
+      <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2021-04-15-test-post</link>
       <description>A short description of the post.</description>
       <guid>https://ellakaye.rbind.io/posts/2021-04-15-test-post</guid>
