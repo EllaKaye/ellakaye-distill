@@ -1,6 +1,6 @@
 ---
 title: "Ella Kaye"
-image: "tobi.jpg"
+image: "images/ella_profile.jpeg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
