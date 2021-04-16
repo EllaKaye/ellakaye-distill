@@ -6,28 +6,21 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-16T15:50:08+01:00"
+      "last_modified": "2021-04-16T16:07:55+01:00"
     },
     {
       "path": "index.html",
       "title": "Ella Kaye",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Posts\n          ☰\n          \n          \n      \n        \n          \n            Ella Kaye\n          \n          \n            \n              I am a classically trained data scientist living in the San Francisco Bay Area. Currently I work on the Oculus team at Facebook. I love talking about baseball, true crime podcasts, and causal inference.\n            \n            \n              I am a classically trained data scientist living in the San Francisco Bay Area. Currently I work on the Oculus team at Facebook. I love talking about baseball, true crime podcasts, and causal inference.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-04-16T15:50:08+01:00"
-    },
-    {
-      "path": "onofre.html",
-      "title": "Willkommen!",
-      "author": [],
-      "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Posts\n          Onofre\n          ☰\n          \n          \n      \n        \n          \n            \n          \n            Willkommen!\n          \n          \n            \n          \n          \n            György Herzl is a filmmaker and computational storyteller based in Leipzig, Germany. Their work has been featured at the Festival do Rio, Internationale Filmfestspiele Berlin, Kunsthalle Basel, and the New Museum of Contemporary Art in New York City. “ГУМ” is their latest project which examines the rise of consumerism in post-Soviet republics.\n          \n          \n            \n                \n                  \n                    YouTube\n                  \n                \n              \n                            \n                \n                  \n                    Vimeo\n                  \n                \n              \n                            \n                \n                  \n                    Twitter\n                  \n                \n              \n                            \n                \n                  \n                    Email\n                  \n                \n              \n                          \n        \n      \n    \n\n    \n      \n        \n          \n            \n          \n            Willkommen!\n          \n          \n            \n          \n          \n            György Herzl is a filmmaker and computational storyteller based in Leipzig, Germany. Their work has been featured at the Festival do Rio, Internationale Filmfestspiele Berlin, Kunsthalle Basel, and the New Museum of Contemporary Art in New York City. “ГУМ” is their latest project which examines the rise of consumerism in post-Soviet republics.\n          \n        \n      \n      \n          \n              \n                                \n                    \n                    YouTube\n                    \n                \n                                \n                    \n                    Vimeo\n                    \n                \n                                \n                    \n                    Twitter\n                    \n                \n                                \n                    \n                    Email\n                    \n                \n                              \n          \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-04-16T16:01:08+01:00"
+      "last_modified": "2021-04-16T16:07:56+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-16T15:50:08+01:00"
+      "last_modified": "2021-04-16T16:07:56+01:00"
     }
   ],
   "collections": ["posts/posts.json"]
