@@ -1,0 +1,59 @@
+---
+title: "Test Post"
+description: |
+  A short description of the post.
+author:
+  - name: Nora Jones
+    url: https://example.com/norajones
+date: 04-15-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+```{r echo = TRUE}
+x <- 1:4
+y <- "foo"
+paste(y, x, sep = "_")
+```
+
+```{r message = FALSE, echo = TRUE, eval = FALSE}
+library(dplyr)
+library(ggplot2)
+
+# from https://r4ds.had.co.nz
+nycflights13::flights %>%
+  mutate(
+    cancelled = is.na(dep_time),
+    sched_hour = sched_dep_time %/% 100,
+    sched_min = sched_dep_time %% 100,
+    sched_dep_time = sched_hour + sched_min /60) %>%
+  ggplot(mapping = aes(sched_dep_time)) +
+    geom_freqpoly(aes(colour = cancelled), binwidth = 1/4) +
+  labs(x = "Scheduled Departure Time")
+```
+
+```{r echo = TRUE}
+icon_link <- function(icon = NULL, text = NULL, url = NULL) {
+  if (!is.null(icon)) {
+    text <- make_icon_text(icon, text)
+  }
+  return(htmltools::a(href = url, text, class = "icon-link"))
+}
+```
+
+```{r echo = TRUE, eval = FALSE}
+# Converting multiple columns to numeric with column indexes:
+online_shoppers_number <- online_shoppers_intention %>%
+  mutate_at((17:18), as.numeric)
+```
+
