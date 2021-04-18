@@ -5,12 +5,12 @@ description: |
 output_dir: "_site"
 theme: emk_theme.css
 favicon: images/favicon.png
-base_url: https://ellakayedistill.netlify.app/
+base_url: https://ellakaye.rbind.io/
 navbar:
   search: false
   logo:
     image: images/logo.png
-    href: https://ellakaye.rbind.io
+    href: https://ellakayedistill.netlify.app
   right:
     - text: "About"
       href: about.html
