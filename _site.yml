@@ -7,6 +7,7 @@ theme: emk_theme.css
 favicon: images/favicon.png
 base_url: https://ellakaye.rbind.io/
 navbar:
+  search: false
   logo:
     image: images/logo.png
     href: https://ellakaye.rbind.io
