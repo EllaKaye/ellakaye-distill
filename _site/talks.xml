@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>ELLA KAYE</title>
+    <link>https://ellakaye.rbind.io/</link>
+    <atom:link href="https://ellakaye.rbind.io/talks.xml" rel="self" type="application/rss+xml"/>
+    <description>Ella Kaye's personal website
+</description>
+    <image>
+      <title>ELLA KAYE</title>
+      <url>https://ellakaye.rbind.io/images/favicon.png</url>
+      <link>https://ellakaye.rbind.io/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>A talk</title>
+      <dc:creator>Nora Jones</dc:creator>
+      <link>https://ellakaye.rbind.io/talks</link>
+      <description>A page for a talk</description>
+      <guid>https://ellakaye.rbind.io/talks</guid>
+      <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

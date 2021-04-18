@@ -6,6 +6,9 @@ output_dir: "_site"
 theme: emk_theme.css
 favicon: images/favicon.png
 base_url: https://ellakaye.rbind.io/
+repository_url: https://github.com/EllaKaye/ellakaye-distill
+twitter:
+  site: "@ellamkaye"
 navbar:
   search: false
   logo:
@@ -14,6 +17,19 @@ navbar:
   right:
     - text: "About"
       href: about.html
+    - text: "Talks"
+      href: talks.html
     - text: "Posts"
       href: posts.html
+collections:
+  posts:
+    categories: true
+    categories_metadata: true
+    authors_metadata: false
+    feed_iems_max: 20 # default
+  talks:
+    categories: true
+    categories_metadata: true
+    authors_metadata: false
+    feed_iems_max: 20 # default
 output: distill::distill_article

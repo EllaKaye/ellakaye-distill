@@ -13,6 +13,10 @@
     <lastmod>2021-04-16T11:11:07+01:00</lastmod>
   </url>
   <url>
+    <loc>https://ellakaye.rbind.io/talks.html</loc>
+    <lastmod>2021-04-18T15:37:03+01:00</lastmod>
+  </url>
+  <url>
     <loc>https://ellakaye.rbind.io/posts/2021-04-16-advent-of-code/</loc>
     <lastmod>2021-04-16T15:22:19+01:00</lastmod>
   </url>
@@ -23,5 +27,9 @@
   <url>
     <loc>https://ellakaye.rbind.io/posts/welcome/</loc>
     <lastmod>2021-04-15T15:14:02+01:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ellakaye.rbind.io/talks/</loc>
+    <lastmod>2021-04-18T15:44:03+01:00</lastmod>
   </url>
 </urlset>

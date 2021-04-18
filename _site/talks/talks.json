@@ -1,0 +1,19 @@
+[
+  {
+    "path": "talks/",
+    "title": "A talk",
+    "description": "A page for a talk",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-04-18",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-18T15:44:03+01:00",
+    "input_file": "talk_test.utf8.md"
+  }
+]
