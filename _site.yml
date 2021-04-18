@@ -5,7 +5,7 @@ description: |
 output_dir: "_site"
 theme: emk_theme.css
 favicon: images/favicon.png
-base_url: https://ellakaye.rbind.io/
+base_url: https://ellakayedistill.netlify.app/
 navbar:
   search: false
   logo:
