@@ -107,14 +107,39 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+/*
 .btn-outline-dark {
     background-color: #D40067;
     color: white;
     border: 10px;
+    border-color: black;
     font-family: "LEMONMILKPro-Regular", sans-serif;
 }
+*/
+
+ .btn-outline-dark{
+   color:#D40067;
+   border-color:#D40067;
+   font-family: "LEMONMILKPro-Light", sans-serif;
+ }
 
 .btn-outline-dark:hover {
-    background-color: #B9005B;
+    background-color: #D40067;
+    color: white;
+    font-family: "LEMONMILKPro-Light", sans-serif;
+    border: none;
 }
 
+/*
+.distill-site-header .title {
+  display: none;
+}
+*/
+
+/*
+.distill-site-header .logo img {
+   max-height: 40px;
+   width: auto;
+   margin-top: 10px;
+}
+*/

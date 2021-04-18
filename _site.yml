@@ -8,7 +8,7 @@ favicon: images/favicon.png
 base_url: https://ellakaye.rbind.io/
 navbar:
   logo:
-    image: images/logo.svg
+    image: images/logo.png
     href: https://ellakaye.rbind.io
   right:
     - text: "About"

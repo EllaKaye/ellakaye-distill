@@ -6,21 +6,21 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-16T16:22:08+01:00"
+      "last_modified": "2021-04-18T14:14:22+01:00"
     },
     {
       "path": "index.html",
       "title": "ELLA KAYE",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Posts\n          ☰\n          \n          \n      \n        \n          \n            ELLA KAYE\n          \n          \n            \n              This site is under construction.\n            \n            \n              This site is under construction.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-04-16T19:05:44+01:00"
+      "last_modified": "2021-04-18T14:14:22+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-16T16:22:08+01:00"
+      "last_modified": "2021-04-18T14:14:23+01:00"
     }
   ],
   "collections": ["posts/posts.json"]
