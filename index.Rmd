@@ -16,4 +16,6 @@ output:
 site: distill::distill_website
 ---
  
-This site is under construction.
+This site is under construction. 
+
+Please see <https://ellakaye.rbind.io> for the fully functional (but soon to be replaced) version of my website.
