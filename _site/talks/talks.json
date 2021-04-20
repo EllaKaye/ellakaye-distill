@@ -11,9 +11,9 @@
     ],
     "date": "2021-04-20",
     "categories": [],
-    "contents": "\nLet’s try some of John Helveston’s icon link functions\n\n\n\nTwo calls to icon_link in the same code chunk puts the buttons on the same line\n\n materials more materials\n\nCalls to icon_link in the different chunks put them on separate lines\n\n even more materials\n\n\n materials\n\nHere’s three in a row that fit:\n\n materials materials materials\n\nHere are three in a row that don’t fit (put them on separate lines instead)\n\n lots materials lots more materials yet more materials\n\n\n\n\n",
+    "contents": "\nLet’s try some of John Helveston’s icon link functions\n\n\n\nTwo calls to icon_link in the same code chunk puts the buttons on the same line\n\n materials more materials\n\nCalls to icon_link in the different chunks put them on separate lines\n\n even more materials\n\n\n materials\n\nHere’s three in a row that fit:\n\n materials materials materials\n\nHere are five in a row that don’t fit (there’s probably a way to handle this via css but sufficient to put them on separate lines via separate chunks instead)\n\n lots materials lots more materials yet more materials even yet more materials loads and loads more materials\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-20T09:16:59+01:00",
+    "last_modified": "2021-04-20T09:22:25+01:00",
     "input_file": "talk_test.utf8.md"
   }
 ]

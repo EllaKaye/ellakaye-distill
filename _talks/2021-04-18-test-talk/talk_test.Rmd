@@ -79,7 +79,7 @@ icon_link(
 
 ```
 
-Here are three in a row that don't fit (put them on separate lines instead)
+Here are five in a row that don't fit (there's probably a way to handle this via css but sufficient to put them on separate lines via separate chunks instead)
 
 ```{r echo = FALSE}
 icon_link(
@@ -97,6 +97,18 @@ icon_link(
 icon_link(
     icon = "fab fa-github",
     text = "yet more materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+icon_link(
+    icon = "fab fa-github",
+    text = "even yet more materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+icon_link(
+    icon = "fab fa-github",
+    text = "loads and loads more materials",
     url  = "https://github.com/EllaKaye/ellakaye-distill"
 )
 
