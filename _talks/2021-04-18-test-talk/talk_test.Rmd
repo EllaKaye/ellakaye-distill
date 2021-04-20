@@ -21,6 +21,8 @@ Let's try some of John Helveston's icon link functions
 source(here::here("R", "functions.R"))
 ```
 
+Two calls to `icon_link` in the same code chunk puts the buttons on the same line
+
 ```{r echo = FALSE}
 icon_link(
     icon = "fab fa-github",
@@ -35,8 +37,67 @@ icon_link(
 )
 ```
 
+Calls to `icon_link` in the different chunks put them on separate lines
 
+```{r echo = FALSE}
+icon_link(
+    icon = "fab fa-github",
+    text = "even more materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+```
 
+```{r echo = FALSE}
+icon_link(
+    icon = "fab fa-github",
+    text = "materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
 
+```
 
+Here's three in a row that fit:
 
+```{r echo = FALSE}
+icon_link(
+    icon = "fab fa-github",
+    text = "materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+icon_link(
+    icon = "fab fa-github",
+    text = "materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+icon_link(
+    icon = "fab fa-github",
+    text = "materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+```
+
+Here are three in a row that don't fit (put them on separate lines instead)
+
+```{r echo = FALSE}
+icon_link(
+    icon = "fab fa-github",
+    text = "lots materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+icon_link(
+    icon = "fab fa-github",
+    text = "lots more materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+icon_link(
+    icon = "fab fa-github",
+    text = "yet more materials",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+
+```
