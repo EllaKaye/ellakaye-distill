@@ -7,6 +7,7 @@ date: 2020-10-29
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -63,4 +64,19 @@ I gave a very slightly updated version of the talk again three months later:
 - Write reproducible examples
 - Give thought to where you ask/post your question
 - Give back by helping others
+
+## Slides
+
+Keyboard Shortcuts for Slides:
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides.
+- Use <kbd>f</kbd> to toggle full screen.
+- Use <kbd>o</kbd> to view an overview of all slides.
+- Use <kbd>h</kbd> to see a list of other shortcuts.
+
+```{r slides, echo=FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html",
+  ratio = "16:9")
+```
 
