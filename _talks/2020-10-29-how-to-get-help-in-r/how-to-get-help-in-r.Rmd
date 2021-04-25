@@ -36,11 +36,9 @@ icon_link(icon = "fas fa-play-circle",
           url = "https://www.youtube.com/watch?v=YhR1gKhWmxs&t=1661s")
 ```
   
-# Abstract
-
 This session will be led by Ella Kaye - an R enthusiast and statistics PhD researcher at the University of Warwick. In the session, Ella will talk us through different ways to get help when you get stuck on a problem in R. We’ll cover how and where to look for answers and how to ask and post good questions that make it easy for others to help you, including a demo of the excellent `reprex` and `datapasta` packages. So whether you’re an R novice or more experienced R user, hopefully there’ll be some useful tips for you!
 
-# Take home messages
+## Key points
 
 - When faced with a question/problem, have a good look - for an answer in R itself and/or online
 - Don't be shy to ask questions!
@@ -48,7 +46,7 @@ This session will be led by Ella Kaye - an R enthusiast and statistics PhD resea
 - Give thought to where you ask/post your question
 - Give back by helping others
 
-# Event details
+## Event details
 
 **Event:** [R Ladies Coventry](https://www.meetup.com/rladies-coventry/events/273429872/) (the inaugural talk)
 
@@ -56,7 +54,7 @@ This session will be led by Ella Kaye - an R enthusiast and statistics PhD resea
 
 **Location:** Zoom
 
-# Event details
+## Event details
 
 I gave a very slightly updated version of the talk again three months later.
 
