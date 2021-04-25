@@ -12,30 +12,14 @@
       <link>https://ellakaye.rbind.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Another test</title>
-      <dc:creator>Nora Jones</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2021-04-25-another-test</link>
-      <description>A short description of the post.</description>
-      <guid>https://ellakaye.rbind.io/talks/2021-04-25-another-test</guid>
-      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>template test</title>
-      <dc:creator>Nora Jones</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2021-04-25-template-test</link>
-      <description>A short description of the post.</description>
-      <guid>https://ellakaye.rbind.io/talks/2021-04-25-template-test</guid>
-      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>A talk</title>
-      <dc:creator>Nora Jones</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2021-04-18-test-talk</link>
-      <description>A page for a talk</description>
-      <guid>https://ellakaye.rbind.io/talks/2021-04-18-test-talk</guid>
-      <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+      <title>How to get help in R</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r</link>
+      <description>Tips for looking for answers and asking questions about R</description>
+      <guid>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r</guid>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

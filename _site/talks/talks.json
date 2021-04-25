@@ -1,53 +1,19 @@
 [
   {
-    "path": "talks/2021-04-25-another-test/",
-    "title": "Another test",
-    "description": "A short description of the post.",
+    "path": "talks/2020-10-29-how-to-get-help-in-r/",
+    "title": "How to get help in R",
+    "description": "Tips for looking for answers and asking questions about R",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Ella Kaye",
+        "url": {}
       }
     ],
-    "date": "2021-04-25",
+    "date": "2020-10-29",
     "categories": [],
-    "contents": "\n\n\n\n\n slides (full screen) slides (PDF) materials video project\n\nDetails about the talk\n\n\n\n",
+    "contents": "\n\n\n\n\n slides (full screen) materials video\n\nAbstract\nThis session will be led by Ella Kaye - an R enthusiast and statistics PhD researcher at the University of Warwick. In the session, Ella will talk us through different ways to get help when you get stuck on a problem in R. We’ll cover how and where to look for answers and how to ask and post good questions that make it easy for others to help you, including a demo of the excellent reprex and datapasta packages. So whether you’re an R novice or more experienced R user, hopefully there’ll be some useful tips for you!\nTake home messages\nWhen faced with a question/problem, have a good look - for an answer in R itself and/or online\nDon’t be shy to ask questions!\nWrite reproducible examples\nGive thought to where you ask/post your question\nGive back by helping others\nEvent details: R Ladies Coventry\nDate: October 29th, 2020 (the inaugural talk) Location: Zoom\nEvent details: bseeR\nDate: January 28th, 2021 Location: Microsoft Teams\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-25T13:20:56+01:00",
-    "input_file": "another-test.utf8.md"
-  },
-  {
-    "path": "talks/2021-04-25-template-test/",
-    "title": "template test",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2021-04-25",
-    "categories": [],
-    "contents": "\n\n\n\n\n slides (full screen) slides (PDF) materials video project\n\nDetails about the talk\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-25T13:42:07+01:00",
-    "input_file": "template-test.utf8.md"
-  },
-  {
-    "path": "talks/2021-04-18-test-talk/",
-    "title": "A talk",
-    "description": "A page for a talk",
-    "author": [
-      {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2021-04-23",
-    "categories": [],
-    "contents": "\nLet’s try some of John Helveston’s icon link functions\n\n\n\nTwo calls to icon_link in the same code chunk puts the buttons on the same line\n\n materials more materials\n\nCalls to icon_link in the different chunks put them on separate lines\n\n even more materials\n\n\n materials\n\nHere’s three in a row that fit:\n\n materials materials materials\n\nHere are five in a row that don’t fit (there’s probably a way to handle this via css but sufficient to put them on separate lines via separate chunks instead)\n\n lots materials lots more materials yet more materials even yet more materials loads and loads more materials\n\nTru with short name:\n\n\nicon_link(\n    icon = \"github\",\n    text = \"shortname\",\n    url  = \"https://github.com/EllaKaye/ellakaye-distill\"\n)\n\n\n shortname\n\nLet’s try using the fontawesome package\n\n\nlibrary(fontawesome)\n\n\n\n\n\nfa(\"fab fa-github\")\n\n\n\nfa_i(\"fab fa-github\")\n\n\n\n\n\n\nicon = \"github\"\n\nmake_icon <- function(icon) {\n  return(htmltools::tag(\"i\", list(class = icon)))\n}\n\nmake_icon(icon)\n\n\n\n\nmake_icon_text <- function(icon, text) {\n  return(htmltools::HTML(paste0(make_icon(icon), \" \", text)))\n}\n\nicon_link <- function(icon = NULL, text = NULL, url = NULL) {\n  if (!is.null(icon)) {\n    text <- make_icon_text(icon, text)\n  }\n  return(htmltools::a(href = url, text, class = \"icon-link\"))\n}\n\nmake_icon_text(icon = \"github\", text = \"materials\")\n\n\n materials\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-23T14:11:02+01:00",
-    "input_file": {}
+    "last_modified": "2021-04-25T14:29:04+01:00",
+    "input_file": "how-to-get-help-in-r.utf8.md"
   }
 ]

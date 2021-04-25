@@ -1,0 +1,62 @@
+---
+title: "How to get help in R"
+description: |
+  Tips for looking for answers and asking questions about R
+author: Ella Kaye
+date: 2020-10-29
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libraries}
+library(distilltools)
+```
+
+```{r icon-links}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+icon_link(icon = "fas fa-images",
+          text = "slides (full screen)",
+          url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1")
+
+icon_link(icon = "fab fa-github",
+          text = "materials",
+          url = "https://github.com/EllaKaye/Rladies-Coventry-getting-help-in-R")
+
+icon_link(icon = "fas fa-play-circle",
+          text = "video",
+          url = "https://www.youtube.com/watch?v=YhR1gKhWmxs&t=1661s")
+```
+  
+# Abstract
+
+This session will be led by Ella Kaye - an R enthusiast and statistics PhD researcher at the University of Warwick. In the session, Ella will talk us through different ways to get help when you get stuck on a problem in R. We’ll cover how and where to look for answers and how to ask and post good questions that make it easy for others to help you, including a demo of the excellent `reprex` and `datapasta` packages. So whether you’re an R novice or more experienced R user, hopefully there’ll be some useful tips for you!
+
+# Take home messages
+
+- When faced with a question/problem, have a good look - for an answer in R itself and/or online
+- Don't be shy to ask questions!
+- Write reproducible examples
+- Give thought to where you ask/post your question
+- Give back by helping others
+
+# Event details: [R Ladies Coventry](https://www.meetup.com/rladies-coventry/events/273429872/)
+
+Date: October 29th, 2020 (the inaugural talk)
+Location: Zoom
+
+# Event details: [bseeR](https://www.ellenwebborn.com/rusergroup/)
+
+Date: January 28th, 2021
+Location: Microsoft Teams
+
+
+
