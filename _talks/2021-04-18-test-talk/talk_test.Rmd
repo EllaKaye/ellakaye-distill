@@ -113,3 +113,49 @@ icon_link(
 )
 
 ```
+
+Tru with short name:
+
+```{r}
+icon_link(
+    icon = "github",
+    text = "shortname",
+    url  = "https://github.com/EllaKaye/ellakaye-distill"
+)
+```
+
+
+Let's try using the `fontawesome` package
+
+```{r}
+library(fontawesome)
+```
+
+```{r}
+fa("fab fa-github")
+fa_i("fab fa-github")
+```
+
+```{r}
+icon = "github"
+
+make_icon <- function(icon) {
+  return(htmltools::tag("i", list(class = icon)))
+}
+
+make_icon(icon)
+
+make_icon_text <- function(icon, text) {
+  return(htmltools::HTML(paste0(make_icon(icon), " ", text)))
+}
+
+icon_link <- function(icon = NULL, text = NULL, url = NULL) {
+  if (!is.null(icon)) {
+    text <- make_icon_text(icon, text)
+  }
+  return(htmltools::a(href = url, text, class = "icon-link"))
+}
+
+make_icon_text(icon = "github", text = "materials")
+```
+

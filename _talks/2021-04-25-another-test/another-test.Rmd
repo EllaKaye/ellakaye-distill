@@ -1,0 +1,49 @@
+---
+title: "Another test"
+description: |
+  A short description of the post.
+author:
+  - name: Nora Jones
+    url: https://example.com/norajones
+date: 2021-04-25
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libraries}
+library(distilltools)
+```
+
+```{r icon-links}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+icon_link(icon = "fas fa-images",
+          text = "slides (full screen)",
+          url = "")
+
+icon_link(icon = "fas fa-file-pdf",
+          text = "slides (PDF)",
+          url = "")
+
+icon_link(icon = "fab fa-github",
+          text = "materials",
+          url = "")
+
+icon_link(icon = "fas fa-play-circle",
+          text = "video",
+          url = "")
+
+icon_link(icon = "fas fa-folder-open",
+          text = "project",
+          url = "")
+```
+
+

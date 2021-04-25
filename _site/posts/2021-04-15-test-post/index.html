@@ -1624,7 +1624,10 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2209,7 +2212,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Test Post","description":"A short description of the post.","authors":[{"author":"Ella Kaye","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-15T00:00:00.000+00:00","citationText":"Kaye, 2021"}
+{"title":"Test Post","description":"A short description of the post.","authors":[{"author":"Ella Kaye","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-15T00:00:00.000+01:00","citationText":"Kaye, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
