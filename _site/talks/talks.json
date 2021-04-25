@@ -17,6 +17,23 @@
     "input_file": "another-test.utf8.md"
   },
   {
+    "path": "talks/2021-04-25-template-test/",
+    "title": "template test",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [],
+    "contents": "\n\n\n\n\n slides (full screen) slides (PDF) materials video project\n\nDetails about the talk\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T13:42:07+01:00",
+    "input_file": "template-test.utf8.md"
+  },
+  {
     "path": "talks/2021-04-18-test-talk/",
     "title": "A talk",
     "description": "A page for a talk",
