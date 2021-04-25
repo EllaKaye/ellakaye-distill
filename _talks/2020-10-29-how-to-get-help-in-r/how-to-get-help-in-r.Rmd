@@ -76,6 +76,7 @@ Keyboard Shortcuts for Slides:
 
 ```{r slides, echo=FALSE}
 xaringanExtra::embed_xaringan(
-  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html")
+  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html",
+  ratio = "4:3")
 ```
 
