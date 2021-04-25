@@ -48,13 +48,19 @@ This session will be led by Ella Kaye - an R enthusiast and statistics PhD resea
 - Give thought to where you ask/post your question
 - Give back by helping others
 
-# Event details: [R Ladies Coventry](https://www.meetup.com/rladies-coventry/events/273429872/)
+# Event details
 
-**Date:** October 29th, 2020 (the inaugural talk)
+**Event:** [R Ladies Coventry](https://www.meetup.com/rladies-coventry/events/273429872/) (the inaugural talk)
+
+**Date:** October 29th, 2020 
 
 **Location:** Zoom
 
-# Event details: [bseeR](https://www.ellenwebborn.com/rusergroup/)
+# Event details
+
+I gave a very slightly updated version of the talk again three months later.
+
+**Event**: [bseeR](https://www.ellenwebborn.com/rusergroup/)
 
 **Date:** January 28th, 2021
 
