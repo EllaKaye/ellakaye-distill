@@ -6,21 +6,21 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T12:07:34+01:00"
+      "last_modified": "2021-04-25T12:12:34+01:00"
     },
     {
       "path": "index.html",
       "title": "ELLA KAYE",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Talks\n          Posts\n          ☰\n          \n          \n      \n        \n          \n            ELLA KAYE\n          \n          \n            \n              This site is under construction.\n              Please see https://ellakaye.rbind.io for the fully functional (but soon to be replaced) version of my website.\n            \n            \n              This site is under construction.\n              Please see https://ellakaye.rbind.io for the fully functional (but soon to be replaced) version of my website.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-04-25T12:07:34+01:00"
+      "last_modified": "2021-04-25T12:12:35+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T12:07:34+01:00"
+      "last_modified": "2021-04-25T12:12:35+01:00"
     },
     {
       "path": "talks.html",
@@ -28,7 +28,7 @@
       "description": "Talks I've given\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T12:07:35+01:00"
+      "last_modified": "2021-04-25T12:12:35+01:00"
     }
   ],
   "collections": ["posts/posts.json", "talks/talks.json"]

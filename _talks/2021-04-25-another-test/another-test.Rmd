@@ -46,4 +46,4 @@ icon_link(icon = "fas fa-folder-open",
           url = "")
 ```
 
-
+Details about the talk
