@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\n\nContents\nOverview\nEvent details\nKey points\nSlides\n\n\n\n\n\n slides (full screen) materials video\n\nOverview\nThis session will be led by Ella Kaye - an R enthusiast and statistics PhD researcher at the University of Warwick. In the session, Ella will talk us through different ways to get help when you get stuck on a problem in R. We’ll cover how and where to look for answers and how to ask and post good questions that make it easy for others to help you, including a demo of the excellent reprex and datapasta packages. So whether you’re an R novice or more experienced R user, hopefully there’ll be some useful tips for you!\nEvent details\nEvent: R Ladies Coventry (the inaugural talk)\nDate: October 29th, 2020\nLocation: Zoom\nI gave a very slightly updated version of the talk again three months later:\nEvent: bseeR\nDate: January 28th, 2021\nLocation: Microsoft Teams\nKey points\nWhen faced with a question/problem, have a good look for an answer in R itself and/or online\nDon’t be shy to ask questions!\nWrite reproducible examples\nGive thought to where you ask/post your question\nGive back by helping others\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-25T16:48:36+01:00",
-    "input_file": "how-to-get-help-in-r.utf8.md"
+    "last_modified": "2021-04-26T16:13:26+01:00",
+    "input_file": {}
   }
 ]
