@@ -25,7 +25,7 @@ library(distilltools)
 # [NOTE]: icons in same chunk will appear on same line
 # [NOTE]: icons in different chunks will appear on a different lines
 icon_link(icon = "fas fa-images",
-          text = "slides (full screen)",
+          text = "slides",
           url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1")
 
 icon_link(icon = "fab fa-github",
