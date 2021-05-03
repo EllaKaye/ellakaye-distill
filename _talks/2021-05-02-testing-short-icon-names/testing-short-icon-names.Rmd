@@ -18,8 +18,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r libraries}
 library(distilltools)
+library(fontawesome)
 ```
 
+## Short names
 ```{r icon-links}
 # [TODO]: fill in urls
 # [TODO]: delete any unessary icons (or add more)
@@ -30,6 +32,13 @@ icon_link(
   icon = "images", #fas fa-images
   text = "slides",
   url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1"
+)
+
+icon_link(
+  icon = "images", #fas fa-images
+  text = "slides",
+  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1",
+  style = "regular"
 )
 
 icon_link(
@@ -45,20 +54,81 @@ icon_link(
 )
 ```
 
+Long names:
+
+```{r icon-links-long}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+# should be regular
+icon_link(
+  icon = "far fa-images", #fas fa-images
+  text = "slides",
+  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1"
+)
+
+# should be solid
+icon_link(
+  icon = "fas fa-images", #fas fa-images
+  text = "slides",
+  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1",
+  style = "regular"
+)
+
+icon_link(
+  icon = "fab fa-github",
+  text = "materials",
+  url = "https://github.com/EllaKaye/Rladies-Coventry-getting-help-in-R"
+)
+
+icon_link(
+  icon = "fas fa-play-circle",
+  text = "video",
+  url = "https://www.youtube.com/watch?v=YhR1gKhWmxs&t=1661s"
+)
+```
+
+
 ```{r}
 make_icon("google-scholar")
 make_icon("orcid")
 make_icon("fab fa-orcid")
 make_icon("ai ai-orcid")
-#make_icon("ai ai-mendeley")
+make_icon("ai ai-mendeley")
 make_icon("fab fa-mendeley")
 make_icon("mendeley")
+make_icon("behance")
+make_icon("fab fa-behance")
+make_icon("researchgate")
+make_icon("fab fa-behance")
 ```
 
+## researchgate:
+```{r}
+icon_link("researchgate", "short")
+icon_link("ai ai-researchgate", "ACAD, full")
+icon_link("fab fa-researchgate", "FA, full")
+```
+
+## orcid:
+```{r}
+icon_link("orcid", "short")
+icon_link("ai ai-orcid", "ACAD, full")
+icon_link("fab fa-orcid", "FA, full")
+```
+
+## mendeley:
+```{r}
+icon_link("mendeley", "short")
+icon_link("ai ai-mendeley", "ACAD, full")
+icon_link("fab fa-mendeley", "FA, full")
+```
 
 ```{r}
 icon_link("google-scholar", "Google Scholar", "https://scholar.google.com")
-icon_link("orcid", "orcid (FA)", url = "https://google.com")
+icon_link("orcid", "orcid (short - ai)", url = "https://google.com")
 icon_link("fab fa-orcid", "orcid fa full", url = "https://google.com")
 icon_link("ai ai-orcid", "orcid (acad)", url = "https://google.com")
 ```
@@ -66,6 +136,18 @@ icon_link("ai ai-orcid", "orcid (acad)", url = "https://google.com")
 ```{r}
 icon_link("arxiv", "arxiv", "https://arxiv.org")
 ```
+
+## other academicons
+```{r}
+icon_link("ceur", "ceur", "https://scholar.google.com")
+icon_link("datacite", "datacite", "https://datacite.org")
+```
+
+# get warning but still knit and link?
+```{r}
+icon_link("images", "images", url = "https://twitter.com/home", style = "brands")
+```
+
 
 
 ```{r}
@@ -79,8 +161,35 @@ i_n %>%
 
 i_n %>%
   filter(str_detect(name, "google"))
+
+i_n %>%
+  filter(name == "researchgate")
 ```
 
+# fontawesome package
+
+```{r}
+fa_i("orcid")
+fa_orcid <- fa_i("orcid")
+as.character(fa_orcid)
+
+fa_i("researchgate")
+fa_rg <- fa_i("researchgate")
+as.character(fa_rg)
+```
+
+- with all: <i class="fab fa-orcid" role = "presentation" aria-label="orcid icon"></i>
+- without role: <i class="fab fa-orcid" aria-label="orcid icon"></i>
+- without aria label: <i class="fab fa-orcid" role = "presentation"></i>
+- with just class: <i class="fab fa-orcid"></i>
+
+- now back to make_icon (short): `r make_icon("orcid")`
+- now back to make_icon (full fa): `r make_icon("fab fa-orcid")`
+- now back to make_icon (full ai): `r make_icon("ai ai-orcid")`
+
+- now back to icon_link (short): `r icon_link("orcid")`
+- now back to icon_link (full fa): `r icon_link("fab fa-orcid")`
+- now back to icon_link (full ai): `r icon_link("ai ai-orcid")`
 
 ## Overview 
 
@@ -112,3 +221,4 @@ Keyboard Shortcuts for Slides:
 xaringanExtra::embed_xaringan(
   url = "url")
 ```
+
