@@ -1,5 +1,26 @@
 [
   {
+    "path": "posts/2021-04-29-new-distilltools-template-post/",
+    "title": "New distilltools template post",
+    "description": "talk description",
+    "author": [
+      {
+        "name": "Ella Kaye",
+        "url": {}
+      },
+      {
+        "name": "John Paul Helveston",
+        "url": {}
+      }
+    ],
+    "date": "2021-04-29",
+    "categories": [],
+    "contents": "\n\n\n\n\n slides materials video\n\nOverview\nEvent details\nEvent: GROUP\nDate: DATE\nLocation: LOCATION\nKey points\nPoint 1\nPoint 2\n…\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-29T09:20:32+01:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-04-16-advent-of-code/",
     "title": "Advent of Code",
     "description": "My attempts at Advent of Code, 2020",

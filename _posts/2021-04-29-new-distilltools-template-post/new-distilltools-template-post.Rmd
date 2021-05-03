@@ -1,0 +1,72 @@
+---
+title: New distilltools template post
+author:
+  - name: Ella Kaye
+    url: {}
+  - name: John Paul Helveston
+    url: {}
+date: '2021-04-29'
+description: |
+  talk description
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libraries}
+library(distilltools)
+```
+
+```{r icon-links}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+icon_link(icon = "fas fa-images",
+          text = "slides",
+          url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1")
+
+icon_link(icon = "fab fa-github",
+          text = "materials",
+          url = "https://github.com/EllaKaye/Rladies-Coventry-getting-help-in-R")
+
+icon_link(icon = "fas fa-play-circle",
+          text = "video",
+          url = "https://www.youtube.com/watch?v=YhR1gKhWmxs&t=1661s")
+```
+
+## Overview 
+
+
+## Event details
+
+**Event:** [GROUP](url)
+
+**Date:** DATE
+
+**Location:** LOCATION
+
+## Key points
+
+- Point 1
+- Point 2
+- ...
+
+## Slides
+
+Keyboard Shortcuts for Slides:
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides.
+- Use <kbd>f</kbd> to toggle full screen.
+- Use <kbd>o</kbd> to view an overview of all slides.
+- Use <kbd>h</kbd> to see a list of other shortcuts.
+
+```{r slides, echo=FALSE}
+xaringanExtra::embed_xaringan(
+  url = "url")
+```

@@ -1,0 +1,114 @@
+---
+title: Testing short icon names
+description: |
+  Talk description
+author: 
+  - name: Ella Kaye
+    url: {}
+date: '2021-05-02'
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libraries}
+library(distilltools)
+```
+
+```{r icon-links}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+icon_link(
+  icon = "images", #fas fa-images
+  text = "slides",
+  url = "https://ellakaye.github.io/Rladies-Coventry-getting-help-in-R/getting_help_in_R.html#1"
+)
+
+icon_link(
+  icon = "github",
+  text = "materials",
+  url = "https://github.com/EllaKaye/Rladies-Coventry-getting-help-in-R"
+)
+
+icon_link(
+  icon = "play-circle",
+  text = "video",
+  url = "https://www.youtube.com/watch?v=YhR1gKhWmxs&t=1661s"
+)
+```
+
+```{r}
+make_icon("google-scholar")
+make_icon("orcid")
+make_icon("fab fa-orcid")
+make_icon("ai ai-orcid")
+#make_icon("ai ai-mendeley")
+make_icon("fab fa-mendeley")
+make_icon("mendeley")
+```
+
+
+```{r}
+icon_link("google-scholar", "Google Scholar", "https://scholar.google.com")
+icon_link("orcid", "orcid (FA)", url = "https://google.com")
+icon_link("fab fa-orcid", "orcid fa full", url = "https://google.com")
+icon_link("ai ai-orcid", "orcid (acad)", url = "https://google.com")
+```
+
+```{r}
+icon_link("arxiv", "arxiv", "https://arxiv.org")
+```
+
+
+```{r}
+library(dplyr)
+library(stringr)
+i_n <- distilltools:::icon_names %>%
+  as_tibble()
+
+i_n %>%
+  filter(full_name == "ai ai-orcid")
+
+i_n %>%
+  filter(str_detect(name, "google"))
+```
+
+
+## Overview 
+
+
+## Event details
+
+**Event:** [GROUP](url)
+
+**Date:** DATE
+
+**Location:** LOCATION
+
+## Key points
+
+- Point 1
+- Point 2
+- ...
+
+## Slides
+
+Keyboard Shortcuts for Slides:
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides.
+- Use <kbd>f</kbd> to toggle full screen.
+- Use <kbd>o</kbd> to view an overview of all slides.
+- Use <kbd>h</kbd> to see a list of other shortcuts.
+
+```{r slides, echo=FALSE}
+xaringanExtra::embed_xaringan(
+  url = "url")
+```
