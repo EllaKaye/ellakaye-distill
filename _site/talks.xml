@@ -29,5 +29,13 @@
       <guid>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r</guid>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>Setting up you PhD (or other research project!) as an R package</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package</link>
+      <description>How I set up my PhD as an R package</description>
+      <guid>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package</guid>
+      <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>
