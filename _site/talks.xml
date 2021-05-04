@@ -21,5 +21,13 @@
       <guid>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r</guid>
       <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>Working with text in R</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r</link>
+      <description>An overview of a range of packages for working with text in R.</description>
+      <guid>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r</guid>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>

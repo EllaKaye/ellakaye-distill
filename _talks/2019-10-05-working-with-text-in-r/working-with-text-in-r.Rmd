@@ -1,0 +1,78 @@
+---
+title: "Working with text in R"
+description: |
+  An overview of a range of packages for working with text in R.
+author: Ella Kaye
+date: 2019-10-05
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libraries}
+library(distilltools)
+```
+
+```{r icon-links}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+icon_link(icon = "images",
+          text = "slides",
+          url = "https://ellakaye.github.io/RLadies-Tbilisi-talk/text_in_R_Tbilisi.html#1")
+
+icon_link(icon = "github",
+          text = "materials",
+          url = "https://github.com/EllaKaye/RLadies-Tbilisi-talk")
+
+icon_link(icon = "play-circle",
+          text = "video",
+          url = "https://youtu.be/AnVzb5XI0Iw")
+```
+
+## Overview
+
+Transcending its origins as a programming language for statistics, R provides excellent tools for working with text. This tidyverse-based talk will provide an overview of some of the fantastic packages available for this, including (but not limited to) `stringr`, `RVerbalExpressions`, `tidytext`, `wordcloud` and `ggwordcloud`.
+
+## Event details
+
+**Event:** RLadies Toronto
+
+**Date:** October 5th, 2019
+
+**Time:** 14:00-16:00 EDT
+
+**Location:** Stewart Building, 149 College Street, Toronto
+
+I then gave an updated version of the talk a few months later (links at the top relate to this version):
+
+**Event:** RLadies Tbilisi
+
+**Date:** July 4th, 2020
+
+**Time:** 09:00-10:00 GMT
+
+**Location:** Zoom
+
+## Slides
+
+Keyboard Shortcuts for Slides:
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides.
+- Use <kbd>f</kbd> to toggle full screen.
+- Use <kbd>o</kbd> to view an overview of all slides.
+- Use <kbd>h</kbd> to see a list of other shortcuts.
+
+```{r slides, echo=FALSE}
+xaringanExtra::embed_xaringan(
+  url = "https://ellakaye.github.io/RLadies-Tbilisi-talk/text_in_R_Tbilisi.html#1",
+  ratio = "4:3")
+```
+

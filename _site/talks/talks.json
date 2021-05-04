@@ -15,5 +15,22 @@
     "preview": {},
     "last_modified": "2021-04-26T16:30:09+01:00",
     "input_file": {}
+  },
+  {
+    "path": "talks/2019-10-05-working-with-text-in-r/",
+    "title": "Working with text in R",
+    "description": "An overview of a range of packages for working with text in R.",
+    "author": [
+      {
+        "name": "Ella Kaye",
+        "url": {}
+      }
+    ],
+    "date": "2019-10-05",
+    "categories": [],
+    "contents": "\n\nContents\nOverview\nEvent details\nSlides\n\n\n\n\n\n slides materials video\n\nOverview\nTranscending its origins as a programming language for statistics, R provides excellent tools for working with text. This tidyverse-based talk will provide an overview of some of the fantastic packages available for this, including (but not limited to) stringr, RVerbalExpressions, tidytext, wordcloud and ggwordcloud.\nEvent details\nEvent: RLadies Toronto\nDate: October 5th, 2019\nTime: 14:00-16:00 EDT\nLocation: Stewart Building, 149 College Street, Toronto\nI then gave an updated version of the talk a few months later (links at the top relate to this version):\nEvent: RLadies Tbilisi\nDate: July 4th, 2020\nTime: 09:00-10:00 GMT\nLocation: Zoom\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-04T15:12:57+01:00",
+    "input_file": {}
   }
 ]
