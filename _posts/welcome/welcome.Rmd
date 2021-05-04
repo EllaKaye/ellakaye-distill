@@ -12,6 +12,7 @@ date: 04-15-2021
 output:
   distill::distill_article:
     self_contained: false
+draft: true
 ---
 
 ```{r setup, include=FALSE}
