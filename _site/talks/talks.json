@@ -49,5 +49,22 @@
     "preview": {},
     "last_modified": "2021-05-04T16:15:56+01:00",
     "input_file": {}
+  },
+  {
+    "path": "talks/2017-07-06-introducing-bradleyterryscalable/",
+    "title": "Ranking Items Scalably with the Bradley-Terry Model",
+    "description": "Introducing the `BradleyTerryScalable` package",
+    "author": [
+      {
+        "name": "Ella Kaye",
+        "url": {}
+      }
+    ],
+    "date": "2017-07-06",
+    "categories": [],
+    "contents": "\n\nContents\nOverview\nEvent details\nSlides\n\n\n\n\n\n slides materials package\n\nOverview\nI am very excited to be introducing the package BradleyTerryScalable at useR!2017. The package is available on GitHub.\nBradleyTerryScalable is an R package for fitting the Bradley-Terry model to pair-comparison data, to enable statistically principled ranking of a potentially large number of objects.\nGiven a number of items for which we have pair-comparison data, the Bradley-Terry model assigns a ‘strength’ parameter to each item. These can be used to rank the items. Moreover, they can be used to determine the probability that any given item will ‘beat’ any other given item when they are compared. Further details of the mathematical model, and the algorithms used to fit it, are available in the package vignette.\nEvent details\nEvent: useR!2017\nDate: July 6th, 2017\nTime: 11:36 AM\nLocation: Brussels, Belgium\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-04T16:32:53+01:00",
+    "input_file": {}
   }
 ]

@@ -37,5 +37,13 @@
       <guid>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package</guid>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>Ranking Items Scalably with the Bradley-Terry Model</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable</link>
+      <description>Introducing the `BradleyTerryScalable` package</description>
+      <guid>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable</guid>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>
