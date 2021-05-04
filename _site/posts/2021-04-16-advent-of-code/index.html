@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -2274,23 +2274,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <p><a href="https://adventofcode.com">Advent of Code</a> is a series of small programming challenges, released daily throughout December in the run-up to Christmas. Part 1 of the challenge is given first. On its successful completion, Part 2 is revealed. The challenges are designed to be solved in any programming language. I will be using R.</p>
 <p>There will no doubt be a wide variety of ways to solve these problems. I’m going to go with the first thing I think of that gets the right answer. In most cases, I expect that there will be more concise and efficient solutions. Most of the time I’m working in R, it’s within the <a href="https://www.tidyverse.org">tidyverse</a>, so I imagine that framework will feature heavily below.</p>
-<p>Each participant gets different input data, so my numerical solutions may be different from others. If you’re not signed up for Advent of Code yourself, but want to follow along with my data, you can download it at from the data links at the beginning of each day’s section. The links in the day section headers take you to challenge on the Advent of Code page. The links directly below are a table of contents for this page.</p>
-<ol type="1">
-<li><a href="#day1">Report Repair</a></li>
-<li><a href="#day2">Password Philosophy</a></li>
-<li><a href="#day3">Toboggan Trajectory</a></li>
-<li><a href="#day4">Passport Processing</a></li>
-<li><a href="#day5">Binary Boarding</a></li>
-<li><a href="#day6">Custom Customs</a></li>
-<li><a href="#day7">Handy Haverstocks</a></li>
-<li><a href="#day8">Handheld Halting</a></li>
-<li><a href="#day9">Encoding Error</a></li>
-<li><a href="#day10">Adapter Array</a></li>
-<li><a href="#day11">Seating System</a></li>
-</ol>
-<p>
-<a id='day1'></a>
-</p>
+<p>Each participant gets different input data, so my numerical solutions may be different from others. If you’re not signed up for Advent of Code yourself, but want to follow along with my data, you can download it at from the data links at the beginning of each day’s section. The links in the day section headers take you to challenge on the Advent of Code page.</p>
 <h2 id="day-1-report-repair">Day 1: <a href="https://adventofcode.com/2020/day/1">Report Repair</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day1.txt">My day 1 data</a></p>
 <h4 id="part-1-two-numbers">Part 1: Two numbers</h4>
@@ -2327,9 +2311,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 65656536</code></pre>
 </div>
-<p>
-<a id='day2'></a>
-</p>
 <h2 id="day-2-password-philosophy">Day 2: <a href="https://adventofcode.com/2020/day/2">Password Philosophy</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day2.txt">My day 2 data</a></p>
 <h4 id="part-1-number-of-letters">Part 1: Number of letters</h4>
@@ -2350,9 +2331,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>passwords</span> <span class='op'>&lt;-</span> <span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_tsv</a></span><span class='op'>(</span><span class='st'>"data/AoC_day2.txt"</span>, col_names <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>X1</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"policy"</span>, <span class='st'>"password"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>":"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>policy</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"count"</span>, <span class='st'>"letter"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>count</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"min"</span>, <span class='st'>"max"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>X1</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"policy"</span>, <span class='st'>"password"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>":"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>policy</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"count"</span>, <span class='st'>"letter"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>count</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"min"</span>, <span class='st'>"max"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>min <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>min</span><span class='op'>)</span>,
          max <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>max</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -2386,9 +2367,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 391</code></pre>
 </div>
-<p>
-<a id='day3'></a>
-</p>
 <h2 id="day-3-toboggan-trajectory">Day 3: <a href="https://adventofcode.com/2020/day/3">Toboggan Trajectory</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day3.txt">My day 3 data</a></p>
 <h4 id="part-1-encountering-trees">Part 1: Encountering trees</h4>
@@ -2482,9 +2460,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 3621285278</code></pre>
 </div>
-<p>
-<a id='day4'></a>
-</p>
 <h2 id="day-4-passport-processing">Day 4: <a href="https://adventofcode.com/2020/day/4">Passport Processing</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day4.txt">My day 4 data</a></p>
 <h4 id="part-1-complete-passports">Part 1: Complete passports</h4>
@@ -2500,12 +2475,12 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>passports</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readLines.html'>readLines</a></span><span class='op'>(</span><span class='st'>"data/AoC_day4.txt"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate_rows.html'>separate_rows</a></span><span class='op'>(</span><span class='va'>value</span>, sep <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate_rows.html'>separate_rows</a></span><span class='op'>(</span><span class='va'>value</span>, sep <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>new_passport <span class='op'>=</span> <span class='va'>value</span> <span class='op'>==</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ID <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/cumsum.html'>cumsum</a></span><span class='op'>(</span><span class='va'>new_passport</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>new_passport</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>new_passport</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>value</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"key"</span>, <span class='st'>"value"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>":"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>value</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"key"</span>, <span class='st'>"value"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>":"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/relocate.html'>relocate</a></span><span class='op'>(</span><span class='va'>ID</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2575,9 +2550,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 131</code></pre>
 </div>
-<p>
-<a id='day5'></a>
-</p>
 <h2 id="day-5-binary-boarding">Day 5: <a href="https://adventofcode.com/2020/day/5">Binary Boarding</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day5.txt">My day 5 data</a></p>
 <h4 id="part-1-finding-all-seat-ids">Part 1: Finding all seat IDs</h4>
@@ -2648,9 +2620,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 592</code></pre>
 </div>
-<p>
-<a id='day6'></a>
-</p>
 <h2 id="day-6-custom-customs">Day 6: <a href="https://adventofcode.com/2020/day/6">Custom Customs</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day6.txt">My day 6 data</a></p>
 <h4 id="part-1-anyone-answers">Part 1: Anyone answers</h4>
@@ -2708,9 +2677,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 3276</code></pre>
 </div>
-<p>
-<a id='day7'></a>
-</p>
 <h2 id="day-7-handy-haverstocks">Day 7: <a href="https://adventofcode.com/2020/day/7">Handy Haverstocks</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day7.txt">My day 7 data</a></p>
 <h4 id="part-1-number-of-colour-bags">Part 1: Number of colour bags</h4>
@@ -2743,12 +2709,12 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rules</span> <span class='op'>&lt;-</span> <span class='va'>bags</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>rule <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>X1</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"container"</span>, <span class='st'>"contains"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>" bags contain "</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/separate_rows.html'>separate_rows</a></span><span class='op'>(</span><span class='va'>contains</span>, sep <span class='op'>=</span> <span class='st'>","</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate.html'>separate</a></span><span class='op'>(</span><span class='va'>X1</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"container"</span>, <span class='st'>"contains"</span><span class='op'>)</span>, sep <span class='op'>=</span> <span class='st'>" bags contain "</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/separate_rows.html'>separate_rows</a></span><span class='op'>(</span><span class='va'>contains</span>, sep <span class='op'>=</span> <span class='st'>","</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>contains <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>contains</span>, <span class='st'>"\\."</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>contains <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>contains</span>, <span class='st'>"bags|bag"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='co'>#mutate(contains = str_replace(contains, "no other", "0 other")) %&gt;%</span>
-  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/extract.html'>extract</a></span><span class='op'>(</span><span class='va'>contains</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'number'</span>, <span class='st'>'contains'</span><span class='op'>)</span>, <span class='st'>"(\\d+) (.+)"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/tidyr/man/extract.html'>extract</a></span><span class='op'>(</span><span class='va'>contains</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'number'</span>, <span class='st'>'contains'</span><span class='op'>)</span>, <span class='st'>"(\\d+) (.+)"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>number</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>contains <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_trim.html'>str_trim</a></span><span class='op'>(</span><span class='va'>contains</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>number <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>number</span><span class='op'>)</span><span class='op'>)</span> 
@@ -2801,9 +2767,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 158730</code></pre>
 </div>
-<p>
-<a id='day8'></a>
-</p>
 <h2 id="day-8-handheld-halting">Day 8: <a href="https://adventofcode.com/2020/day/8">Handheld Halting</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day8.txt">My day 8 data</a></p>
 <h4 id="part-1-infinite-loop">Part 1: Infinite Loop</h4>
@@ -2938,9 +2901,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] 944</code></pre>
 </div>
-<p>
-<a id='day9'></a>
-</p>
 <h2 id="day-9-encoding-error">Day 9: <a href="https://adventofcode.com/2020/day/9">Encoding Error</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day9.txt">My day 9 data</a></p>
 <h4 id="part-1-weak-link">Part 1: Weak Link</h4>
@@ -2955,7 +2915,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>check_sum</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>target</span>, <span class='va'>addends</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/generics/man/setops.html'>intersect</a></span><span class='op'>(</span><span class='va'>addends</span>, <span class='va'>target</span><span class='op'>-</span><span class='va'>addends</span><span class='op'>)</span>
+  <span class='fu'><a href='https://generics.r-lib.org/reference/setops.html'>intersect</a></span><span class='op'>(</span><span class='va'>addends</span>, <span class='va'>target</span><span class='op'>-</span><span class='va'>addends</span><span class='op'>)</span>
 <span class='op'>}</span>
 </code></pre>
 </div>
@@ -2997,7 +2957,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   <span class='va'>len</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>)</span>
   
   <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>len</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/accumulate.html'>accumulate</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>[</span><span class='va'>i</span><span class='op'>:</span><span class='va'>len</span><span class='op'>]</span>, <span class='va'>sum</span><span class='op'>)</span>
+    <span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/purrr/man/accumulate.html'>accumulate</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>[</span><span class='va'>i</span><span class='op'>:</span><span class='va'>len</span><span class='op'>]</span>, <span class='va'>sum</span><span class='op'>)</span>
     <span class='va'>b</span> <span class='op'>&lt;-</span> <span class='va'>a</span> <span class='op'>==</span> <span class='va'>target</span>
     
     <span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>b</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>{</span>
@@ -3016,9 +2976,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 <pre><code>[1] 76688505</code></pre>
 </div>
 <p>I appreciate that there’s some redundant calculation in this method. The vectors of accumulated sums can contain numbers larger than the target (if writing our own loop, we could break as soon as the accumulated sum got too big). Also, in retrospect, we could have only run <code>accumulate</code> once, then in the second iteration of the loop, subtracted <code>input[1]</code> from the result, in the third iteration subtracted <code>input[2]</code> from that result, etc. However, the function as written is concise and easy to understand, and gets our answer in around a second, so that will do!</p>
-<p>
-<a id='day10'></a>
-</p>
 <h2 id="day-10-adapter-array">Day 10: <a href="https://adventofcode.com/2020/day/10">Adapter Array</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day10.txt">My day 10 data</a></p>
 <h4 id="part-1-adapter-distribution">Part 1: Adapter Distribution</h4>
@@ -3129,9 +3086,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 <pre><code>[1] &quot;259172170858496&quot;</code></pre>
 </div>
-<p>
-<a id='day11'></a>
-</p>
 <h2 id="day-11-seating-system">Day 11: <a href="https://adventofcode.com/2020/day/11">Seating System</a></h2>
 <p><a href="https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day11.txt">My day 11 data</a></p>
 <h4 id="part-1-changing-layout">Part 1: Changing layout</h4>
@@ -3269,7 +3223,7 @@ d-appendix d-footnote-list a.footnote-backlink {
     <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='op'>)</span>  
 
   <span class='va'>layout</span><span class='op'>[</span><span class='va'>indices_to_change</span><span class='op'>]</span> <span class='op'>&lt;-</span> 
-    <span class='fu'><a href='https://rdrr.io/pkg/generics/man/setops.html'>setdiff</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"L"</span>, <span class='st'>"#"</span><span class='op'>)</span>,  <span class='va'>layout</span><span class='op'>[</span><span class='va'>indices_to_change</span><span class='op'>]</span><span class='op'>)</span>
+    <span class='fu'><a href='https://generics.r-lib.org/reference/setops.html'>setdiff</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"L"</span>, <span class='st'>"#"</span><span class='op'>)</span>,  <span class='va'>layout</span><span class='op'>[</span><span class='va'>indices_to_change</span><span class='op'>]</span><span class='op'>)</span>
   
   <span class='va'>iters</span> <span class='op'>&lt;-</span> <span class='va'>iters</span> <span class='op'>+</span> <span class='fl'>1</span>
 <span class='op'>}</span>
@@ -3375,7 +3329,7 @@ d-appendix d-footnote-list a.footnote-backlink {
     <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>N <span class='op'>=</span> <span class='va'>N</span>, S <span class='op'>=</span> <span class='va'>S</span>, E <span class='op'>=</span> <span class='va'>E</span>, W <span class='op'>=</span> <span class='va'>W</span>, NW <span class='op'>=</span> <span class='va'>NW</span>, NE <span class='op'>=</span> <span class='va'>NE</span>, SE <span class='op'>=</span> <span class='va'>SE</span>, SW <span class='op'>=</span> <span class='va'>SW</span><span class='op'>)</span><span class='op'>)</span>
   
   <span class='co'># the first seat in each direction, collapsed to a vector</span>
-  <span class='va'>first_seats</span> <span class='op'>&lt;-</span> <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_chr</a></span><span class='op'>(</span><span class='va'>all_vecs</span>, <span class='va'>get_first_seat_from_vec</span><span class='op'>)</span>
+  <span class='va'>first_seats</span> <span class='op'>&lt;-</span> <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/purrr/man/map.html'>map_chr</a></span><span class='op'>(</span><span class='va'>all_vecs</span>, <span class='va'>get_first_seat_from_vec</span><span class='op'>)</span>
   
   <span class='co'># remove NAs from list and return</span>
   <span class='co'># (these occur either when starting on an edge, </span>
@@ -3412,7 +3366,7 @@ d-appendix d-footnote-list a.footnote-backlink {
     <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='op'>)</span>  
 
   <span class='va'>layout</span><span class='op'>[</span><span class='va'>indices_to_change</span><span class='op'>]</span> <span class='op'>&lt;-</span> 
-    <span class='fu'><a href='https://rdrr.io/pkg/generics/man/setops.html'>setdiff</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"L"</span>, <span class='st'>"#"</span><span class='op'>)</span>,  <span class='va'>layout</span><span class='op'>[</span><span class='va'>indices_to_change</span><span class='op'>]</span><span class='op'>)</span>
+    <span class='fu'><a href='https://generics.r-lib.org/reference/setops.html'>setdiff</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"L"</span>, <span class='st'>"#"</span><span class='op'>)</span>,  <span class='va'>layout</span><span class='op'>[</span><span class='va'>indices_to_change</span><span class='op'>]</span><span class='op'>)</span>
   
   <span class='va'>iters</span> <span class='op'>&lt;-</span> <span class='va'>iters</span> <span class='op'>+</span> <span class='fl'>1</span>
 <span class='op'>}</span>
@@ -3426,7 +3380,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>On the test set, this takes 6 iterations. On the full data set, my answer is 2128, and it took 87 iterations. Given this is fewer iterations than in Part 1, it must be my code for getting the first seat that’s slowing things down.</p>
 <p>I am unsatisfied both by how many lines of code this has taken as well as the time taken to run. The introduction to Advent of Code says that each challenge has a solution that will complete in at most 15 seconds on ten year old hardware. So clearly there’s a better way of doing this. Perhaps something to revisit in the future.</p>
 <h2 id="next">Next</h2>
-<p>This post will be updated as I work my way through the remainder of the challenges.</p>
+<p>I was late to the game, and that was as far as I managed to get in December 2020. I’m looking forward to taking on the challenge again in 2021!</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

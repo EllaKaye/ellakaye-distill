@@ -12,27 +12,11 @@ output:
     toc: true
 ---
 
-
-
 [Advent of Code](https://adventofcode.com) is a series of small programming challenges, released daily throughout December in the run-up to Christmas. Part 1 of the challenge is given first. On its successful completion, Part 2 is revealed. The challenges are designed to be solved in any programming language. I will be using R. 
 
 There will no doubt be a wide variety of ways to solve these problems. I'm going to go with the first thing I think of that gets the right answer. In most cases, I expect that there will be more concise and efficient solutions. Most of the time I'm working in R, it's within the [tidyverse](https://www.tidyverse.org), so I imagine that framework will feature heavily below.
 
-Each participant gets different input data, so my numerical solutions may be different from others. If you're not signed up for Advent of Code yourself, but want to follow along with my data, you can download it at from the data links at the beginning of each day's section. The links in the day section headers take you to challenge on the Advent of Code page. The links directly below are a table of contents for this page.
-
-1. <a href="#day1">Report Repair</a> 
-2. <a href="#day2">Password Philosophy</a>
-3. <a href="#day3">Toboggan Trajectory</a>
-4. <a href="#day4">Passport Processing</a>
-5. <a href="#day5">Binary Boarding</a>
-6. <a href="#day6">Custom Customs</a>
-7. <a href="#day7">Handy Haverstocks</a>
-8. <a href="#day8">Handheld Halting</a>
-9. <a href="#day9">Encoding Error</a>
-10. <a href="#day10">Adapter Array</a>
-11. <a href="#day11">Seating System</a>
-
-<p><a id='day1'></a></p>
+Each participant gets different input data, so my numerical solutions may be different from others. If you're not signed up for Advent of Code yourself, but want to follow along with my data, you can download it at from the data links at the beginning of each day's section. The links in the day section headers take you to challenge on the Advent of Code page. 
 
 ## Day 1: [Report Repair](https://adventofcode.com/2020/day/1)
 
@@ -70,8 +54,6 @@ expand.grid(expenses, expenses, expenses) %>%
   slice(1) %>%
   pull(prod)
 ```
-
-<p><a id='day2'></a></p>
 
 ## Day 2: [Password Philosophy](https://adventofcode.com/2020/day/2)
 
@@ -131,8 +113,6 @@ passwords %>%
   summarise(correct = sum(match_one)) %>%
   pull(correct) 
 ```
-
-<p><a id='day3'></a></p>
 
 ## Day 3: [Toboggan Trajectory](https://adventofcode.com/2020/day/3)
 
@@ -227,8 +207,6 @@ prod(slope_check(tree_mat, 1, 1),
      slope_check(tree_mat, 1, 2))
 ```
 
-<p><a id='day4'></a></p>
-
 ## Day 4: [Passport Processing](https://adventofcode.com/2020/day/4)
 
 [My day 4 data](https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day4.txt)
@@ -313,8 +291,6 @@ complete_passports %>%
   nrow()
 ```
 
-<p><a id='day5'></a></p>
-
 ## Day 5: [Binary Boarding](https://adventofcode.com/2020/day/5)
 
 [My day 5 data](https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day5.txt)
@@ -382,8 +358,6 @@ seat_IDs %>%
   pull(my_seat)
 ```
 
-<p><a id='day6'></a></p>
-
 ## Day 6: [Custom Customs](https://adventofcode.com/2020/day/6)
 
 [My day 6 data](https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day6.txt)
@@ -438,8 +412,6 @@ customs_groups %>%
   summarise(total = sum(in_common)) %>%
   pull(total)
 ```
-
-<p><a id='day7'></a></p>
 
 ## Day 7: [Handy Haverstocks](https://adventofcode.com/2020/day/7)
 
@@ -517,8 +489,6 @@ count_all_contained <- function(colour) {
 
 count_all_contained("shiny gold")
 ```
-
-<p><a id='day8'></a></p>
 
 ## Day 8: [Handheld Halting](https://adventofcode.com/2020/day/8)
 
@@ -654,8 +624,6 @@ check_programme$accumulator
 
 ```
 
-<p><a id='day9'></a></p>
-
 ## Day 9: [Encoding Error](https://adventofcode.com/2020/day/9)
 
 [My day 9 data](https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day9.txt)
@@ -729,8 +697,6 @@ contiguous_sum(input_reduced, target)
 ```
 
 I appreciate that there's some redundant calculation in this method. The vectors of accumulated sums can contain numbers larger than the target (if writing our own loop, we could break as soon as the accumulated sum got too big). Also, in retrospect, we could have only run `accumulate` once, then in the second iteration of the loop, subtracted `input[1]` from the result, in the third iteration subtracted `input[2]` from that result, etc. However, the function as written is concise and easy to understand, and gets our answer in around a second, so that will do!
-
-<p><a id='day10'></a></p>
 
 ## Day 10: [Adapter Array](https://adventofcode.com/2020/day/10)
 
@@ -822,8 +788,6 @@ runs_df %>%
   pull(prod_options) %>%
   format(scientific = FALSE) 
 ```
-
-<p><a id='day11'></a></p>
 
 ## Day 11: [Seating System](https://adventofcode.com/2020/day/11)
 
@@ -1114,10 +1078,6 @@ On the test set, this takes `r part_2_iters` iterations. On the full data set, m
 
 I am unsatisfied both by how many lines of code this has taken as well as the time taken to run. The introduction to Advent of Code says that each challenge has a solution that will complete in at most 15 seconds on ten year old hardware. So clearly there's a better way of doing this. Perhaps something to revisit in the future.
 
-
-
-
-
 ## Next
 
-This post will be updated as I work my way through the remainder of the challenges.
+I was late to the game, and that was as far as I managed to get in December 2020. I'm looking forward to taking on the challenge again in 2021!

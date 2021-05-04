@@ -1,22 +1,5 @@
 [
   {
-    "path": "talks/2021-05-02-testing-short-icon-names/",
-    "title": "Testing short icon names",
-    "description": "Talk description",
-    "author": [
-      {
-        "name": "Ella Kaye",
-        "url": {}
-      }
-    ],
-    "date": "2021-05-02",
-    "categories": [],
-    "contents": "\n\nContents\nShort names\nresearchgate:\norcid:\nmendeley:\nother academicons\nget warning but still knit and link?\nfontawesome package\nOverview\nEvent details\nKey points\nSlides\n\n\n\n\n\nShort names\n\n slides slides materials video\n\nLong names:\n\n slides slides materials video\n\n\n\n\nresearchgate:\n\n short ACAD, full FA, full\n\norcid:\n\n short ACAD, full FA, full\n\nmendeley:\n\n short ACAD, full FA, full\n\n\n Google Scholar orcid (short - ai) orcid fa full orcid (acad)\n\n\n arxiv\n\nother academicons\n\n ceur datacite\n\nget warning but still knit and link?\n\n images\n\n\n# A tibble: 1 x 3\n  name  full_name   style\n  <chr> <chr>       <chr>\n1 orcid ai ai-orcid <NA> \n# A tibble: 10 x 3\n   name                  full_name                   style \n   <chr>                 <chr>                       <chr> \n 1 google                fab fa-google               brands\n 2 google-drive          fab fa-google-drive         brands\n 3 google-pay            fab fa-google-pay           brands\n 4 google-play           fab fa-google-play          brands\n 5 google-plus           fab fa-google-plus          brands\n 6 google-plus-g         fab fa-google-plus-g        brands\n 7 google-plus-square    fab fa-google-plus-square   brands\n 8 google-wallet         fab fa-google-wallet        brands\n 9 google-scholar-square ai ai-google-scholar-square <NA>  \n10 google-scholar        ai ai-google-scholar        <NA>  \n# A tibble: 2 x 3\n  name         full_name           style \n  <chr>        <chr>               <chr> \n1 researchgate fab fa-researchgate brands\n2 researchgate ai ai-researchgate  <NA>  \n\nfontawesome package\n\n\n[1] \"<i class=\\\"fab fa-orcid\\\" role=\\\"presentation\\\" aria-label=\\\"orcid icon\\\"><\/i>\"\n\n[1] \"<i class=\\\"fab fa-researchgate\\\" role=\\\"presentation\\\" aria-label=\\\"researchgate icon\\\"><\/i>\"\n\nwith all: \nwithout role: \nwithout aria label: \nwith just class: \nnow back to make_icon (short): \nnow back to make_icon (full fa): \nnow back to make_icon (full ai): \nnow back to icon_link (short):  \nnow back to icon_link (full fa):  \nnow back to icon_link (full ai):  \nOverview\nEvent details\nEvent: GROUP\nDate: DATE\nLocation: LOCATION\nKey points\nPoint 1\nPoint 2\n…\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-05-03T18:04:45+01:00",
-    "input_file": {}
-  },
-  {
     "path": "talks/2020-10-29-how-to-get-help-in-r/",
     "title": "How to get help in R",
     "description": "Tips for looking for answers and asking questions about R",
