@@ -23,4 +23,4 @@ library(distilltools)
 
 Hello and welcome to my personal website! 
 
-I am a PhD student in Statistics at the University of Warwick and an R enthusiast. I love developing packages and talking and posting about what I've learnt, as well as connecting with others in the R community.
+I am a PhD student in Statistics at the University of Warwick and an R enthusiast. 
