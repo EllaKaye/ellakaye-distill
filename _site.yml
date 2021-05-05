@@ -22,6 +22,10 @@ navbar:
       href: talks.html
     - text: "Posts"
       href: posts.html
+    - icon: fab fa-github
+      href: https://github.com/EllaKaye/ellakaye-distill
+    - icon: fab fa-twitter
+      href: https://twitter.com/ellamkaye
 collections:
   posts:
     categories: true
@@ -38,3 +42,4 @@ output:
     includes:
       in_header:
       - _includes/header.html
+      - _includes/utterances.html
