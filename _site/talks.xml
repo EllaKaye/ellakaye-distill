@@ -45,5 +45,13 @@
       <guid>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable</guid>
       <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>An Overview of htmlwidgets</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets</link>
+      <description>A brief overview of htmlwidgets in R</description>
+      <guid>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets</guid>
+      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>

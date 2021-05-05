@@ -1,0 +1,55 @@
+---
+title: An Overview of htmlwidgets
+description: |
+  A brief overview of htmlwidgets in R
+author: 
+  - name: Ella Kaye
+    url: {}
+date: '2017-05-25'
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libraries}
+library(distilltools)
+```
+
+```{r icon-links}
+# [TODO]: fill in urls
+# [TODO]: delete any unessary icons (or add more)
+# [TODO]: css styling for .icon-link and .icon-link:hover
+# [NOTE]: icons in same chunk will appear on same line
+# [NOTE]: icons in different chunks will appear on a different lines
+icon_link(
+  icon = "images",
+  text = "slides",
+  url = "https://ellakaye.shinyapps.io/htmlwidgets_overview/#1"
+)
+
+icon_link(
+  icon = "github",
+  text = "materials",
+  url = "https://github.com/EllaKaye/htmlwidgets_WRUG_pres"
+)
+```
+
+## Overview 
+
+The [`htmlwidgets`](http://www.htmlwidgets.org/index.html) package allows developers to create R bindings to JavaScript libraries. The resulting R packages allow the embedding of interactive content in R Markdown documents and Shiny web apps. There are over 50 available widgets. In this talk I give an overview of the `htmlwidget` framework and demonstrate the use of the [`DT`](https://rstudio.github.io/DT/), [`leaflet`](http://rstudio.github.io/leaflet/) and [`DiagrammeR`](http://rich-iannone.github.io/DiagrammeR/) packages.
+
+## Event details
+
+**Event:** [Warwick R User Group](https://warwick.ac.uk/fac/sci/wdsi/events/wrug/)
+
+**Date:** May 25th, 2017
+
+**Time:** 17:00 
+
+**Location:** University of Warwick
+

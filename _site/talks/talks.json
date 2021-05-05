@@ -66,5 +66,22 @@
     "preview": {},
     "last_modified": "2021-05-04T16:32:53+01:00",
     "input_file": {}
+  },
+  {
+    "path": "talks/2017-05-25-an-overview-of-htmlwidgets/",
+    "title": "An Overview of htmlwidgets",
+    "description": "A brief overview of htmlwidgets in R",
+    "author": [
+      {
+        "name": "Ella Kaye",
+        "url": {}
+      }
+    ],
+    "date": "2017-05-25",
+    "categories": [],
+    "contents": "\n\nContents\nOverview\nEvent details\n\n\n\n\n\n slides materials\n\nOverview\nThe htmlwidgets package allows developers to create R bindings to JavaScript libraries. The resulting R packages allow the embedding of interactive content in R Markdown documents and Shiny web apps. There are over 50 available widgets. In this talk I give an overview of the htmlwidget framework and demonstrate the use of the DT, leaflet and DiagrammeR packages.\nEvent details\nEvent: Warwick R User Group\nDate: May 25th, 2017\nTime: 17:00\nLocation: University of Warwick\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-05T09:25:05+01:00",
+    "input_file": {}
   }
 ]
