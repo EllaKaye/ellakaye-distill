@@ -21,5 +21,13 @@
       <guid>https://ellakaye.rbind.io/posts/2020-12-09-advent-of-code-2020</guid>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>n_letter_words and a personal (publicly available) package</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/posts/2017-06-17-n-letter-words</link>
+      <description>How I created a handy function and a personal package</description>
+      <guid>https://ellakaye.rbind.io/posts/2017-06-17-n-letter-words</guid>
+      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>
