@@ -47,9 +47,11 @@ library(EMK)
 
 n_letter_words(2)
 
-some_three_letter_words <- n_letter_words(3, num_letters = 10, 
-                                          case = "lower", 
-                                          as_vector = TRUE)
+some_three_letter_words <- n_letter_words(
+  3, num_letters = 10, 
+  case = "lower", 
+  as_vector = TRUE
+)
 
 c(head(some_three_letter_words), tail(some_three_letter_words))
 

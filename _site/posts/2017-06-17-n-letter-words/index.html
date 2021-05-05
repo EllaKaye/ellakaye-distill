@@ -2300,9 +2300,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 10 JA   
 # … with 666 more rows</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>some_three_letter_words</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/EMK/man/n_letter_words.html'>n_letter_words</a></span><span class='op'>(</span><span class='fl'>3</span>, num_letters <span class='op'>=</span> <span class='fl'>10</span>, 
-                                          case <span class='op'>=</span> <span class='st'>"lower"</span>, 
-                                          as_vector <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>some_three_letter_words</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/EMK/man/n_letter_words.html'>n_letter_words</a></span><span class='op'>(</span>
+  <span class='fl'>3</span>, num_letters <span class='op'>=</span> <span class='fl'>10</span>, 
+  case <span class='op'>=</span> <span class='st'>"lower"</span>, 
+  as_vector <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
 
 <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>some_three_letter_words</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>some_three_letter_words</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
