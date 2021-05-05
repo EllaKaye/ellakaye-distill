@@ -3,19 +3,24 @@ title: "ELLA KAYE"
 image: "images/ella_profile.jpeg"
 favicon: images/favicon.png
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
   - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://twitter.com/ellamkaye"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/EllaKaye"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/ella-kaye-9b878248/"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:ella.kaye@gmail.com"
 output:
   postcards::jolla
 site: distill::distill_website
 ---
- 
-This site is under construction. 
 
-Please see <https://ellakaye.rbind.io> for the fully functional (but soon to be replaced) version of my website.
+```{r echo = FALSE}
+library(distilltools)
+```
+
+
+Hello and welcome to my personal website! 
+
+I am a PhD student in Statistics at the University of Warwick. I am an [`r make_icon("r-project")`](https://www.r-project.org/about.html) enthusiast. I love developing packages and [talking](talks.html) and [posting](posts.html) about what I've learnt. Check out my site to find out more [about](about.html) me and my [projects](projects.html).
