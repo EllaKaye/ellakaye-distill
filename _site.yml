@@ -42,4 +42,3 @@ output:
     includes:
       in_header:
       - _includes/header.html
-      - _includes/utterances.html
