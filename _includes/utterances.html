@@ -1,6 +1,6 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    if (!/posts/.test(location.pathname)) {
+    if (!/posts/.test(location.pathname) | !/talks/.test(location.pathname)) {
       return;
     }
 
