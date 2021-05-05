@@ -23,4 +23,4 @@ library(distilltools)
 
 Hello and welcome to my personal website! 
 
-I am a PhD student in Statistics at the University of Warwick. I am an [`r make_icon("r-project")`](https://www.r-project.org/about.html) enthusiast. I love developing packages and [talking](talks.html) and [posting](posts.html) about what I've learnt. Check out my site to find out more [about](about.html) me and my [projects](projects.html).
+I am a PhD student in Statistics at the University of Warwick and an R enthusiast. I love developing packages and talking and posting about what I've learnt, as well as connecting with others in the R community.
