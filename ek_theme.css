@@ -14,6 +14,35 @@
 /* This must remain at the top of this file.                 */
 
 
+/**
+ * @license
+ * MyFonts Webfont Build ID 3934149, 2020-08-10T16:13:12-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: LEMONMILKPro-UltraLight by Marsnev
+ * URL: https://www.myfonts.com/fonts/marsnev/lemon-milk-pro/ultra-light/
+ *
+ * Webfont: LEMONMILKPro-Light by Marsnev
+ * URL: https://www.myfonts.com/fonts/marsnev/lemon-milk-pro/light/
+ *
+ * Webfont: LEMONMILKPro-Regular by Marsnev
+ * URL: https://www.myfonts.com/fonts/marsnev/lemon-milk-pro/regular/
+ *
+ * Webfont: LEMONMILKPro-Medium by Marsnev
+ * URL: https://www.myfonts.com/fonts/marsnev/lemon-milk-pro/medium/
+ *
+ *
+ * Webfonts copyright: Copyright © 2020 by MARSNEV. All rights reserved.
+ *
+ * © 2020 MyFonts Inc
+*/
+
+
 @font-face {
   font-family: 'LEMONMILKPro-Regular';
   src: local('LEMONMILKPro-Regular'), url('/fonts/LEMONMILKPro-Regular.woff2') format('woff2'), url('/fonts/LEMONMILKPro-Regular.woff') format('woff');
