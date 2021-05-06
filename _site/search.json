@@ -5,22 +5,22 @@
       "title": "About this blog",
       "description": "Some additional details about the blog",
       "author": [],
-      "contents": "\nSay something more about myself here. Add CV?\n\n\n\n",
-      "last_modified": "2021-05-05T16:30:54+01:00"
+      "contents": "\nHello! I am a PhD student in Statistics at the University of Warwick. I am part of the OxWaSP programme. I am interested in Applied Statistics, particularly as applied in the Social Sciences. I am currently working on a project analysing data from applications to undergraduate statistics courses in the Statistics department at Warwick. I am supervised by Dr Julia Brettschneider and Dr Anastasia Papavasiliou.\n\n\n\n",
+      "last_modified": "2021-05-06T06:16:50+01:00"
     },
     {
       "path": "index.html",
       "title": "ELLA KAYE",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Talks\n          Posts\n          \n          \n          \n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            ELLA KAYE\n          \n          \n            \n              Hello and welcome to my personal website!\n              I am a PhD student in Statistics at the University of Warwick and an R enthusiast.\n            \n            \n              Hello and welcome to my personal website!\n              I am a PhD student in Statistics at the University of Warwick and an R enthusiast.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-05-05T17:26:40+01:00"
+      "last_modified": "2021-05-06T06:15:47+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-05T16:06:45+01:00"
+      "last_modified": "2021-05-06T06:16:05+01:00"
     },
     {
       "path": "talks.html",
@@ -28,7 +28,7 @@
       "description": "Talks I've given\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-05T16:06:48+01:00"
+      "last_modified": "2021-05-06T06:16:19+01:00"
     }
   ],
   "collections": ["posts/posts.json", "talks/talks.json"]

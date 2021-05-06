@@ -8,4 +8,4 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Say something more about myself here. Add CV?
+Hello! I am a PhD student in Statistics at the University of Warwick. I am part of the [OxWaSP programme](http://www.oxwasp-cdt.ac.uk). I am interested in Applied Statistics, particularly as applied in the Social Sciences. I am currently working on a project analysing data from applications to undergraduate statistics courses in the Statistics department at Warwick. I am supervised by [Dr Julia Brettschneider](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/brettschneider/) and [Dr Anastasia Papavasiliou](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/papavasiliou/).
