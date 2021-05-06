@@ -1,0 +1,24 @@
+---
+title: "Projects"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include=FALSE}
+library(htmltools)
+source("R/create_proj_card.R")
+```
+
+```{r}
+create_proj_card(
+  img_src = "images/EMK-hex.png",
+  url = "https://github.com/EllaKaye/EMK",
+  title = "EMK",
+  text = "A personal pacakge of a collection of miscellaneous functions I find useful.",
+  text2 = NULL
+)
+```
+

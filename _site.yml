@@ -22,6 +22,8 @@ navbar:
       href: talks.html
     - text: "Posts"
       href: posts.html
+    - text: "Projects"
+      href: projects.html
     - icon: fab fa-github
       href: https://github.com/EllaKaye/ellakaye-distill
     - icon: fab fa-twitter

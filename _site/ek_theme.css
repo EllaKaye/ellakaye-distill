@@ -188,3 +188,55 @@ h1, h2, h3 {
     border-color: #D40067;
     color: white;
 }
+
+/*
+For project cards
+Adapted from Ijeamaka Anyene
+https://github.com/Ijeamakaanyene/ijeamaka-anyene
+https://ijeamaka-anyene.netlify.app
+*/
+
+.card {
+    color: #474747;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    margin: 16px 16px;
+    text-decoration: none;
+    display: flex;
+}
+
+.card-body {
+  padding: 2px 16px;
+}
+
+.card-img {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  border-radius: 30px;
+}
+
+.card-footer {
+  background-color: #000;
+  color: white;
+  text-align: right;
+  padding-right: 5px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .card {
+    color: #474747;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    margin: 16px 16px;
+    text-decoration: none;
+    display: block;
+    width: 300px;
+  }
+
+}

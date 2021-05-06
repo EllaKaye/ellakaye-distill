@@ -1,3 +1,5 @@
+# From John Paul Helveston
+
 # to use any of these functions in distill articles on this website, call `source(file.path("R", "functions.R"))` at the top of the .Rmd file
 
 # copied from https://github.com/jhelvy/jhelvy.com
