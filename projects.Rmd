@@ -22,6 +22,14 @@ create_proj_card(
 )
 
 create_proj_card(
+  img_src = "images/projects/BradleyTerryScalable-hex.png",
+  url = "https://ellakaye.github.io/BradleyTerryScalable/",
+  title = "{BradleyTerryScalable}",
+  text = "An R pacakge for fitting the Bradley-Terry model to potentially large and sparse networks for paired comparison data.",
+  text2 = NULL
+)
+
+create_proj_card(
   img_src = "images/projects/EMK-hex.png",
   url = "https://github.com/EllaKaye/EMK",
   title = "{EMK}",
