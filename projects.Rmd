@@ -14,10 +14,18 @@ source("R/create_proj_card.R")
 
 ```{r}
 create_proj_card(
-  img_src = "images/EMK-hex.png",
+  img_src = "images/projects/TidyTuesday.png",
+  url = "https://github.com/EllaKaye/TidyTuesday",
+  title = "TidyTuesday",
+  text = "My (infrequent) contributions to #TidyTuesday",
+  text2 = NULL
+)
+
+create_proj_card(
+  img_src = "images/projects/EMK-hex.png",
   url = "https://github.com/EllaKaye/EMK",
-  title = "EMK",
-  text = "A personal pacakge of a collection of miscellaneous functions I find useful.",
+  title = "{EMK}",
+  text = "A personal R package of a collection of miscellaneous functions I find useful.",
   text2 = NULL
 )
 ```
