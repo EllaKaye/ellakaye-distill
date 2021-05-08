@@ -14,6 +14,14 @@ source("R/create_proj_card.R")
 
 ```{r}
 create_proj_card(
+  img_src = "images/projects/distilltools-hex.png",
+  url = "https://ellakaye.github.io/distilltools/",
+  title = "{distilltools}",
+  text = "The {distilltools} R package is a collection of tools to support the creation and styling of content on blogs/wesbites made with the {distill} package.",
+  text2 = NULL
+)
+
+create_proj_card(
   img_src = "images/projects/TidyTuesday.png",
   url = "https://github.com/EllaKaye/TidyTuesday",
   title = "TidyTuesday",
