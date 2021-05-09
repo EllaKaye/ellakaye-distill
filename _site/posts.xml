@@ -17,7 +17,9 @@
       <title>Welcome to my {distill} website!</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website</link>
-      <description>Resources and sites I found inspiring when building my new site, and a sneak-peak at an exciting new project for {distill} users</description>
+      <description>Resources and sites I found inspiring when building my new site, and a sneak-peek at an exciting new project for {distill} users</description>
+      <category>distill</category>
+      <category>distilltools</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website</guid>
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/distill-logo.png" medium="image" type="image/png" width="240" height="277"/>

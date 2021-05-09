@@ -1,13 +1,19 @@
 ---
 title: "Welcome to my {distill} website!"
 description: |
-  Resources and sites I found inspiring when building my new site, and a sneak-peak at an exciting new project for {distill} users
+  Resources and sites I found inspiring when building my new site, and a sneak-peek at an exciting new project for {distill} users
 author:
   - name: Ella Kaye
-    url: {}
+    url: https://twitter.com/ellamkaye
 date: 2021-05-08
 preview: distill-logo.png
+twitter:
+  site: "@ellamkaye"
+  creator: "@ellamkaye"
 base_url: https://ellakaye.rbind.io/
+categories:
+  - distill
+  - distilltools
 output:
   distill::distill_article:
     self_contained: false
@@ -105,7 +111,7 @@ The showcase is a great place to browse sites for inspiration and the tips and t
 
 There are a number of folk who tweet about {distill} (alongside other #rstats content). I've seen useful tweets from Shannon Pileggi [@PipingHotData](#https://twitter.com/PipingHotData), Lisa Lendway [@lisalendway](https://twitter.com/lisalendway) and John Helveston [@JohnHelveston](https://twitter.com/JohnHelveston). And it pretty much goes without saying that anyone with an interest in {distill} should be following its authors (and general R Markdown gurus), Alison Hill [@apreshill](https://twitter.com/apreshill), Christopher Dervieux [@chrisderv](https://twitter.com/chrisderv), Rich Iannone [@riannone](https://twitter.com/riannone) and Yihui Xie [@xieyihui](https://twitter.com/xieyihui) (note that the author and original creator of {distill} is JJ Allaire - he does have a [twitter account](https://twitter.com/fly_upside_down) but doesn't seem to use it).
 
-## A sneak-peak of {distilltools}
+## A sneak-peek at {distilltools}
 
 Inspiried by the above-mentioned posts from John Helveston and Eric Ekholm, I've started working on a package, ({distilltools})[https://ellakaye.github.io/distilltools/], a collection of tools to support the creation and styling of content on websites created using {distill}. 
 

@@ -2438,11 +2438,11 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Posts">Posts</h1>
 <a href="posts/2021-05-08-welcome-to-my-distill-website/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["distill","distilltools"]}</script>
 <div class="metadata">
 <div class="publishedDate">May 7, 2021</div>
 </div>
@@ -2451,8 +2451,11 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Welcome to my {distill} website!</h2>
-<div class="dt-tags"></div>
-<p>Resources and sites I found inspiring when building my new site, and a sneak-peak at an exciting new project for {distill} users</p>
+<div class="dt-tags">
+<div class="dt-tag">distill</div>
+<div class="dt-tag">distilltools</div>
+</div>
+<p>Resources and sites I found inspiring when building my new site, and a sneak-peek at an exciting new project for {distill} users</p>
 </div>
 </a>
 <a href="posts/2021-05-06-test-post-for-utterances/" class="post-preview">
@@ -2497,6 +2500,25 @@ function init_posts_list() {
 <p>How I created a handy function and a personal package</p>
 </div>
 </a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:articles">articles</a>
+<span class="category-count">(4)</span>
+</li>
+<li>
+<a href="#category:distill">distill</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:distilltools">distilltools</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
