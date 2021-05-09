@@ -113,7 +113,13 @@ There are a number of folk who tweet about {distill} (alongside other #rstats co
 
 ## A sneak-peek at {distilltools}
 
-Inspiried by the above-mentioned posts from John Helveston and Eric Ekholm, I've started working on a package, ({distilltools})[https://ellakaye.github.io/distilltools/], a collection of tools to support the creation and styling of content on websites created using {distill}. 
+Inspiried by the above-mentioned posts from John Helveston and Eric Ekholm, I've started working on a package, {distilltools}, a collection of tools to support the creation and styling of content on websites created using {distill}. 
+
+```{r}
+icon_link("globe", "site", "https://ellakaye.github.io/distilltools/", style = "regular")
+icon_link("github", "source", "https://github.com/EllaKaye/distilltools")
+```
+
 
 It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of {distill} users. The idea is for the package to become a curated, collaborative, community-driven project. Pleae see the [contributing guide](https://ellakaye.github.io/distilltools/CONTRIBUTING.html) for more details on how to get involved. In terms of relationship between packages, I hope in time that {distilltools} can be for {distill} something like what [{xaringanExtra}](https://pkg.garrickadenbuie.com/xaringanExtra/#/) and [{xaringanthemer}](https://pkg.garrickadenbuie.com/xaringanthemer/) are for [{xaringan}](https://github.com/yihui/xaringan). Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.
 
