@@ -26,14 +26,6 @@
       <media:content url="https://ellakaye.netlify.app/posts/2021-05-08-welcome-to-my-distill-website/distill-logo.png" medium="image" type="image/png" width="240" height="277"/>
     </item>
     <item>
-      <title>Test Post for Utterances</title>
-      <dc:creator>Ella Kaye</dc:creator>
-      <link>https://ellakaye.netlify.app/posts/2021-05-06-test-post-for-utterances</link>
-      <description>A short description of the post.</description>
-      <guid>https://ellakaye.netlify.app/posts/2021-05-06-test-post-for-utterances</guid>
-      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
-    </item>
-    <item>
       <title>Advent of Code 2020</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.netlify.app/posts/2020-12-09-advent-of-code-2020</link>
