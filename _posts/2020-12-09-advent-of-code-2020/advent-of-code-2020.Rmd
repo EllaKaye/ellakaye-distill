@@ -4,7 +4,16 @@ description: |
   My attempts at Advent of Code, 2020
 author:
   - name: Ella Kaye
+    url: https://twitter.com/ellamkaye
 date: 2020-12-09
+preview: advent-of-code-2020.jpg
+twitter:
+  site: "@ellamkaye"
+  creator: "@ellamkaye"
+base_url: https://ellakaye.rbind.io/
+categories:
+  - R
+  - Advent of Code
 output:
   distill::distill_article:
     self_contained: false

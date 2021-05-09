@@ -4,7 +4,16 @@ description: |
   How I created a handy function and a personal package
 author:
   - name: Ella Kaye
+    url: https://twitter.com/ellamkaye
 date: 2017-06-17
+preview: EMK-hex.png
+twitter:
+  site: "@ellamkaye"
+  creator: "@ellamkaye"
+base_url: https://ellakaye.rbind.io/
+categories:
+  - R functions
+  - R package development
 output:
   distill::distill_article:
     self_contained: false

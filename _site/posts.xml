@@ -12,7 +12,7 @@
       <link>https://ellakaye.rbind.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Welcome to my {distill} website!</title>
       <dc:creator>Ella Kaye</dc:creator>
@@ -20,8 +20,9 @@
       <description>Resources and sites I found inspiring when building my new site, and a sneak-peek at an exciting new project for {distill} users</description>
       <category>distill</category>
       <category>distilltools</category>
+      <category>R package development</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website</guid>
-      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/distill-logo.png" medium="image" type="image/png" width="240" height="277"/>
     </item>
     <item>
@@ -37,16 +38,22 @@
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2020-12-09-advent-of-code-2020</link>
       <description>My attempts at Advent of Code, 2020</description>
+      <category>R</category>
+      <category>Advent of Code</category>
       <guid>https://ellakaye.rbind.io/posts/2020-12-09-advent-of-code-2020</guid>
       <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/posts/2020-12-09-advent-of-code-2020/advent-of-code-2020.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>n_letter_words and a personal (publicly available) package</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2017-06-17-n-letter-words</link>
       <description>How I created a handy function and a personal package</description>
+      <category>R functions</category>
+      <category>R package development</category>
       <guid>https://ellakaye.rbind.io/posts/2017-06-17-n-letter-words</guid>
-      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/posts/2017-06-17-n-letter-words/EMK-hex.png" medium="image" type="image/png" width="348" height="400"/>
     </item>
   </channel>
 </rss>
