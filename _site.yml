@@ -14,7 +14,7 @@ navbar:
   search: false
   logo:
     image: images/logo.png
-    href: https://ellakayedistill.netlify.app
+    href: https://ellakaye.rbind.io
   right:
     - text: "About"
       href: about.html
