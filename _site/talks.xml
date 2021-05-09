@@ -2,55 +2,55 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>ELLA KAYE</title>
-    <link>https://ellakaye.rbind.io/</link>
-    <atom:link href="https://ellakaye.rbind.io/talks.xml" rel="self" type="application/rss+xml"/>
+    <link>https://ellakaye.netlify.app/</link>
+    <atom:link href="https://ellakaye.netlify.app/talks.xml" rel="self" type="application/rss+xml"/>
     <description>Ella Kaye's personal website
 </description>
     <image>
       <title>ELLA KAYE</title>
-      <url>https://ellakaye.rbind.io/images/favicon.png</url>
-      <link>https://ellakaye.rbind.io/</link>
+      <url>https://ellakaye.netlify.app/images/favicon.png</url>
+      <link>https://ellakaye.netlify.app/</link>
     </image>
     <generator>Distill</generator>
     <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate>
     <item>
       <title>How to get help in R</title>
       <dc:creator>Ella Kaye</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r</link>
+      <link>https://ellakaye.netlify.app/talks/2020-10-29-how-to-get-help-in-r</link>
       <description>Tips for looking for answers and asking questions about R</description>
-      <guid>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r</guid>
+      <guid>https://ellakaye.netlify.app/talks/2020-10-29-how-to-get-help-in-r</guid>
       <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Working with text in R</title>
       <dc:creator>Ella Kaye</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r</link>
+      <link>https://ellakaye.netlify.app/talks/2019-10-05-working-with-text-in-r</link>
       <description>An overview of a range of packages for working with text in R.</description>
-      <guid>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r</guid>
+      <guid>https://ellakaye.netlify.app/talks/2019-10-05-working-with-text-in-r</guid>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Setting up you PhD (or other research project!) as an R package</title>
       <dc:creator>Ella Kaye</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package</link>
+      <link>https://ellakaye.netlify.app/talks/2018-08-23-phd-as-package</link>
       <description>How I set up my PhD as an R package</description>
-      <guid>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package</guid>
+      <guid>https://ellakaye.netlify.app/talks/2018-08-23-phd-as-package</guid>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Ranking Items Scalably with the Bradley-Terry Model</title>
       <dc:creator>Ella Kaye</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable</link>
+      <link>https://ellakaye.netlify.app/talks/2017-07-06-introducing-bradleyterryscalable</link>
       <description>Introducing the `BradleyTerryScalable` package</description>
-      <guid>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable</guid>
+      <guid>https://ellakaye.netlify.app/talks/2017-07-06-introducing-bradleyterryscalable</guid>
       <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>An Overview of htmlwidgets</title>
       <dc:creator>Ella Kaye</dc:creator>
-      <link>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets</link>
+      <link>https://ellakaye.netlify.app/talks/2017-05-25-an-overview-of-htmlwidgets</link>
       <description>A brief overview of htmlwidgets in R</description>
-      <guid>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets</guid>
+      <guid>https://ellakaye.netlify.app/talks/2017-05-25-an-overview-of-htmlwidgets</guid>
       <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
     </item>
   </channel>
