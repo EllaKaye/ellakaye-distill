@@ -5,7 +5,7 @@ description: |
 output_dir: "_site"
 theme: ek_theme.css
 favicon: images/favicon.png
-base_url: https://ellakaye.netlify.app/
+base_url: https://ellakaye.rbind.io/
 repository_url: https://github.com/EllaKaye/ellakaye-distill
 creative_commons: CC BY-SA
 twitter:
@@ -15,7 +15,7 @@ navbar:
   search: false
   logo:
     image: images/logo.png
-    href: https://ellakaye.netlify.app
+    href: https://ellakaye.rbind.io
   right:
     - text: "About"
       href: about.html

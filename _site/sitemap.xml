@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>https://ellakaye.netlify.app/about.html</loc>
+    <loc>https://ellakaye.rbind.io/about.html</loc>
     <lastmod>2021-05-06T13:15:58+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/</loc>
+    <loc>https://ellakaye.rbind.io/</loc>
     <lastmod>2021-05-05T17:26:34+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/posts.html</loc>
+    <loc>https://ellakaye.rbind.io/posts.html</loc>
     <lastmod>2021-04-16T11:11:07+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/projects.html</loc>
+    <loc>https://ellakaye.rbind.io/projects.html</loc>
     <lastmod>2021-05-08T15:11:54+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/talks.html</loc>
+    <loc>https://ellakaye.rbind.io/talks.html</loc>
     <lastmod>2021-04-18T15:37:03+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/posts/2021-05-08-welcome-to-my-distill-website/</loc>
+    <loc>https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/</loc>
     <lastmod>2021-05-09T14:30:19+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/posts/2020-12-09-advent-of-code-2020/</loc>
+    <loc>https://ellakaye.rbind.io/posts/2020-12-09-advent-of-code-2020/</loc>
     <lastmod>2021-05-09T14:29:31+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/posts/2017-06-17-n-letter-words/</loc>
+    <loc>https://ellakaye.rbind.io/posts/2017-06-17-n-letter-words/</loc>
     <lastmod>2021-05-09T14:35:19+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/talks/2020-10-29-how-to-get-help-in-r/</loc>
+    <loc>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r/</loc>
     <lastmod>2021-04-26T16:30:09+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/talks/2019-10-05-working-with-text-in-r/</loc>
+    <loc>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r/</loc>
     <lastmod>2021-05-04T15:12:57+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/talks/2018-08-23-phd-as-package/</loc>
+    <loc>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package/</loc>
     <lastmod>2021-05-04T16:15:56+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/talks/2017-07-06-introducing-bradleyterryscalable/</loc>
+    <loc>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable/</loc>
     <lastmod>2021-05-04T16:32:53+01:00</lastmod>
   </url>
   <url>
-    <loc>https://ellakaye.netlify.app/talks/2017-05-25-an-overview-of-htmlwidgets/</loc>
+    <loc>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets/</loc>
     <lastmod>2021-05-05T09:25:05+01:00</lastmod>
   </url>
 </urlset>
