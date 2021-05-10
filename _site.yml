@@ -42,6 +42,7 @@ collections:
     feed_iems_max: 20 # default
 output:
   distill::distill_article:
+    highlight: /Users/ellakaye/ellakaye-distill/ek_syntax_highlighting.theme
     includes:
       in_header:
       - _includes/header.html
