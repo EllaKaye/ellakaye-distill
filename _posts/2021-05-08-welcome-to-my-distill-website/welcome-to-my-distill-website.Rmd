@@ -102,7 +102,7 @@ The above just scratches the surface. There are many more great sites built to {
 
 ### The distillery
 
-The [distillery]{https://distillery.rbind.io} is a {distill} blog about building {distill} blogs and websites. As the site's GitHub README states:
+The [distillery](https://distillery.rbind.io) is a {distill} blog about building {distill} blogs and websites. As the site's GitHub README states:
 
 > This site was built for the community of distill users to find ways to build and customize their sites and to inspire one another. If you have a distill website or blog, we would love to have it included in the distillery [showcase]()https://distillery.rbind.io/showcase.html! Have a post about ways to customize or add new features to your blog? We would love to have it included on the distillery [tips & tricks page](https://distillery.rbind.io/tips_and_tricks.html)!
 
@@ -110,7 +110,7 @@ The showcase is a great place to browse sites for inspiration and the tips and t
 
 ### Twitter
 
-There are a number of folk who tweet about {distill} (alongside other #rstats content). I've seen useful tweets from Shannon Pileggi [@PipingHotData](#https://twitter.com/PipingHotData), Lisa Lendway [@lisalendway](https://twitter.com/lisalendway) and John Helveston [@JohnHelveston](https://twitter.com/JohnHelveston). And it pretty much goes without saying that anyone with an interest in {distill} should be following its authors (and general R Markdown gurus), Alison Hill [@apreshill](https://twitter.com/apreshill), Christophe Dervieux [@chrisderv](https://twitter.com/chrisderv), Rich Iannone [@riannone](https://twitter.com/riannone) and Yihui Xie [@xieyihui](https://twitter.com/xieyihui) (note that the author and original creator of {distill} is JJ Allaire - he does have a [twitter account](https://twitter.com/fly_upside_down) but doesn't seem to use it).
+There are a number of folk who tweet about {distill} (alongside other #rstats content). I've seen useful tweets from Shannon Pileggi [\@PipingHotData](https://twitter.com/PipingHotData), Lisa Lendway [\@lisalendway](https://twitter.com/lisalendway) and John Helveston [\@JohnHelveston](https://twitter.com/JohnHelveston). And it pretty much goes without saying that anyone with an interest in {distill} should be following its authors (and general R Markdown gurus), Alison Hill [\@apreshill](https://twitter.com/apreshill), Christophe Dervieux [\@chrisderv](https://twitter.com/chrisderv), Rich Iannone [\@riannone](https://twitter.com/riannone) and Yihui Xie [\@xieyihui](https://twitter.com/xieyihui) (note that the author and original creator of {distill} is JJ Allaire - he does have a [twitter account](https://twitter.com/fly_upside_down) but doesn't seem to use it).
 
 ## A sneak-peek at {distilltools}
 
