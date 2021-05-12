@@ -30,6 +30,8 @@ navbar:
       href: https://github.com/EllaKaye/ellakaye-distill
     - icon: fab fa-twitter
       href: https://twitter.com/ellamkaye
+    - icon: fas fa-home
+      href: https://ellakaye.rbind.io
 collections:
   posts:
     categories: true
