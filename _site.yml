@@ -19,10 +19,10 @@ navbar:
   right:
     - text: "About"
       href: about.html
-    - text: "Talks"
-      href: talks.html
     - text: "Posts"
       href: posts.html
+    - text: "Talks"
+      href: talks.html
     - text: "Projects"
       href: projects.html
     - icon: fab fa-github

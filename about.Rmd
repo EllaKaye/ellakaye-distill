@@ -6,6 +6,11 @@ title: "About Me"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r eval = FALSE}
+knitr::include_graphics("images/ella_profile.jpeg")
+```
+
+
 Hello! I am a PhD student in Statistics at the University of Warwick. I am part of the [OxWaSP programme](http://www.oxwasp-cdt.ac.uk). I am interested in Applied Statistics, particularly as applied in the Social Sciences. I am currently working on a project analysing data from applications to undergraduate statistics courses in the Statistics department at Warwick. I am supervised by [Dr Julia Brettschneider](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/brettschneider/) and [Dr Anastasia Papavasiliou](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/papavasiliou/).
 
 I love R! I use it daily in my PhD work for analysing and visualising data, as well as for personal projects. This website is built using the [{distill}](https://rstudio.github.io/distill/) package, alongside my and [John Paul Helveston's](https://www.jhelvy.com) (very much still in development) package [{distilltools}](https://ellakaye.github.io/distilltools/). I am also the author, along with [Prof David Firth](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/) of the {BradleyTerryScalable package}, which is available on [GitHub](https://github.com/EllaKaye/BradleyTerryScalable). 
