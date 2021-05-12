@@ -8,6 +8,7 @@ favicon: images/favicon.png
 base_url: https://ellakaye.rbind.io/
 repository_url: https://github.com/EllaKaye/ellakaye-distill
 creative_commons: CC BY-SA
+google_analytics: "UA-101621242-1"
 twitter:
   site: "@ellamkaye"
   creator: "@ellamkaye"

@@ -24,3 +24,19 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_viewport() %>%
+  meta_social(
+    title = "TITLE", # adding title here removes "ELLA KAYE: " from the front
+    image = "https://ellakaye.rbind.io/posts/FULL_PATH_TO_IMAGE.png", 
+    image_alt = "ALT TEXT FOR IMAGE",
+    og_type = "website",
+    og_author = c("Ella Kaye"),
+    twitter_card_type = "summary_large_image", # can also be summary
+  )
+```
