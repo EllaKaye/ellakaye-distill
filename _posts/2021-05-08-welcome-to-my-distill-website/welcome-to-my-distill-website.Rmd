@@ -47,7 +47,7 @@ Hello, and welcome to my new site, built using the [{distill}](https://rstudio.g
 
 ## Why {distill}?
 
-As the documentation says, {distill} for R Markdown is a web publishing format optimised for scientific and technical communication. Recent updates to the package, particularly the ability to customise the theme through the `create_theme()` function, have made it a really appealing choice for those wanting a personalised website based only on R Markdown. The fact that {distill} is made just in R Markdown is a big win for those not wanting to go down (or, like me, looking to get away from), the Hugo route. I'd had a Hugo Academic website for four years, built on {blogdown}, and had been stung a number of times by it breaking after updates to Hugo and Hugo Academic. Last year, I switched to {hugodown}, and that helped, but I had some serious regret about that shift after the release of [{blogdown} v1.0](https://alison.rbind.io/post/new-year-new-blogdown/) a few months later. By then, though, I was also displeased with the shift from Hugo Academic to Wowchemy, and getting a little bored of it anyway. I had also started seeing more and more {distill} sites pop up from those I admire in the RStats community. I looked into it and and I loved the simplicity of it, both in looks and in management. No more impenetrable file structures! No more not being sure quite why my website is working/looking as it does! Attending [Alison Hill's](https://alison.rbind.io) incredible ['Crafting Kind Tools'](https://alison.netlify.app/ares-kind-tools/#1) talk, in which she described the care put into making the {distill} user experience an enjoyable one, was the last push I needed to start my website again (though, to be fair, that talk also described similar care put into the latest release of {blogdown}).
+As the documentation says, {distill} for R Markdown is a web publishing format optimised for scientific and technical communication. Recent updates to the package, particularly the ability to customise the theme through the `create_theme()` function, have made it a really appealing choice for those wanting a personalised website based only on R Markdown. The fact that {distill} is made just in R Markdown is a big win for those not wanting to go down (or, like me, looking to get away from), the Hugo route. I'd had a Hugo Academic website for four years, built on {blogdown}, and had been stung a number of times by it breaking after updates to Hugo and Hugo Academic. Last year, I switched to {hugodown}, and that helped, but I had some serious FOMO following that shift after the release of [{blogdown} v1.0](https://alison.rbind.io/post/new-year-new-blogdown/) a few months later, with all its handy check functions. By then, anyway, I was also displeased with the shift from Hugo Academic to Wowchemy, and getting a little bored of that theme anyway. I had also started seeing more and more {distill} sites pop up from those I admire in the RStats community. I looked into it and and I loved the simplicity of it, both in looks and in management. No more impenetrable file structures! No more not being sure quite why my website is working/looking as it does! Attending [Alison Hill's](https://alison.rbind.io) incredible ['Crafting Kind Tools'](https://alison.netlify.app/ares-kind-tools/#1) talk, in which she described the care put into making the {distill} user experience an enjoyable one, was the last push I needed to start my website again (though, to be fair, that talk also described similar care put into the latest release of {blogdown}).
 
 I'm finding working with {distill} to be an absolute joy!
 
@@ -57,7 +57,7 @@ This post is not a guide on how to get a {distill} site up an running. There are
 
 ### The basics
 
-- The blogpost from RStudio on [rRe-)introducting Distill for R Markdown](https://blog.rstudio.com/2020/12/07/distill/) is a great place to start.
+- The blogpost from RStudio on [(Re-)introducting Distill for R Markdown](https://blog.rstudio.com/2020/12/07/distill/) is a great place to start.
 
 - For getting up and running, the official [{distill} documentation](https://rstudio.github.io/distill/) is excellent (and also a {distill} website).
 
@@ -69,7 +69,7 @@ This post is not a guide on how to get a {distill} site up an running. There are
 
 ### Next steps
 
-- The [{postcards}](https://github.com/seankross/postcards) package from Sean Kross makes it incredibly easy to create simple, styling, landing pages, and they make great home pages for {distill} sites. Alison Hill has a walk-through on how to set this up: [M-F-E-O](https://alison.rbind.io/post/2020-12-22-postcards-distill/)
+- The [{postcards}](https://github.com/seankross/postcards) package from Sean Kross makes it incredibly easy to create simple, stylish, landing pages, and they make great home pages for {distill} sites. Alison Hill has a walk-through on how to set this up: [M-F-E-O: postcards + distill](https://alison.rbind.io/post/2020-12-22-postcards-distill/)
 
 - Tom Mock has another excellent {distill} post on [including and meta tagging extra content in a distill blog](https://themockup.blog/posts/2021-03-21-including-and-meta-tagging-extra-content-in-a-distill-blog/), useful for if/when you want your site to contain content other than `distill_articles`
 
@@ -81,7 +81,7 @@ This post is not a guide on how to get a {distill} site up an running. There are
 
 ## Inspirations/Code
 
-I'm extremely grateful to the authors of the above posts for taking time to write up what they've developed and what they know/have learnt to do, therefore making it easy for others to apply. I guess that's what blogs are for! But I've also learnt a lot from finding sites that I simply like the look of, or have cool features, and looking at the source code on GitHub and adapting it for my own site. Here are some sites that I've drawn on for inspiration and code:
+I'm extremely grateful to the authors of the above posts for taking the time to write up what they've developed and what they know/have learnt to do, therefore making it easy for others to apply. I guess that's what blogs are for! But I've also learnt a lot from finding sites that I simply like the look of, or have cool features, and looking at the source code on GitHub and adapting it for my own site. Here are some sites that I've drawn on for inspiration and code:
 
 ```{r}
 library(distilltools)
@@ -94,7 +94,7 @@ icon_link("globe", "site", "https://www.jhelvy.com", style = "regular")
 icon_link("github", "source", "https://github.com/jhelvy/jhelvy.com")
 ```
 
-I particularly like his `icon_link` buttons (as demonstrated just above), and the second collection for talks. John tells me he is turn took inspiration for this from [Emi Tanaka's site](https://emitanaka.org/.
+I particularly like his `icon_link` buttons (as demonstrated just above), and the second collection for talks. John tells me he is turn took inspiration for this from [Emi Tanaka's site](https://emitanaka.org/).
 
 - Ijeamaka Anyene
 
@@ -116,7 +116,7 @@ Come for the minimalist, stylish design, stay for the fantastic blog content, no
 
 ## Finding out more
 
-The above just scratches the surface. There are many more great sites built to {distill} out there, and lots more ways to customise them. Below are some good ways to find out more.
+The above just scratches the surface. There are many more great sites built on {distill} out there, and lots more ways to customise them. Below are some good ways to find out more.
 
 ### The distillery
 
@@ -140,13 +140,13 @@ icon_link("github", "source", "https://github.com/EllaKaye/distilltools")
 ```
 
 
-It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of {distill} users. The idea is for the package to become a curated, collaborative, community-driven project. Pleae see the [contributing guide](https://ellakaye.github.io/distilltools/CONTRIBUTING.html) for more details on how to get involved. In terms of relationship between packages, I hope in time that {distilltools} can be for {distill} something like what [{xaringanExtra}](https://pkg.garrickadenbuie.com/xaringanExtra/#/) and [{xaringanthemer}](https://pkg.garrickadenbuie.com/xaringanthemer/) are for [{xaringan}](https://github.com/yihui/xaringan). Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.
+It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of {distill} users. The idea is for the package to become a curated, collaborative, community-driven project. Please see the [contributing guide](https://ellakaye.github.io/distilltools/CONTRIBUTING.html) for more details on how to get involved. In terms of relationship between packages, I hope in time that {distilltools} can be for {distill} something like what [{xaringanExtra}](https://pkg.garrickadenbuie.com/xaringanExtra/#/) and [{xaringanthemer}](https://pkg.garrickadenbuie.com/xaringanthemer/) are for [{xaringan}](https://github.com/yihui/xaringan). Some of what I have in mind may sit better within the distill package itself, and I am in touch with the {distill} team about that.
 
 At the time of writing, there are just three functions: 
 
 - `icon_link`: creates the html for a link button with icon and text (as seen above).  Output of `icon_link` will need styling via the `icon-link` class to make it look like a button. 
 - `create_talk()`: a wrapper around `distill::create_post()` that creates a post in the talk directory and includes buttons (made with `icon-link()`) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file.
-- `create_post_from_template()`: this function operates almost identically to `distill::create_post()` except for the addition of a `path` argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post.
+- `create_post_from_template()`: this function operates almost identically to `distill::create_post()` except for the addition of a `path` argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post. (Note that this function is likely going to be pulled into the {distill} package and hence be depreciated here.)
 
-Expect to hear much more from me, both on this blog and [twitter](https://twitter.com/ellamkaye), about this in the near future.
+Expect to hear much more from me, both on this blog and [twitter](https://twitter.com/ellamkaye), about {distilltools} in the near future.
 
