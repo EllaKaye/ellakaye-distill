@@ -3,13 +3,13 @@ title: "ELLA KAYE"
 image: "images/ella_profile.jpeg"
 favicon: images/favicon.png
 links:
-  - label: Twitter
+  - label: '<i class="fab fa-twitter"></i> Twitter'
     url: "https://twitter.com/ellamkaye"
-  - label: GitHub
+  - label: '<i class="fab fa-github"></i> GitHub'
     url: "https://github.com/EllaKaye"
-  - label: LinkedIn
+  - label: '<i class="fab fa-linkedin"></i> LinkedIn'
     url: "https://www.linkedin.com/in/ella-kaye-9b878248/"
-  - label: Email
+  - label: '<i class="fas fa-envelope"></i> Email'
     url: "mailto:ella.kaye@gmail.com"
 twitter:
   creator: "@ellamkaye"
