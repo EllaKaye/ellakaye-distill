@@ -11,15 +11,34 @@ links:
     url: "https://www.linkedin.com/in/ella-kaye-9b878248/"
   - label: Email
     url: "mailto:ella.kaye@gmail.com"
+twitter:
+  creator: "@ellamkaye"
+  site: "@ellakaye"
 output:
   postcards::jolla
 site: distill::distill_website
 ---
 
-```{r echo = FALSE}
-library(distilltools)
-```
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
 
+meta() %>%
+  meta_description(
+    "The personal website of Ella Kaye"
+  ) %>%
+  meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_viewport() %>%
+  meta_social(
+    title = "ellakaye.rbind.io",
+    url = "https://ellakaye.rbind.io/",
+    image = "https://ellakaye.rbind.io/images/logo.png",
+    image_alt = "A logo made from Ella Kaye's name - first name on top of last name in black capital letters, separated by a horizontal bright pink line",
+    og_type = "website",
+    og_author = c("Ella Kaye"),
+    twitter_card_type = "summary",
+    twitter_creator = "@ellamkaye"
+  )
+```
 
 Hello and welcome to my personal website! 
 
