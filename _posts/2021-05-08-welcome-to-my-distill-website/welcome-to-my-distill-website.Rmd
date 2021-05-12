@@ -25,6 +25,27 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_description(
+    "About Ella Kaye"
+  ) %>%
+  meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_viewport() %>%
+  meta_social(
+    title = "Welcome to my {distill} website!",
+    url = "https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/",
+    image = "https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/distill-logo-rect.png",
+    image_alt = "The distill logo. A white drop with the word distill underneath inside a blue hexagon",
+    og_type = "website",
+    og_author = c("Ella Kaye"),
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@ellamkaye"
+  )
+```
+
 Hello, and welcome to my new site, built using the [{distill}](https://rstudio.github.io/distill/) package. Here's why I switched from {blogdown}, and the resources and inspirations that helped me in the process.
 
 ## Why {distill}?
