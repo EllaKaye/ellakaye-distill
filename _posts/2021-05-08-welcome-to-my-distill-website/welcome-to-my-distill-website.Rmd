@@ -30,6 +30,7 @@ library(metathis)
 
 meta() %>%
   meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_description("Resources and sites I found inspiring when building my new site, and a sneak-peek at {distilltools}")
   meta_viewport() %>%
   meta_social(
     title = "Welcome to my {distill} website!",
