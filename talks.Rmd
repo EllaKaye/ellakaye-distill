@@ -1,9 +1,27 @@
 ---
 title: "Talks"
-description: |
-  Talks I've given
 twitter:
   creator: "@ellamkaye"
 listing: talks
 ---
 
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_description(
+    "A selection of talks given by Ella Kaye"
+  ) %>%
+  meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_viewport() %>%
+  meta_social(
+    title = "ELLA KAYE: Talks",
+    url = "https://ellakaye.rbind.io/talks",
+    image = "https://ellakaye.rbind.io/images/logo-white-background.png",
+    image_alt = "A logo made from Ella Kaye's name - first name on top of last name in black capital letters, separated by a horizontal bright pink line",
+    og_type = "website",
+    og_author = c("Ella Kaye"),
+    twitter_card_type = "summary",
+    twitter_creator = "@ellamkaye"
+  )
+```

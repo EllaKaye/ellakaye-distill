@@ -7,6 +7,28 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_description(
+    "A selection of Ella Kaye's projects"
+  ) %>%
+  meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_viewport() %>%
+  meta_social(
+    title = "ELLA KAYE: Projects",
+    url = "https://ellakaye.rbind.io/projects",
+    image = "https://ellakaye.rbind.io/images/logo-white-background.png",
+    image_alt = "A logo made from Ella Kaye's name - first name on top of last name in black capital letters, separated by a horizontal bright pink line",
+    og_type = "website",
+    og_author = c("Ella Kaye"),
+    twitter_card_type = "summary",
+    twitter_creator = "@ellamkaye"
+  )
+```
+
+
 ```{r, include=FALSE}
 library(htmltools)
 source("R/create_proj_card.R")
