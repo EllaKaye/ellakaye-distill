@@ -29,7 +29,7 @@ meta() %>%
   meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
   meta_viewport() %>%
   meta_social(
-    title = "ellakaye.rbind.io",
+    title = "ELLA KAYE",
     url = "https://ellakaye.rbind.io/",
     image = "https://ellakaye.rbind.io/images/logo-white-background.png",
     image_alt = "A logo made from Ella Kaye's name - first name on top of last name in black capital letters, separated by a horizontal bright pink line",
