@@ -20,6 +20,7 @@
       <description>Tips for looking for answers and asking questions about R</description>
       <guid>https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r</guid>
       <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/talks/2020-10-29-how-to-get-help-in-r/how-to-get-help-in-r.png" medium="image" type="image/png" width="1261" height="710"/>
     </item>
     <item>
       <title>Working with text in R</title>
@@ -28,6 +29,7 @@
       <description>An overview of a range of packages for working with text in R.</description>
       <guid>https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r</guid>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/talks/2019-10-05-working-with-text-in-r/working-with-text-in-r.png" medium="image" type="image/png" width="1261" height="710"/>
     </item>
     <item>
       <title>Setting up you PhD (or other research project!) as an R package</title>
@@ -36,6 +38,7 @@
       <description>How I set up my PhD as an R package</description>
       <guid>https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package</guid>
       <pubDate>Thu, 23 Aug 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/talks/2018-08-23-phd-as-package/phd-as-package.png" medium="image" type="image/png" width="1261" height="710"/>
     </item>
     <item>
       <title>Ranking Items Scalably with the Bradley-Terry Model</title>
@@ -44,6 +47,7 @@
       <description>Introducing the `BradleyTerryScalable` package</description>
       <guid>https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable</guid>
       <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/talks/2017-07-06-introducing-bradleyterryscalable/introducing-bradleyterryscalable.png" medium="image" type="image/png" width="1261" height="710"/>
     </item>
     <item>
       <title>An Overview of htmlwidgets</title>
@@ -51,7 +55,8 @@
       <link>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets</link>
       <description>A brief overview of htmlwidgets in R</description>
       <guid>https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets</guid>
-      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      <media:content url="https://ellakaye.rbind.io/talks/2017-05-25-an-overview-of-htmlwidgets/an-overview-of-htmlwidgets.png" medium="image" type="image/png" width="1840" height="1446"/>
     </item>
   </channel>
 </rss>

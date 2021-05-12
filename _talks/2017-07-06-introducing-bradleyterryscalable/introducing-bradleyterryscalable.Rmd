@@ -6,6 +6,8 @@ author:
   - name: Ella Kaye
     url: {}
 date: '2017-07-06'
+base_url: https://ellakaye.rbind.io/
+preview: introducing-bradleyterryscalable.png
 output:
   distill::distill_article:
     self_contained: false

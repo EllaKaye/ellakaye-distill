@@ -6,6 +6,8 @@ author:
   - name: Ella Kaye
     url: {}
 date: '2017-05-25'
+base_url: https://ellakaye.rbind.io/
+preview: an-overview-of-htmlwidgets.png
 output:
   distill::distill_article:
     self_contained: false

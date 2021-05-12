@@ -3,6 +3,8 @@ title: "How to get help in R"
 description: |
   Tips for looking for answers and asking questions about R
 author: Ella Kaye
+base_url: https://ellakaye.rbind.io/
+preview: how-to-get-help-in-r.png
 date: 2020-10-29
 output:
   distill::distill_article:

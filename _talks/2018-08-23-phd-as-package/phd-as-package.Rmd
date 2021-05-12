@@ -6,6 +6,8 @@ author:
   - name: Ella Kaye
     url: {}
 date: '2018-08-23'
+base_url: https://ellakaye.rbind.io/
+preview: phd-as-package.png
 output:
   distill::distill_article:
     self_contained: false

@@ -12,9 +12,11 @@
     "date": "2020-10-29",
     "categories": [],
     "contents": "\n\nContents\nOverview\nEvent details\nKey points\nSlides\n\n\n\n\n\n slides materials video\n\nOverview\nThis session will be led by Ella Kaye - an R enthusiast and statistics PhD researcher at the University of Warwick. In the session, Ella will talk us through different ways to get help when you get stuck on a problem in R. We’ll cover how and where to look for answers and how to ask and post good questions that make it easy for others to help you, including a demo of the excellent reprex and datapasta packages. So whether you’re an R novice or more experienced R user, hopefully there’ll be some useful tips for you!\nEvent details\nEvent: R Ladies Coventry (the inaugural talk)\nDate: October 29th, 2020\nLocation: Zoom\nI gave a very slightly updated version of the talk again three months later:\nEvent: bseeR\nDate: January 28th, 2021\nLocation: Microsoft Teams\nKey points\nWhen faced with a question/problem, have a good look for an answer in R itself and/or online\nDon’t be shy to ask questions!\nWrite reproducible examples\nGive thought to where you ask/post your question\nGive back by helping others\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-26T16:30:09+01:00",
-    "input_file": {}
+    "preview": "talks/2020-10-29-how-to-get-help-in-r/how-to-get-help-in-r.png",
+    "last_modified": "2021-05-12T17:47:35+01:00",
+    "input_file": "how-to-get-help-in-r.knit.md",
+    "preview_width": 1261,
+    "preview_height": 710
   },
   {
     "path": "talks/2019-10-05-working-with-text-in-r/",
@@ -29,9 +31,11 @@
     "date": "2019-10-05",
     "categories": [],
     "contents": "\n\nContents\nOverview\nEvent details\nSlides\n\n\n\n\n\n slides materials video\n\nOverview\nTranscending its origins as a programming language for statistics, R provides excellent tools for working with text. This tidyverse-based talk will provide an overview of some of the fantastic packages available for this, including (but not limited to) stringr, RVerbalExpressions, tidytext, wordcloud and ggwordcloud.\nEvent details\nEvent: RLadies Toronto\nDate: October 5th, 2019\nTime: 14:00-16:00 EDT\nLocation: Stewart Building, 149 College Street, Toronto\nI then gave an updated version of the talk a few months later (links at the top relate to this version):\nEvent: RLadies Tbilisi\nDate: July 4th, 2020\nTime: 09:00-10:00 GMT\nLocation: Zoom\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-05-04T15:12:57+01:00",
-    "input_file": {}
+    "preview": "talks/2019-10-05-working-with-text-in-r/working-with-text-in-r.png",
+    "last_modified": "2021-05-12T17:59:31+01:00",
+    "input_file": "working-with-text-in-r.knit.md",
+    "preview_width": 1261,
+    "preview_height": 710
   },
   {
     "path": "talks/2018-08-23-phd-as-package/",
@@ -46,9 +50,11 @@
     "date": "2018-08-23",
     "categories": [],
     "contents": "\n\nContents\nOverview\nEvent details\nSlides\n\n\n\n\n\n slides materials\n\nOverview\nIn this talk, I will try to convince you that if you have any of your own data or write any of your own R functions, then you should put them into an R package. Benefits include reproducibility and keeping everything together and accessible. Also, it’s really easy to do, and to prove it, I will build a package from scratch before your very eyes. I will also introduce the bookdown package for writing reports and even your thesis. Filled with tips and tricks from my own experiences, this talk could save you hours!\nEvent details\nEvent: Birmingham R User Group\nDate: August 8th, 2018\nTime: 18:00-20:00 GMT+1\nLocation: Faraday Wharf, Innovation Birmingham Campus, Holt Street, Birmingham Science Park, B7 4BB\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-05-04T16:15:56+01:00",
-    "input_file": {}
+    "preview": "talks/2018-08-23-phd-as-package/phd-as-package.png",
+    "last_modified": "2021-05-12T18:31:25+01:00",
+    "input_file": "phd-as-package.knit.md",
+    "preview_width": 1261,
+    "preview_height": 710
   },
   {
     "path": "talks/2017-07-06-introducing-bradleyterryscalable/",
@@ -63,9 +69,11 @@
     "date": "2017-07-06",
     "categories": [],
     "contents": "\n\nContents\nOverview\nEvent details\nSlides\n\n\n\n\n\n slides materials package\n\nOverview\nI am very excited to be introducing the package BradleyTerryScalable at useR!2017. The package is available on GitHub.\nBradleyTerryScalable is an R package for fitting the Bradley-Terry model to pair-comparison data, to enable statistically principled ranking of a potentially large number of objects.\nGiven a number of items for which we have pair-comparison data, the Bradley-Terry model assigns a ‘strength’ parameter to each item. These can be used to rank the items. Moreover, they can be used to determine the probability that any given item will ‘beat’ any other given item when they are compared. Further details of the mathematical model, and the algorithms used to fit it, are available in the package vignette.\nEvent details\nEvent: useR!2017\nDate: July 6th, 2017\nTime: 11:36 AM\nLocation: Brussels, Belgium\nSlides\nKeyboard Shortcuts for Slides:\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-05-04T16:32:53+01:00",
-    "input_file": {}
+    "preview": "talks/2017-07-06-introducing-bradleyterryscalable/introducing-bradleyterryscalable.png",
+    "last_modified": "2021-05-12T18:35:19+01:00",
+    "input_file": "introducing-bradleyterryscalable.knit.md",
+    "preview_width": 1261,
+    "preview_height": 710
   },
   {
     "path": "talks/2017-05-25-an-overview-of-htmlwidgets/",
@@ -80,8 +88,10 @@
     "date": "2017-05-25",
     "categories": [],
     "contents": "\n\nContents\nOverview\nEvent details\n\n\n\n\n\n slides materials\n\nOverview\nThe htmlwidgets package allows developers to create R bindings to JavaScript libraries. The resulting R packages allow the embedding of interactive content in R Markdown documents and Shiny web apps. There are over 50 available widgets. In this talk I give an overview of the htmlwidget framework and demonstrate the use of the DT, leaflet and DiagrammeR packages.\nEvent details\nEvent: Warwick R User Group\nDate: May 25th, 2017\nTime: 17:00\nLocation: University of Warwick\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-05-05T09:25:05+01:00",
-    "input_file": {}
+    "preview": "talks/2017-05-25-an-overview-of-htmlwidgets/an-overview-of-htmlwidgets.png",
+    "last_modified": "2021-05-12T18:42:12+01:00",
+    "input_file": "an-overview-of-htmlwidgets.knit.md",
+    "preview_width": 1840,
+    "preview_height": 1446
   }
 ]

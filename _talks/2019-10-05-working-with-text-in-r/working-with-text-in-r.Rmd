@@ -3,6 +3,8 @@ title: "Working with text in R"
 description: |
   An overview of a range of packages for working with text in R.
 author: Ella Kaye
+base_url: https://ellakaye.rbind.io/
+preview: working-with-text-in-r.png
 date: 2019-10-05
 output:
   distill::distill_article:
