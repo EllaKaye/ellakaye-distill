@@ -16,7 +16,7 @@ navbar:
   search: false
   logo:
     image: images/logo.png
-    href: https://ellakaye.rbind.io
+    href: index.html
   right:
     - text: "About"
       href: about.html
@@ -31,7 +31,7 @@ navbar:
     - icon: fab fa-twitter
       href: https://twitter.com/ellamkaye
     - icon: fas fa-home
-      href: https://ellakaye.rbind.io
+      href: index.html
 collections:
   posts:
     categories: true
