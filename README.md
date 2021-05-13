@@ -1,1 +1,1 @@
-A work-in-progress personal website, built with [{distill}](https://rstudio.github.io/distill/).
+My personal website, [https://ellakaye.rbind.io](https://ellakaye.rbind.io), built with [{distill}](https://rstudio.github.io/distill/).
