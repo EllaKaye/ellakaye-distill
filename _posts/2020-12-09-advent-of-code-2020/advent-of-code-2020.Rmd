@@ -29,6 +29,8 @@ Each participant gets different input data, so my numerical solutions may be dif
 
 ## Day 1: [Report Repair](https://adventofcode.com/2020/day/1)
 
+<p><a id='day1'></a></p>
+
 [My day 1 data](https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day1.txt)
 
 #### Part 1: Two numbers
@@ -217,6 +219,8 @@ prod(slope_check(tree_mat, 1, 1),
 ```
 
 ## Day 4: [Passport Processing](https://adventofcode.com/2020/day/4)
+
+<p><a id='day4'></a></p>
 
 [My day 4 data](https://ellakaye.rbind.io/post/advent-of-code-2020/data/AoC_day4.txt)
 
