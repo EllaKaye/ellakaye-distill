@@ -146,7 +146,10 @@ h1, h2, h3 {
 }
 */
 
-/* buttoms on postcards homepage page */
+/* buttons on postcards homepage page
+.btn-outline-dark targets when window is wide
+.list-group-item targets when window is narrow
+*/
 .btn-outline-dark{
    color:#D40067;
    border-color:#D40067;
@@ -161,13 +164,13 @@ h1, h2, h3 {
     border: none;
 }
 
-@media .btn-outline-dark{
+.list-group-item {
    color:#D40067;
    border-color:#D40067;
    font-family: "LEMONMILKPro-Light", sans-serif;
  }
 
-@media .btn-outline-dark:hover {
+ .list-group-item:hover {
     background-color: #D40067;
     border-color:#D40067;
     color: white;
@@ -175,6 +178,7 @@ h1, h2, h3 {
     border: none;
 }
 
+/* remove title - logo suffices*/
 .distill-site-header .title {
   display: none;
 }
@@ -185,6 +189,7 @@ h1, h2, h3 {
    margin-top: 15px;
 }
 
+/* styling for icon-link buttons (see distilltools::icon_link()) */
 .icon-link {
     background-color: transparent;
     color: #D40067;
