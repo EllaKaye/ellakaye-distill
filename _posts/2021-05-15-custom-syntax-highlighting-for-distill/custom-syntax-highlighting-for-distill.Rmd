@@ -40,3 +40,75 @@ meta() %>%
     twitter_card_type = "summary_large_image", # can also be summary
   )
 ```
+
+## TL;DR
+
+The [{distill}](https://rstudio.github.io/distill/) package for R can be used to build easy-to-maintain websites written only in R markdown. It's the package on which this site is built.^[For more on resources and inspirations for setting up a {distill} website, see my previous post, [Welcome to my {distill} website](https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/).]
+
+**Summary of the code chunk, like in Alison's blogdown post, or call to {distilltools} function**
+
+Read on for how this function was built, and considerations about colour choices, particularly in respect to accessibility.
+
+## In praise of the default
+
+Before I get into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below SECTION LINK. Also, it seems to me that the colours in the scheme are well chosen to work well together together, and overall, on many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
+
+
+## So, why change?
+
+## Distill/pandoc documentation
+
+## Finding and saving the default
+
+## Closer inspection of the default
+
+## Building my own palette
+
+- starting colour choice
+- nods to colour theory
+- checking accessibility
+- checking for colour-blindness
+- resources (e.g. ColorSlurp)
+
+### Colours and web accessibility
+
+- <https://www.w3.org/WAI/standards-guidelines/wcag/>
+- <https://color.a11y.com>
+- <https://www.a11yproject.com>
+
+### Online resources for checking accessibility
+
+See above
+
+### Colourblindness considerations and R resources
+
+- <https://njt-monash-colour.netlify.app/#1>
+- <https://www.njtierney.com/post/2020/10/15/assess-colour/>
+- <https://www.canva.com/colors/color-wheel/>
+
+```{r}
+ek_highlight_colours <- c("#C55100", "#008747", "#0067D4", "#6600D4", "#D40067")
+```
+
+```{r}
+library(prismatic)
+check_color_blindness(ek_highlight_colours)
+```
+
+
+### ColorSlurp
+
+## Modifying the default
+
+With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices
+
+## Using the theme
+
+Issues with `_site.yml` vs YAML in individual distill articles (and link to open issue).
+
+## Wrapping this in a {distilltools} function
+
+- NEED TO WRITE THE FUNCTION AND PUT IT IN DISTILLTOOLS!
+- New package from R Markdown team, so this one likely to be depreciated
+- Clunky function name on purpose
+- Still need to follow the steps in the previous section to use the theme.

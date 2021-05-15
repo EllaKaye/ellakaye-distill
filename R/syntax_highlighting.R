@@ -16,7 +16,7 @@ theme <- gsub("#AD0000", "#D40067", theme) # red -> pink
 theme <- gsub("#8f5902", "#C15500", theme) # brown -> orange (note lower case!)
 theme <- gsub("#007BA5", "#6600D4", theme) # blue -> purple
 theme <- gsub("#20794D", "#008747", theme) # green -> green
-theme <- gsub("#4758AB", "#0077CE", theme) # purple -> blue
+theme <- gsub("#4758AB", "#0067D4", theme) # purple -> blue
 
 writeLines(theme, "ek_syntax_highlighting.theme")
 
@@ -32,7 +32,7 @@ writeLines(theme, "ek_syntax_highlighting.theme")
 #   str_replace_all("#8f5902", "#C15500") %>% # brown -> orange (note lower case!)
 #   str_replace_all("#007BA5", "#6600D4") %>% # blue -> purple
 #   str_replace_all("#20794D", "#008747") %>% # green -> green
-#   str_replace_all("#4758AB", "#0077CE")     # purple -> blue
+#   str_replace_all("#4758AB", "#0067D4")     # purple -> blue
 #
 # writeLines(theme, "ek_syntax_highlighting.theme")
 
