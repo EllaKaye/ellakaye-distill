@@ -1,5 +1,25 @@
 [
   {
+    "path": "posts/2021-05-15-custom-syntax-highlighting-for-distill/",
+    "title": "Custom Syntax Highlighting for Distill",
+    "description": "Post description",
+    "author": [
+      {
+        "name": "Ella Kaye",
+        "url": "https://twitter.com/ellamkaye"
+      }
+    ],
+    "date": "2021-05-15",
+    "categories": [
+      "TAG_1",
+      "TAG_2"
+    ],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-15T20:49:52+01:00",
+    "input_file": "custom-syntax-highlighting-for-distill.knit.md"
+  },
+  {
     "path": "posts/2021-05-08-welcome-to-my-distill-website/",
     "title": "Welcome to my {distill} website!",
     "description": "Resources and sites I found inspiring when building my new site, and a sneak-peek at {distilltools}, an exciting new project for {distill} users",

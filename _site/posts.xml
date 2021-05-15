@@ -12,7 +12,17 @@
       <link>https://ellakaye.rbind.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Custom Syntax Highlighting for Distill</title>
+      <dc:creator>Ella Kaye</dc:creator>
+      <link>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</link>
+      <description>Post description</description>
+      <category>TAG_1</category>
+      <category>TAG_2</category>
+      <guid>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</guid>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Welcome to my {distill} website!</title>
       <dc:creator>Ella Kaye</dc:creator>
