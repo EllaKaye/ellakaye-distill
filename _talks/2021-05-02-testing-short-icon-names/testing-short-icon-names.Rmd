@@ -223,3 +223,6 @@ xaringanExtra::embed_xaringan(
   url = "url")
 ```
 
+# Raw html
+
+
