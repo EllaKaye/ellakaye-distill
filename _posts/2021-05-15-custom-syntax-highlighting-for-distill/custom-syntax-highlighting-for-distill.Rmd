@@ -1,7 +1,7 @@
 ---
-title: Custom Syntax Highlighting for Distill
+title: Custom Syntax Highlighting for {distill}
 description: |
-  Post description
+  A deep-dive into how I created a custom theme, including considerations in choosing a good-looking and accessible colour palette
 author: 
   - name: Ella Kaye
     url: https://twitter.com/ellamkaye
@@ -9,8 +9,10 @@ date: '2021-05-15'
 base_url: https://ellakaye.rbind.io/
 preview: IMAGE.png
 categories:
-  - TAG_1
-  - TAG_2
+  - distill
+  - distilltools
+  - colour
+  - accessibility
 twitter:
   site: "@ellamkaye"
   creator: "@ellamkaye"
@@ -47,18 +49,26 @@ The [{distill}](https://rstudio.github.io/distill/) package for R can be used to
 
 **Summary of the code chunk, like in Alison's blogdown post, or call to {distilltools} function**
 
-Read on for how this function was built, and considerations about colour choices, particularly in respect to accessibility.
+Read on for why and how this function was built, its somewhat clunky name and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package, as well as considerations about colour choices, in respect to both colour theory and accessibility.
 
-## In praise of the default
+## But first, in praise of the default
 
 Before I get into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below SECTION LINK. Also, it seems to me that the colours in the scheme are well chosen to work well together together, and overall, on many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
 
-
 ## So, why change?
+When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the bright pink I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.
 
 ## Distill/pandoc documentation
+My first task was to find out if this was possible, and if, so, how. Thankfully, the distill documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give a `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme, stating that can then be edited to create a custom theme. 
 
 ## Finding and saving the default
+Once I had a general strategy of copying and editing an existing `.theme` file, my next task was to find the `.theme` file of the default used for distill, because that's what I'd decided to use as my starting point.
+
+I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio^[From RStudio, go to 'File' in the menu bar, then 'New Project...'. Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project']. From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. I saved a copy of it into the RStudio project for my website by going to that project and, in the console, running
+
+```
+HERE
+```
 
 ## Closer inspection of the default
 
