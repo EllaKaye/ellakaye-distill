@@ -51,3 +51,9 @@ writeLines(theme, "ek_syntax_highlighting.theme")
 
 # Actually, have just heard from Alison Hill that the R Markdown team are working on pandoc package that will include wrapper functions to make your own highlighter, so might hold off on wrapping this in a function/distilltools as their version will be the canonical approach.
 
+# this DOESN'T seem to work to change the background colour
+#theme <- readLines("arrow.theme")
+#theme[3] <- "    \"background-color\": \"#FDDB97\","
+#theme[3]
+#theme[4]
+#writeLines(theme, "yellow_background.theme")
