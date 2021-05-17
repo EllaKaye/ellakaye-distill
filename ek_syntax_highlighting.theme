@@ -5,7 +5,7 @@
     "line-number-background-color": null,
     "text-styles": {
         "Other": {
-            "text-color": "#6600D4",
+            "text-color": "#6D00D4",
             "background-color": null,
             "bold": false,
             "italic": false,
@@ -19,7 +19,7 @@
             "underline": false
         },
         "SpecialString": {
-            "text-color": "#008747",
+            "text-color": "#008745",
             "background-color": null,
             "bold": false,
             "italic": false,
@@ -40,14 +40,14 @@
             "underline": false
         },
         "String": {
-            "text-color": "#008747",
+            "text-color": "#008745",
             "background-color": null,
             "bold": false,
             "italic": false,
             "underline": false
         },
         "ControlFlow": {
-            "text-color": "#6600D4",
+            "text-color": "#6D00D4",
             "background-color": null,
             "bold": false,
             "italic": false,
@@ -117,7 +117,7 @@
             "underline": false
         },
         "VerbatimString": {
-            "text-color": "#008747",
+            "text-color": "#008745",
             "background-color": null,
             "bold": false,
             "italic": false,
@@ -145,7 +145,7 @@
             "underline": false
         },
         "Char": {
-            "text-color": "#008747",
+            "text-color": "#008745",
             "background-color": null,
             "bold": false,
             "italic": false,
@@ -180,7 +180,7 @@
             "underline": false
         },
         "Constant": {
-            "text-color": "#C15500",
+            "text-color": "#B55D00",
             "background-color": null,
             "bold": false,
             "italic": false,
@@ -201,7 +201,7 @@
             "underline": false
         },
         "Keyword": {
-            "text-color": "#6600D4",
+            "text-color": "#6D00D4",
             "background-color": null,
             "bold": false,
             "italic": false,

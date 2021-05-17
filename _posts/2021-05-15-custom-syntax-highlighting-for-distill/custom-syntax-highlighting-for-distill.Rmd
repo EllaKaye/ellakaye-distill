@@ -24,7 +24,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
@@ -64,13 +64,20 @@ My first task was to find out if this was possible, and if, so, how. Thankfully,
 ## Finding and saving the default
 Once I had a general strategy of copying and editing an existing `.theme` file, my next task was to find the `.theme` file of the default used for distill, because that's what I'd decided to use as my starting point.
 
-I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio^[From RStudio, go to 'File' in the menu bar, then 'New Project...'. Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project']. From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. I saved a copy of it into the RStudio project for my website by going to that project and, in the console, running
+I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio^[From RStudio, go to 'File' in the menu bar, then 'New Project...'. Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project']. From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. I saved a copy of it into the RStudio project for my website by going to that project and created a new script, `syntax_highlighting.R`, in the `R` folder I have in my root directory. I then added the following to the script and ran it, once, before commenting it out.
 
-```
-HERE
+```{r eval = FALSE}
+arrow_theme_path <- system.file(
+  "rmarkdown/templates/distill_article/resources/arrow.theme", 
+  package = "distill"
+)
+
+file.copy(arrow_theme_path, "arrow.theme")
 ```
 
 ## Closer inspection of the default
+
+From there, I could open up the `arrow.theme` file, and manually inspect it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com). The basic version is free, though the pro version has great features for testing accessibility - more on that below^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there ]. For each hex colour code I encountered.
 
 ## Building my own palette
 
@@ -97,7 +104,7 @@ See above
 - <https://www.canva.com/colors/color-wheel/>
 
 ```{r}
-ek_highlight_colours <- c("#C55100", "#008747", "#0067D4", "#6600D4", "#D40067")
+ek_highlight_colours <- c("#B55D00", "#008745", "#0067D4", "#6D00D4", "#D40067")
 ```
 
 ```{r}

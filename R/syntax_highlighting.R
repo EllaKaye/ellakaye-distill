@@ -1,21 +1,21 @@
 # Manual
 
-# theme <- readLines("arrow.theme")
+theme <- readLines("arrow.theme")
 # theme taken from rmarkdown/templates/distill_article/resources/arrow.theme in the "distill" package and also accessible via
 
 # arrow_theme_path <- system.file("rmarkdown/templates/distill_article/resources/arrow.theme", package = "distill")
 
 # Could readLines directly from arrow_theme_path, but better to copy to my root directory first, in case distill team tweak colours in the package version, which would stop the gsub/str_replace_all calls from working!
 
-# file.copy(arrow_theme_path, "templates/arrow.theme")
+# file.copy(arrow_theme_path, "arrow.theme")
 
 # Now this is done once, keep above lines commented and don't rerun!
 
 # brighter version
 theme <- gsub("#AD0000", "#D40067", theme) # red -> pink
-theme <- gsub("#8f5902", "#C15500", theme) # brown -> orange (note lower case!)
-theme <- gsub("#007BA5", "#6600D4", theme) # blue -> purple
-theme <- gsub("#20794D", "#008747", theme) # green -> green
+theme <- gsub("#8f5902", "#B55D00", theme) # brown -> brown (note lower case!)
+theme <- gsub("#007BA5", "#6D00D4", theme) # blue -> purple
+theme <- gsub("#20794D", "#008745", theme) # green -> green
 theme <- gsub("#4758AB", "#0067D4", theme) # purple -> blue
 
 writeLines(theme, "ek_syntax_highlighting.theme")
@@ -29,9 +29,9 @@ writeLines(theme, "ek_syntax_highlighting.theme")
 #
 # theme <- readLines("arrow.theme") %>%
 #   str_replace_all("#AD0000", "#D40067") %>% # red -> pink
-#   str_replace_all("#8f5902", "#C15500") %>% # brown -> orange (note lower case!)
-#   str_replace_all("#007BA5", "#6600D4") %>% # blue -> purple
-#   str_replace_all("#20794D", "#008747") %>% # green -> green
+#   str_replace_all("#8f5902", "#B55D00") %>% # brown -> brown (note lower case!)
+#   str_replace_all("#007BA5", "#6D00D4") %>% # blue -> purple
+#   str_replace_all("#20794D", "#008745") %>% # green -> green
 #   str_replace_all("#4758AB", "#0067D4")     # purple -> blue
 #
 # writeLines(theme, "ek_syntax_highlighting.theme")
