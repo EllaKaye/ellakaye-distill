@@ -17,14 +17,14 @@
       <title>Custom Syntax Highlighting for {distill}</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</link>
-      <description>A deep-dive into how I created a custom theme, including considerations in choosing a good-looking and accessible colour palette</description>
+      <description>A deep-dive into creating a custom theme, including considerations in choosing a good-looking and accessible colour palette</description>
       <category>distill</category>
       <category>distilltools</category>
       <category>colour</category>
       <category>accessibility</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</guid>
       <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-hsb-sliders.png" medium="image" type="image/png" width="2564" height="876"/>
     </item>
     <item>
       <title>Welcome to my {distill} website!</title>
