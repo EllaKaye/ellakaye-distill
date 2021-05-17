@@ -1512,35 +1512,43 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#tldr">TL;DR</a></li>
-<li><a href="#but-first-in-praise-of-the-default">But first, in praise of the default</a></li>
+<li><a href="#but-first-the-default">But first, the default</a>
+<ul>
+<li><a href="#in-praise-of-the-default">In praise of the default</a></li>
 <li><a href="#so-why-change">So, why change?</a></li>
 <li><a href="#distillpandoc-documentation">Distill/pandoc documentation</a></li>
 <li><a href="#finding-and-saving-the-default">Finding and saving the default</a></li>
 <li><a href="#closer-inspection-of-the-default">Closer inspection of the default</a></li>
+</ul></li>
 <li><a href="#building-my-own-palette">Building my own palette</a>
 <ul>
-<li><a href="#colours-and-web-accessibility">Colours and web accessibility</a></li>
-<li><a href="#online-resources-for-checking-accessibility">Online resources for checking accessibility</a></li>
-<li><a href="#colourblindness-considerations-and-r-resources">Colourblindness considerations and R resources</a></li>
-<li><a href="#colorslurp">ColorSlurp</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#starting-with-colour-theory">Starting with colour theory</a></li>
+<li><a href="#adapting-for-web-accessibility">Adapting for web accessibility</a></li>
+<li><a href="#checking-for-colourblindness">Checking for colourblindness</a></li>
 </ul></li>
-<li><a href="#modifying-the-default">Modifying the default</a></li>
+<li><a href="#putting-it-all-together">Putting it all together</a>
+<ul>
+<li><a href="#modifying-arrow.theme">Modifying <code>arrow.theme</code></a></li>
 <li><a href="#using-the-theme">Using the theme</a></li>
-<li><a href="#wrapping-this-in-a-distilltools-function">Wrapping this in a {distilltools} function</a></li>
+</ul></li>
+<li><a href="#wrapping-in-a-distilltools-function">Wrapping in a {distilltools} function</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="tldr">TL;DR</h2>
 <p>The <a href="https://rstudio.github.io/distill/">{distill}</a> package for R can be used to build easy-to-maintain websites written only in R markdown. It’s the package on which this site is built.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p><strong>Summary of the code chunk, like in Alison’s blogdown post, or call to {distilltools} function</strong></p>
+<p><strong>Code chunk to demonstrate the palette</strong></p>
 <p>Read on for why and how this function was built, its somewhat clunky name and its inclusion in the <a href="https://github.com/EllaKaye/distilltools">{distilltools}</a> package, as well as considerations about colour choices, in respect to both colour theory and accessibility.</p>
-<h2 id="but-first-in-praise-of-the-default">But first, in praise of the default</h2>
+<h2 id="but-first-the-default">But first, the default</h2>
+<h3 id="in-praise-of-the-default">In praise of the default</h3>
 <p>Before I get into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular <a href="https://alison.rbind.io">Alison Hill</a>, have thought and worked hard to ensure that {distill} provides a good user experience, both for the site’s author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below SECTION LINK. Also, it seems to me that the colours in the scheme are well chosen to work well together together, and overall, on many {distill} websites where I’ve seen the scheme used, I think it looks really good! For a great example of the default in action, check out this <a href="https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/">code-chunk-heavy post</a> by <a href="https://twitter.com/thomas_mock">Tom Mock</a>.</p>
-<h2 id="so-why-change">So, why change?</h2>
+<h3 id="so-why-change">So, why change?</h3>
 <p>When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the bright pink I’ve used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.</p>
-<h2 id="distillpandoc-documentation">Distill/pandoc documentation</h2>
+<h3 id="distillpandoc-documentation">Distill/pandoc documentation</h3>
 <p>My first task was to find out if this was possible, and if, so, how. Thankfully, the distill documentation contains a section on <a href="https://rstudio.github.io/distill/#syntax-highlighting">syntax highlighting</a>, showing that there is an option to give a <code>distill_article</code> a path to a custom <code>.theme</code> file. The <a href="https://pandoc.org/MANUAL.html#syntax-highlighting">linked pandoc documentation on syntax highlighting</a> demonstrates how to use pandoc in the command line to save a personal version of the <code>pygments</code> highlighting theme, stating that can then be edited to create a custom theme.</p>
-<h2 id="finding-and-saving-the-default">Finding and saving the default</h2>
+<h3 id="finding-and-saving-the-default">Finding and saving the default</h3>
 <p>Once I had a general strategy of copying and editing an existing <code>.theme</code> file, my next task was to find the <code>.theme</code> file of the default used for distill, because that’s what I’d decided to use as my starting point.</p>
 <p>I cloned the <a href="https://github.com/rstudio/distill">distill repo from GitHub</a> and opened it in RStudio<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. From there I began my detective work with one of my favourite RStudio features, ‘Find in Files’ (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for “highlight” and followed various trails until I discovered that the default is called <code>arrow.theme</code> and is stored in <code>inst/rmarkdown/templates/distill_article/resources/</code>. Thankfully, because it’s in the <code>inst</code> folder, the file is accessible to users who have the {distill} package installed. I saved a copy of it into the RStudio project for my website by going to that project and created a new script, <code>syntax_highlighting.R</code>, in the <code>R</code> folder I have in my root directory. I then added the following to the script and ran it, once, before commenting it out.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1554,33 +1562,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<h2 id="closer-inspection-of-the-default">Closer inspection of the default</h2>
+<h3 id="closer-inspection-of-the-default">Closer inspection of the default</h3>
 <p>From there, I could open up the <code>arrow.theme</code> file, and manually inspect it. I use a great Mac app for building colour palettes, <a href="https://colorslurp.com">ColorSlurp</a>. The basic version is free, though the pro version has great features for testing accessibility - more on that below<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. For each hex colour code I encountered.</p>
 <h2 id="building-my-own-palette">Building my own palette</h2>
+<h3 id="resources">Resources</h3>
 <ul>
-<li>starting colour choice</li>
-<li>nods to colour theory</li>
-<li>checking accessibility</li>
-<li>checking for colour-blindness</li>
-<li>resources (e.g. ColorSlurp)</li>
+<li><a href="https://colorslurp.com" class="uri">https://colorslurp.com</a></li>
+<li><a href="https://www.canva.com/colors/color-wheel/" class="uri">https://www.canva.com/colors/color-wheel/</a></li>
+<li><a href="http://colorizer.org/" class="uri">http://colorizer.org/</a></li>
+<li>lists of alternatives apps and web resources</li>
+<li><a href="https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html" class="uri">https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html</a></li>
 </ul>
-<h3 id="colours-and-web-accessibility">Colours and web accessibility</h3>
+<h3 id="starting-with-colour-theory">Starting with colour theory</h3>
 <ul>
-<li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" class="uri">https://www.w3.org/WAI/standards-guidelines/wcag/</a></li>
-<li><a href="https://color.a11y.com" class="uri">https://color.a11y.com</a></li>
-<li><a href="https://www.a11yproject.com" class="uri">https://www.a11yproject.com</a></li>
+<li>Nutshell</li>
+<li>RGB vs HSL/HCL vs HSB/HSV
+<ul>
+<li>screen shot from colorizer</li>
+</ul></li>
 </ul>
-<h3 id="online-resources-for-checking-accessibility">Online resources for checking accessibility</h3>
-<p>See above</p>
-<h3 id="colourblindness-considerations-and-r-resources">Colourblindness considerations and R resources</h3>
+<h3 id="adapting-for-web-accessibility">Adapting for web accessibility</h3>
+<ul>
+<li><p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" class="uri">https://www.w3.org/WAI/standards-guidelines/wcag/</a></p></li>
+<li><p><a href="https://color.a11y.com" class="uri">https://color.a11y.com</a></p></li>
+<li><p><a href="https://www.a11yproject.com" class="uri">https://www.a11yproject.com</a></p></li>
+<li><p>Keep hue and saturation, decrease brightness</p></li>
+</ul>
+<h3 id="checking-for-colourblindness">Checking for colourblindness</h3>
 <ul>
 <li><a href="https://njt-monash-colour.netlify.app/#1" class="uri">https://njt-monash-colour.netlify.app/#1</a></li>
 <li><a href="https://www.njtierney.com/post/2020/10/15/assess-colour/" class="uri">https://www.njtierney.com/post/2020/10/15/assess-colour/</a></li>
-<li><a href="https://www.canva.com/colors/color-wheel/" class="uri">https://www.canva.com/colors/color-wheel/</a></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ek_highlight_colours</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#C55100"</span>, <span class='st'>"#008747"</span>, <span class='st'>"#0067D4"</span>, <span class='st'>"#6600D4"</span>, <span class='st'>"#D40067"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ek_highlight_colours</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#B55D00"</span>, <span class='st'>"#008745"</span>, <span class='st'>"#0067D4"</span>, <span class='st'>"#6D00D4"</span>, <span class='st'>"#D40067"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -1592,14 +1607,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
-<h3 id="colorslurp">ColorSlurp</h3>
-<h2 id="modifying-the-default">Modifying the default</h2>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<h3 id="modifying-arrow.theme">Modifying <code>arrow.theme</code></h3>
 <p>With all the pieces in place, it’s now just a case of swapping out the default colour codes for our own choices</p>
-<h2 id="using-the-theme">Using the theme</h2>
+<ul>
+<li><p>show code (base and tidyverse)</p></li>
+<li><p>can modify further by hand</p></li>
+<li><p>Quirk of background color, how to modify CSS instead</p></li>
+</ul>
+<h3 id="using-the-theme">Using the theme</h3>
 <p>Issues with <code>_site.yml</code> vs YAML in individual distill articles (and link to open issue).</p>
-<h2 id="wrapping-this-in-a-distilltools-function">Wrapping this in a {distilltools} function</h2>
+<ul>
+<li><code>_site.yml</code> vs <code>.Rmd</code></li>
+</ul>
+<h2 id="wrapping-in-a-distilltools-function">Wrapping in a {distilltools} function</h2>
 <ul>
 <li>NEED TO WRITE THE FUNCTION AND PUT IT IN DISTILLTOOLS!</li>
+<li><code>modify_default_highlighting_theme()</code></li>
 <li>New package from R Markdown team, so this one likely to be depreciated</li>
 <li>Clunky function name on purpose</li>
 <li>Still need to follow the steps in the previous section to use the theme.</li>

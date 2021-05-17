@@ -49,19 +49,23 @@ The [{distill}](https://rstudio.github.io/distill/) package for R can be used to
 
 **Summary of the code chunk, like in Alison's blogdown post, or call to {distilltools} function**
 
+**Code chunk to demonstrate the palette**
+
 Read on for why and how this function was built, its somewhat clunky name and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package, as well as considerations about colour choices, in respect to both colour theory and accessibility.
 
-## But first, in praise of the default
+## But first, the default
+
+### In praise of the default
 
 Before I get into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below SECTION LINK. Also, it seems to me that the colours in the scheme are well chosen to work well together together, and overall, on many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
 
-## So, why change?
+### So, why change?
 When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the bright pink I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.
 
-## Distill/pandoc documentation
+### Distill/pandoc documentation
 My first task was to find out if this was possible, and if, so, how. Thankfully, the distill documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give a `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme, stating that can then be edited to create a custom theme. 
 
-## Finding and saving the default
+### Finding and saving the default
 Once I had a general strategy of copying and editing an existing `.theme` file, my next task was to find the `.theme` file of the default used for distill, because that's what I'd decided to use as my starting point.
 
 I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio^[From RStudio, go to 'File' in the menu bar, then 'New Project...'. Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project']. From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. I saved a copy of it into the RStudio project for my website by going to that project and created a new script, `syntax_highlighting.R`, in the `R` folder I have in my root directory. I then added the following to the script and ran it, once, before commenting it out.
@@ -75,33 +79,38 @@ arrow_theme_path <- system.file(
 file.copy(arrow_theme_path, "arrow.theme")
 ```
 
-## Closer inspection of the default
+### Closer inspection of the default
 
 From there, I could open up the `arrow.theme` file, and manually inspect it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com). The basic version is free, though the pro version has great features for testing accessibility - more on that below^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there ]. For each hex colour code I encountered.
 
 ## Building my own palette
 
-- starting colour choice
-- nods to colour theory
-- checking accessibility
-- checking for colour-blindness
-- resources (e.g. ColorSlurp)
+### Resources
 
-### Colours and web accessibility
+- <https://colorslurp.com>
+- <https://www.canva.com/colors/color-wheel/>
+- <http://colorizer.org/>
+- lists of alternatives apps and web resources
+- <https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html>
+
+### Starting with colour theory
+
+- Nutshell
+- RGB vs HSL/HCL vs HSB/HSV
+  - screen shot from colorizer
+
+### Adapting for web accessibility
 
 - <https://www.w3.org/WAI/standards-guidelines/wcag/>
 - <https://color.a11y.com>
 - <https://www.a11yproject.com>
 
-### Online resources for checking accessibility
+- Keep hue and saturation, decrease brightness
 
-See above
-
-### Colourblindness considerations and R resources
+### Checking for colourblindness
 
 - <https://njt-monash-colour.netlify.app/#1>
 - <https://www.njtierney.com/post/2020/10/15/assess-colour/>
-- <https://www.canva.com/colors/color-wheel/>
 
 ```{r}
 ek_highlight_colours <- c("#B55D00", "#008745", "#0067D4", "#6D00D4", "#D40067")
@@ -112,20 +121,27 @@ library(prismatic)
 check_color_blindness(ek_highlight_colours)
 ```
 
-
-### ColorSlurp
-
-## Modifying the default
+## Putting it all together
+### Modifying `arrow.theme`
 
 With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices
 
-## Using the theme
+- show code (base and tidyverse)
+
+- can modify further by hand
+
+- Quirk of background color, how to modify CSS instead
+
+### Using the theme
 
 Issues with `_site.yml` vs YAML in individual distill articles (and link to open issue).
 
-## Wrapping this in a {distilltools} function
+- `_site.yml` vs `.Rmd`
+
+## Wrapping in a {distilltools} function
 
 - NEED TO WRITE THE FUNCTION AND PUT IT IN DISTILLTOOLS!
+- `modify_default_highlighting_theme()`
 - New package from R Markdown team, so this one likely to be depreciated
 - Clunky function name on purpose
 - Still need to follow the steps in the previous section to use the theme.

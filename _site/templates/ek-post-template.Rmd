@@ -22,7 +22,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
