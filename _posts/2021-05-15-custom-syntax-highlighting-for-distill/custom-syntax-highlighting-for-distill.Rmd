@@ -108,6 +108,11 @@ knitr::include_graphics("hsl-colour-wheel-d4006a.png")
 
 Colour theory determines which colours 'look good' together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. There are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). 
 
+```{r colour-harmonies, echo = FALSE, fig.cap = "Harmonious colour combinations. SAY MORE. ADD ALT TEXT"}
+knitr::include_graphics("colour-harmonies.png")
+```
+
+
 **INSERT IMAGE HERE?**
 <https://www.pngfind.com/mpng/wmmiiT_colour-harmonies-and-schemes-reference-card-colour-complementary/>
 
