@@ -12,11 +12,11 @@ theme <- readLines("arrow.theme")
 # Now this is done once, keep above lines commented and don't rerun!
 
 # brighter version
-theme <- gsub("#AD0000", "#D40067", theme) # red -> pink
-theme <- gsub("#8f5902", "#B55D00", theme) # brown -> brown (note lower case!)
-theme <- gsub("#007BA5", "#6D00D4", theme) # blue -> purple
-theme <- gsub("#20794D", "#008745", theme) # green -> green
-theme <- gsub("#4758AB", "#0067D4", theme) # purple -> blue
+theme <- gsub("#AD0000", "#BD005B", theme) # red -> pink
+theme <- gsub("#8f5902", "#B65D00", theme) # brown -> brown (note lower case!)
+theme <- gsub("#007BA5", "#5A00B5", theme) # blue -> purple
+theme <- gsub("#20794D", "#008643", theme) # green -> green
+theme <- gsub("#4758AB", "#005BB6", theme) # purple -> blue
 
 writeLines(theme, "ek_syntax_highlighting.theme")
 
@@ -28,11 +28,11 @@ writeLines(theme, "ek_syntax_highlighting.theme")
 # library(magrittr)
 #
 # theme <- readLines("arrow.theme") %>%
-#   str_replace_all("#AD0000", "#D40067") %>% # red -> pink
-#   str_replace_all("#8f5902", "#B55D00") %>% # brown -> brown (note lower case!)
-#   str_replace_all("#007BA5", "#6D00D4") %>% # blue -> purple
-#   str_replace_all("#20794D", "#008745") %>% # green -> green
-#   str_replace_all("#4758AB", "#0067D4")     # purple -> blue
+#   str_replace_all("#AD0000", "#BD005B") %>% # red -> pink
+#   str_replace_all("#8f5902", "#B65D00") %>% # brown -> brown (note lower case!)
+#   str_replace_all("#007BA5", "#5A00B5") %>% # blue -> purple
+#   str_replace_all("#20794D", "#008643") %>% # green -> green
+#   str_replace_all("#4758AB", "#005BB6")     # purple -> blue
 #
 # writeLines(theme, "ek_syntax_highlighting.theme")
 

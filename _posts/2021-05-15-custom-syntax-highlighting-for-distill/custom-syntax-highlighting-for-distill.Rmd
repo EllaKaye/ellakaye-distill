@@ -105,7 +105,7 @@ Colour theory determines which colours 'look good' together, based on their rela
 
 **INSERT IMAGE HERE?**
 
-Another aspect of colour relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255.
+Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255.
 
 More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness/**L**uminance/**L**uminosity). It is also known, particularly in R, through the [colorspace](https://colorspace.r-forge.r-project.org/articles/colorspace.html) package, as HCL (**H**ue, **C**hroma, **L**uminance). Even more confusingly, the saturation component is different in HSB and HSL!
 
@@ -120,7 +120,19 @@ knitr::include_graphics("hsl-hsb-sliders.png")
 There are [lots of online palette creators](https://www.elegantthemes.com/blog/resources/color-palette-generators), which will produce palettes based on various colour theory principles, given a starting colour. Personally, I think that the [canva colour wheel](https://www.canva.com/colors/color-wheel/) is a great place to start (probably because that's the one I started with!) It's pretty simple, but nicely designed and easy to use, and the page explains the basics of colour theory too.
 
 The more I played around with the canva colour wheel, though, the clearer it was that it didn't quite meet my needs. In particular, I needed five colours, and here we only have options for palettes of up to four. 
-On pretty much the other end of the scale to the canva colour wheel, I found [colorizer.org](http://colorizer.org). It lacks in pleasing design and ease of use, plus it's a bit buggy. It took me a while to figure out, so I'll share what I learnt. The easiest way to get started is to enter the hex value of your main colour into the hex box, five boxes down on the right. Then scroll down past the sliders (more on those in just a moment), and you get to a bunch of different harmonious palettes, including, very helpfully for our needs, one that contains twelve different colours. To get the hex codes for the colours in those palettes, though, you have to drag and drop them into the squares to the right of the sliders (that's the part that's a bit buggy), and then read off the hex code from the hex box. A bit fiddly, but worth it. Plus, scroll down further, and there's a more technical explanation of different colour spaces. I then copied those hex codes into ColorSlurp, which has an easier user interface and a contrast checker, which becomes important in the next step of the process.
+On pretty much the other end of the scale to the canva colour wheel, I found [colorizer.org](http://colorizer.org). It lacks in pleasing design and ease of use, plus it's a bit buggy. It took me a while to figure out, so I'll share what I learnt. The easiest way to get started is to enter the hex value of your main colour into the hex box, five boxes down on the right. Then scroll down past the sliders (more on those in just a moment), and you get to a bunch of different harmonious palettes, including, very helpfully for our needs, one that contains twelve different colours. 
+
+**INSERT IMAGE HERE**
+
+To get the hex codes for the colours in those palettes, though, you have to drag and drop them into the squares to the right of the sliders (that's the part that's a bit buggy), and then read off the hex code from the hex box. A bit fiddly, but worth it. Plus, scroll down further, and there's a more technical explanation of different colour spaces. I then copied those hex codes into ColorSlurp, which has an easier user interface and a contrast checker, which becomes important in the next step of the process.
+
+**12 points/hcl**
+
+```{r}
+library(colorspace)
+
+```
+
 
 ### Adapting for web accessibility
 
