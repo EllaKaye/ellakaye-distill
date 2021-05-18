@@ -104,9 +104,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="A deep-dive into creating a custom theme, including considerations in choosing a good-looking and accessible colour palette"/>
 <meta property="og:url" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/"/>
-<meta property="og:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a.png"/>
-<meta property="og:image:width" content="802"/>
-<meta property="og:image:height" content="780"/>
+<meta property="og:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a-annotated.png"/>
+<meta property="og:image:width" content="750"/>
+<meta property="og:image:height" content="750"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="ELLA KAYE"/>
 
@@ -115,9 +115,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="ELLA KAYE: Custom Syntax Highlighting for {distill}"/>
 <meta property="twitter:description" content="A deep-dive into creating a custom theme, including considerations in choosing a good-looking and accessible colour palette"/>
 <meta property="twitter:url" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/"/>
-<meta property="twitter:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a.png"/>
-<meta property="twitter:image:width" content="802"/>
-<meta property="twitter:image:height" content="780"/>
+<meta property="twitter:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a-annotated.png"/>
+<meta property="twitter:image:width" content="750"/>
+<meta property="twitter:image:height" content="750"/>
 <meta property="twitter:site" content="@ellamkaye"/>
 <meta property="twitter:creator" content="@ellamkaye"/>
 
@@ -137,7 +137,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["colour-harmonies.jpg","colour-palettes-d4006a.png","custom-syntax-highlighting-for-distill_files/anchor-4.2.2/anchor.min.js","custom-syntax-highlighting-for-distill_files/bowser-1.9.3/bowser.min.js","custom-syntax-highlighting-for-distill_files/distill-2.2.21/template.v2.js","custom-syntax-highlighting-for-distill_files/figure-html5/colour-theory-palette-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-2-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png","custom-syntax-highlighting-for-distill_files/header-attrs-2.8/header-attrs.js","custom-syntax-highlighting-for-distill_files/jquery-1.11.3/jquery.min.js","custom-syntax-highlighting-for-distill_files/popper-2.6.0/popper.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-bundle.umd.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-light-border.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.umd.min.js","custom-syntax-highlighting-for-distill_files/webcomponents-2.0.0/webcomponents.js","hsl-colour-wheel-d4006a.png","hsl-hsb-sliders.png"]}
+  {"type":"character","attributes":{},"value":["colour-harmonies.jpg","colour-palettes-d4006a.png","contrast-check.png","custom-syntax-highlighting-for-distill_files/anchor-4.2.2/anchor.min.js","custom-syntax-highlighting-for-distill_files/bowser-1.9.3/bowser.min.js","custom-syntax-highlighting-for-distill_files/distill-2.2.21/template.v2.js","custom-syntax-highlighting-for-distill_files/figure-html5/colour-theory-palette-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-2-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-5-1.png","custom-syntax-highlighting-for-distill_files/header-attrs-2.8/header-attrs.js","custom-syntax-highlighting-for-distill_files/jquery-1.11.3/jquery.min.js","custom-syntax-highlighting-for-distill_files/popper-2.6.0/popper.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-bundle.umd.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-light-border.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.umd.min.js","custom-syntax-highlighting-for-distill_files/webcomponents-2.0.0/webcomponents.js","first-colour-swatch.png","hsl-colour-wheel-d4006a-annotated.png","hsl-colour-wheel-d4006a.png","hsl-hsb-sliders.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2496,19 +2496,74 @@ gtag('config', 'UA-101621242-1');
 <p>Once I had run that once, I commented out the lines. I don’t want any future changes in <code>arrow.theme</code> in {distill} to break what I do next.</p>
 <h3 id="closer-inspection-of-the-default">Closer inspection of the default</h3>
 <p>From there, I could open up my copy <code>arrow.theme</code> file, and manually inspected it. I use a great Mac app for building colour palettes, <a href="https://colorslurp.com">ColorSlurp</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.]. The basic version is free, though the pro version has great features for testing accessibility - more on that below. I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.</p>
-<p>There are 29 types of <code>text-styles</code> in the theme, of which: - 8 are assigned a grey, things like <code>Comment</code> and <code>Documentation</code> - 1 is off-black, <code>Variable</code> - 3 are blue, <code>Other</code>, <code>ControlFlow</code> and <code>Keyword</code> - 4 are green, corresponding to various types of string - 1 is purple, <code>Function</code> - 7 are red, a mix of numeric (e.g. <code>BaseN</code>, <code>Float</code>) and things like <code>Alert</code> and <code>Error</code> - 1 is a brown, for <code>Constant</code> - 4 types are not assigned a colour - they are left as <code>null</code></p>
+<div class="layout-chunk" data-layout="l-body">
+<style type="text/css">
+.arrow-red {
+  background-color: #AD0000;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-brown {
+  background-color: #8F5902;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-green {
+  background-color: #20794D;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-blue {
+  background-color: #007BA5;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-purple {
+  background-color: #4758AB;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-grey {
+  background-color: #5E5E5E;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-black {
+  background-color: #111111;
+  color: white; 
+  padding: 3px;
+}
+</style>
+</div>
+<p>There are 29 types of <code>text-styles</code> in the theme, of which:</p>
+<ul>
+<li>8 are assigned a grey, <span class="arrow-grey">#5E5E5E</span>, things like <code>Comment</code> and <code>Documentation</code></li>
+<li>1 is off-black, <span class="arrow-black">#5E5E5E</span>, <code>Variable</code></li>
+<li>3 are blue, <span class="arrow-blue">#007BA5</span>, <code>Other</code>, <code>ControlFlow</code> and <code>Keyword</code></li>
+<li>4 are green, <span class="arrow-green">#20794D</span>, corresponding to various types of string</li>
+<li>1 is purple, <span class="arrow-purple">#4758AB</span>, <code>Function</code></li>
+<li>7 are red, <span class="arrow-red">#AD0000</span>, a mix of numeric (e.g. <code>BaseN</code>, <code>Float</code>) and things like <code>Alert</code> and <code>Error</code></li>
+<li>1 is a brown, <span class="arrow-brown">#8F5902</span>, for <code>Constant</code></li>
+<li>4 types are not assigned a colour - they are left as <code>null</code></li>
+</ul>
 <p>I was happy to stick with the groupings, grey and <code>null</code> in the default, so now I knew I had to pick five colours for my theme.</p>
 <h2 id="building-my-own-palette">Building my own palette</h2>
 <h3 id="a-brief-primer-on-colour-theory">A brief primer on colour theory</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:hsl-colour-wheel"></span>
-<img src="hsl-colour-wheel-d4006a.png" alt="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/). ADD ALT TEXT." width="401" />
+<img src="hsl-colour-wheel-d4006a-annotated.png" alt="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3). ADD ALT TEXT." width="375" />
 <p class="caption">
-Figure 1: An HSL colour wheel. Screen shot from <a href="https://www.canva.com/colors/color-wheel/">https://www.canva.com/colors/color-wheel/</a>. ADD ALT TEXT.
+Figure 1: An HSL colour wheel. Screen shot from <a href="https://www.canva.com/colors/color-wheel/">https://www.canva.com/colors/color-wheel/</a>, annotations adapted from <a href="https://dev.to/rneha725/hsl-and-hsla-in-css-31j3">https://dev.to/rneha725/hsl-and-hsla-in-css-31j3</a>. ADD ALT TEXT.
 </p>
 </div>
 </div>
-<p>Colour theory determines which colours ‘look good’ together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in <a href="#fig:colour-harmonies">2</a>, there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle.</p>
+<p>Colour theory determines which colours ‘look good’ together, based on their relative position on a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure <a href="#fig:colour-harmonies">2</a>, there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:colour-harmonies"></span>
 <img src="colour-harmonies.jpg" alt="Harmonious colour combinations. Figure from [https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel](https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel) SAY MORE. ADD ALT TEXT" width="428" />
@@ -2517,8 +2572,8 @@ Figure 2: Harmonious colour combinations. Figure from <a href="https://www.widew
 </p>
 </div>
 </div>
-<p>Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (<strong>R</strong>eg <strong>G</strong>reen <strong>B</strong>lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that make up the hex code for a colour.</p>
-<p>More intuitive, however, for adjusting colours, is defining them by SB (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>B</strong>rightness), also known as HSV (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>V</strong>alue). Similar to HSB is HSL (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>L</strong>ightness/<strong>L</strong>uminance/<strong>L</strong>uminosity). It is also known, particularly in R, through the <a href="https://colorspace.r-forge.r-project.org/articles/colorspace.html">colorspace</a> package, as HCL (<strong>H</strong>ue, <strong>C</strong>hroma, <strong>L</strong>uminance). Even more confusingly, the saturation component is different in HSB and HSL!</p>
+<p>Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (<strong>R</strong>eg <strong>G</strong>reen <strong>B</strong>lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.</p>
+<p>More intuitive, however, for adjusting colours, is defining them by SB (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>B</strong>rightness), also known as HSV (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>V</strong>alue). Similar to HSB is HSL (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>L</strong>ightness/<strong>L</strong>uminance/<strong>L</strong>uminosity). It is also known, particularly in R, through the <a href="https://colorspace.r-forge.r-project.org/articles/colorspace.html">colorspace</a> package, as HCL (<strong>H</strong>ue, <strong>C</strong>hroma, <strong>L</strong>uminance). Somewhat confusingly, the saturation component is different in HSB and HSL.</p>
 <p>In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it’s where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here’s a <a href="https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html">excellent article on the HSB system</a>, which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure <a href="#fig:hsl-hsb-sliders">3</a> for HSL and HSB sliders for my pink.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:hsl-hsb-sliders"></span>
@@ -2529,22 +2584,32 @@ Figure 3: HSL and HSB sliders for the pink used throughout this site. Image is a
 </div>
 </div>
 <h3 id="building-a-palette-using-colour-theory">Building a palette using colour theory</h3>
-<p>It’s great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the <a href="https://www.canva.com/colors/color-wheel/">canva colour wheel</a>. It’s pretty simple, with only a few scheme, but it’s nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch!</p>
-<p>The problem with all the colour schemes defined in Figure <a href="#fig:colour-harmonies">2</a> is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, we can get away with only finding the six colours that are 60° apart, and ignoring one of them. Note that for the colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.</p>
-<p>The main pink that I use in this site has hex #D4006A. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, for two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don’t use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example <a href="http://colorizer.org">http://colorizer.org</a> (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code.</p>
+<p>It’s great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the <a href="https://www.canva.com/colors/color-wheel/">canva colour wheel</a>. It’s pretty simple, with only a few schemes, but it’s nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch!</p>
+<p>The problem with all the colour schemes defined in Figure <a href="#fig:colour-harmonies">2</a> is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, it’s sufficient to find the six colours that are 60° apart, and ignore one of them. Note that for five colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.</p>
+<div class="layout-chunk" data-layout="l-body">
+<style type="text/css">
+.my-pink {
+  background-color: #D4006A;
+  color: white; 
+  padding: 3px;
+}
+</style>
+</div>
+<p>The main pink that I use in this site has hex <span class="my-pink">#D4006A</span>. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don’t use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example <a href="http://colorizer.org">http://colorizer.org</a> (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code.</p>
 <p>At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure <a href="#fig:colour-theory-palette">4</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:colour-theory-palette"></span>
-<img src="custom-syntax-highlighting-for-distill_files/figure-html5/colour-theory-palette-1.png" alt="Colours for syntax highlighting, starting from my main pink, based only on colour theory" width="624" />
+<img src="first-colour-swatch.png" alt="Colours for syntax highlighting, starting from my main pink, based only on colour theory" width="650" />
 <p class="caption">
 Figure 4: Colours for syntax highlighting, starting from my main pink, based only on colour theory
 </p>
 </div>
 </div>
 <h3 id="adapting-for-web-accessibility">Adapting for web accessibility</h3>
+<p>As noted at the beginning of this post, one key feature of the default syntax highlighting scheme for {distill} is that it is optimised for accessibility and colour contrast. According to the <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>, this requires that that contrast ratio between text and background colours be at least 4.5:1 for text of 14pt+ (which is the default text size for code in {distill}).</p>
 <ul>
 <li><p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" class="uri">https://www.w3.org/WAI/standards-guidelines/wcag/</a></p></li>
-<li><p><a href="https://color.a11y.com" class="uri">https://color.a11y.com</a></p></li>
+<li><p><a href="https://webaim.org/resources/contrastchecker/" class="uri">https://webaim.org/resources/contrastchecker/</a></p></li>
 <li><p><a href="https://www.a11yproject.com" class="uri">https://www.a11yproject.com</a></p></li>
 <li><p>Silvia Canelón</p></li>
 <li><p>Keep hue and saturation, decrease brightness</p></li>
@@ -2561,7 +2626,7 @@ Figure 4: Colours for syntax highlighting, starting from my main pink, based onl
 <span class='fu'><a href='https://colorspace.R-Forge.R-project.org//reference/swatchplot.html'>swatchplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>, border <span class='op'>=</span> <span class='st'>"transparent"</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2569,7 +2634,7 @@ Figure 4: Colours for syntax highlighting, starting from my main pink, based onl
 <span class='fu'><a href='https://rdrr.io/pkg/prismatic/man/check_color_blindness.html'>check_color_blindness</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
 <h2 id="putting-it-all-together">Putting it all together</h2>
 <h3 id="modifying-arrow.theme">Modifying <code>arrow.theme</code></h3>

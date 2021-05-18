@@ -85,14 +85,59 @@ Once I had run that once, I commented out the lines. I don't want any future cha
 
 From there, I could open up my copy `arrow.theme` file, and manually inspected it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com)^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/)].]. The basic version is free, though the pro version has great features for testing accessibility - more on that below. I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
 
+```{css echo = FALSE}
+.arrow-red {
+  background-color: #AD0000;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-brown {
+  background-color: #8F5902;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-green {
+  background-color: #20794D;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-blue {
+  background-color: #007BA5;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-purple {
+  background-color: #4758AB;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-grey {
+  background-color: #5E5E5E;
+  color: white; 
+  padding: 3px;
+}
+
+.arrow-black {
+  background-color: #111111;
+  color: white; 
+  padding: 3px;
+}
+```
+
 There are 29 types of `text-styles` in the theme, of which:
-- 8 are assigned a grey, things like `Comment` and `Documentation`
-- 1 is off-black, `Variable`
-- 3 are blue, `Other`, `ControlFlow` and `Keyword`
-- 4 are green, corresponding to various types of string
-- 1 is purple, `Function`
-- 7 are red, a mix of numeric (e.g. `BaseN`, `Float`) and things like `Alert` and `Error`
-- 1 is a brown, for `Constant`
+
+- 8 are assigned a grey, [#5E5E5E]{.arrow-grey}, things like `Comment` and `Documentation`
+- 1 is off-black, [#5E5E5E]{.arrow-black}, `Variable`
+- 3 are blue, [#007BA5]{.arrow-blue}, `Other`, `ControlFlow` and `Keyword`
+- 4 are green, [#20794D]{.arrow-green}, corresponding to various types of string
+- 1 is purple, [#4758AB]{.arrow-purple}, `Function`
+- 7 are red, [#AD0000]{.arrow-red}, a mix of numeric (e.g. `BaseN`, `Float`) and things like `Alert` and `Error`
+- 1 is a brown, [#8F5902]{.arrow-brown}, for `Constant`
 - 4 types are not assigned a colour - they are left as `null`
 
 I was happy to stick with the groupings, grey and `null` in the default, so now I knew I had to pick five colours for my theme.
@@ -101,20 +146,19 @@ I was happy to stick with the groupings, grey and `null` in the default, so now 
 
 ### A brief primer on colour theory
 
-```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/). ADD ALT TEXT.", echo = FALSE}
-knitr::include_graphics("hsl-colour-wheel-d4006a.png")
+```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3). ADD ALT TEXT.", echo = FALSE}
+knitr::include_graphics("hsl-colour-wheel-d4006a-annotated.png")
 ```
 
-
-Colour theory determines which colours 'look good' together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in \@ref(fig:colour-harmonies), there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle. 
+Colour theory determines which colours 'look good' together, based on their relative position on a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure \@ref(fig:colour-harmonies), there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle. 
 
 ```{r colour-harmonies, echo = FALSE, fig.cap = "Harmonious colour combinations. Figure from [https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel](https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel) SAY MORE. ADD ALT TEXT"}
 knitr::include_graphics("colour-harmonies.jpg")
 ```
 
-Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that make up the hex code for a colour.
+Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.
 
-More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness/**L**uminance/**L**uminosity). It is also known, particularly in R, through the [colorspace](https://colorspace.r-forge.r-project.org/articles/colorspace.html) package, as HCL (**H**ue, **C**hroma, **L**uminance). Even more confusingly, the saturation component is different in HSB and HSL!
+More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness/**L**uminance/**L**uminosity). It is also known, particularly in R, through the [colorspace](https://colorspace.r-forge.r-project.org/articles/colorspace.html) package, as HCL (**H**ue, **C**hroma, **L**uminance). Somewhat confusingly, the saturation component is different in HSB and HSL.
 
 In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's a [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure \@ref(fig:hsl-hsb-sliders) for HSL and HSB sliders for my pink.
 
@@ -124,24 +168,37 @@ knitr::include_graphics("hsl-hsb-sliders.png")
 
 ### Building a palette using colour theory
 
-It's great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the [canva colour wheel](https://www.canva.com/colors/color-wheel/). It's pretty simple, with only a few scheme, but it's nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
+It's great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the [canva colour wheel](https://www.canva.com/colors/color-wheel/). It's pretty simple, with only a few schemes, but it's nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
 
-The problem with all the colour schemes defined in Figure \@ref(fig:colour-harmonies) is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, we can get away with only finding the six colours that are 60° apart, and ignoring one of them. Note that for the colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.
+The problem with all the colour schemes defined in Figure \@ref(fig:colour-harmonies) is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, it's sufficient to find the six colours that are 60° apart, and ignore one of them. Note that for five colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.
 
-The main pink that I use in this site has hex #D4006A. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, for two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code. 
+```{css echo = FALSE}
+.my-pink {
+  background-color: #D4006A;
+  color: white; 
+  padding: 3px;
+}
+```
+
+The main pink that I use in this site has hex [#D4006A]{.my-pink}. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code. 
 
 At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure \@ref(fig:colour-theory-palette).
 
 ```{r colour-theory-palette, echo = FALSE, fig.cap = "Colours for syntax highlighting, starting from my main pink, based only on colour theory"}
-library(colorspace)
-ek_pure_highlight_colours <- c("#D4006A", "#D46A00", "#00D46A", "#006AD4", "#6A00D4")
-swatchplot(ek_pure_highlight_colours, border = "transparent")
+#library(colorspace)
+#ek_pure_highlight_colours <- c("#D4006A", "#D46A00", "#00D46A", "#006AD4", "#6A00D4")
+#swatchplot(ek_pure_highlight_colours, border = "transparent")
+# Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
+knitr::include_graphics("first-colour-swatch.png")
 ```
 
 ### Adapting for web accessibility
 
+As noted at the beginning of this post, one key feature of the default syntax highlighting scheme for {distill} is that it is optimised for accessibility and colour contrast. According to the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), this requires that that contrast ratio between text and background colours be at least 4.5:1 for text of 14pt+ (which is the default text size for code in {distill}). 
+
 - <https://www.w3.org/WAI/standards-guidelines/wcag/>
-- <https://color.a11y.com>
+- <https://webaim.org/resources/contrastchecker/>
+- <https://coolors.co/contrast-checker/112a46-acc8e5>
 - <https://www.a11yproject.com>
 - Silvia Canelón
 
