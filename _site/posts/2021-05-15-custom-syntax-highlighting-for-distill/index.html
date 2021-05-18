@@ -104,9 +104,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="A deep-dive into creating a custom theme, including considerations in choosing a good-looking and accessible colour palette"/>
 <meta property="og:url" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/"/>
-<meta property="og:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-hsb-sliders.png"/>
-<meta property="og:image:width" content="2564"/>
-<meta property="og:image:height" content="876"/>
+<meta property="og:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a.png"/>
+<meta property="og:image:width" content="802"/>
+<meta property="og:image:height" content="780"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="ELLA KAYE"/>
 
@@ -115,9 +115,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:title" content="ELLA KAYE: Custom Syntax Highlighting for {distill}"/>
 <meta property="twitter:description" content="A deep-dive into creating a custom theme, including considerations in choosing a good-looking and accessible colour palette"/>
 <meta property="twitter:url" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/"/>
-<meta property="twitter:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-hsb-sliders.png"/>
-<meta property="twitter:image:width" content="2564"/>
-<meta property="twitter:image:height" content="876"/>
+<meta property="twitter:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a.png"/>
+<meta property="twitter:image:width" content="802"/>
+<meta property="twitter:image:height" content="780"/>
 <meta property="twitter:site" content="@ellamkaye"/>
 <meta property="twitter:creator" content="@ellamkaye"/>
 
@@ -137,7 +137,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["colour-palettes-for-d40067.png","custom-syntax-highlighting-for-distill_files/anchor-4.2.2/anchor.min.js","custom-syntax-highlighting-for-distill_files/bowser-1.9.3/bowser.min.js","custom-syntax-highlighting-for-distill_files/distill-2.2.21/template.v2.js","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-2-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png","custom-syntax-highlighting-for-distill_files/header-attrs-2.8/header-attrs.js","custom-syntax-highlighting-for-distill_files/jquery-1.11.3/jquery.min.js","custom-syntax-highlighting-for-distill_files/popper-2.6.0/popper.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-bundle.umd.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-light-border.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.umd.min.js","custom-syntax-highlighting-for-distill_files/webcomponents-2.0.0/webcomponents.js","hsl-hsb-sliders.png"]}
+  {"type":"character","attributes":{},"value":["colour-harmonies.png","colour-palettes-d4006a.png","custom-syntax-highlighting-for-distill_files/anchor-4.2.2/anchor.min.js","custom-syntax-highlighting-for-distill_files/bowser-1.9.3/bowser.min.js","custom-syntax-highlighting-for-distill_files/distill-2.2.21/template.v2.js","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-2-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png","custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png","custom-syntax-highlighting-for-distill_files/header-attrs-2.8/header-attrs.js","custom-syntax-highlighting-for-distill_files/jquery-1.11.3/jquery.min.js","custom-syntax-highlighting-for-distill_files/popper-2.6.0/popper.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-bundle.umd.min.js","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy-light-border.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.css","custom-syntax-highlighting-for-distill_files/tippy-6.2.7/tippy.umd.min.js","custom-syntax-highlighting-for-distill_files/webcomponents-2.0.0/webcomponents.js","hsl-colour-wheel-d4006a.png","hsl-hsb-sliders.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2500,31 +2500,33 @@ gtag('config', 'UA-101621242-1');
 <p>I was happy to stick with the groupings, grey and <code>null</code> in the default, so now I knew I had to pick five colours for my theme.</p>
 <h2 id="building-my-own-palette">Building my own palette</h2>
 <h3 id="a-brief-primer-on-colour-theory">A brief primer on colour theory</h3>
-<p>Colour theory determines which colours ‘look good’ together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. There are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around).</p>
-<p><strong>INSERT IMAGE HERE?</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hsl-colour-wheel"></span>
+<img src="hsl-colour-wheel-d4006a.png" alt="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/). ADD ALT TEXT." width="401" />
+<p class="caption">
+Figure 1: An HSL colour wheel. Screen shot from <a href="https://www.canva.com/colors/color-wheel/">https://www.canva.com/colors/color-wheel/</a>. ADD ALT TEXT.
+</p>
+</div>
+</div>
+<p>Colour theory determines which colours ‘look good’ together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. There are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel).</p>
+<p><strong>INSERT IMAGE HERE?</strong> <a href="https://www.pngfind.com/mpng/wmmiiT_colour-harmonies-and-schemes-reference-card-colour-complementary/" class="uri">https://www.pngfind.com/mpng/wmmiiT_colour-harmonies-and-schemes-reference-card-colour-complementary/</a></p>
 <p>Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (<strong>R</strong>eg <strong>G</strong>reen <strong>B</strong>lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255.</p>
 <p>More intuitive, however, for adjusting colours, is defining them by SB (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>B</strong>rightness), also known as HSV (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>V</strong>alue). Similar to HSB is HSL (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>L</strong>ightness/<strong>L</strong>uminance/<strong>L</strong>uminosity). It is also known, particularly in R, through the <a href="https://colorspace.r-forge.r-project.org/articles/colorspace.html">colorspace</a> package, as HCL (<strong>H</strong>ue, <strong>C</strong>hroma, <strong>L</strong>uminance). Even more confusingly, the saturation component is different in HSB and HSL!</p>
-<p>In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it’s where you are on the colour wheel. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here’s a <a href="https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html">excellent article on the HSB system</a>, which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure <a href="#fig:hsl-hsb-sliders">1</a> for HSL and HSB sliders for my pink.</p>
+<p>In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it’s where you are on the colour wheel. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here’s a <a href="https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html">excellent article on the HSB system</a>, which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure <a href="#fig:hsl-hsb-sliders">2</a> for HSL and HSB sliders for my pink.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:hsl-hsb-sliders"></span>
-<img src="hsl-hsb-sliders.png" alt="HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from [http://colorizer.org](http://colorizer.org). ADD ALT TEXT" width="1282" />
+<img src="hsl-hsb-sliders.png" alt="HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from [http://colorizer.org](http://colorizer.org). ADD ALT TEXT" width="1200" />
 <p class="caption">
-Figure 1: HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from <a href="http://colorizer.org">http://colorizer.org</a>. ADD ALT TEXT
+Figure 2: HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from <a href="http://colorizer.org">http://colorizer.org</a>. ADD ALT TEXT
 </p>
 </div>
 </div>
 <h3 id="building-a-palette-using-colour-theory">Building a palette using colour theory</h3>
-<p>There are <a href="https://www.elegantthemes.com/blog/resources/color-palette-generators">lots of online palette creators</a>, which will produce palettes based on various colour theory principles, given a starting colour. Personally, I think that the <a href="https://www.canva.com/colors/color-wheel/">canva colour wheel</a> is a great place to start (probably because that’s the one I started with!) It’s pretty simple, but nicely designed and easy to use, and the page explains the basics of colour theory too.</p>
+<p>There are <a href="https://www.elegantthemes.com/blog/resources/color-palette-generators">lots of online palette creators</a>, which will produce palettes based on various colour theory principles, given a starting colour. Personally, I think that the <a href="https://www.canva.com/colors/color-wheel/">canva colour wheel</a> is a great place to start (probably because that’s the one I started with!) It’s pretty simple, but nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch!</p>
+<p><strong>INSERT IMAGE OF WHEEL</strong></p>
 <p>The more I played around with the canva colour wheel, though, the clearer it was that it didn’t quite meet my needs. In particular, I needed five colours, and here we only have options for palettes of up to four. On pretty much the other end of the scale to the canva colour wheel, I found <a href="http://colorizer.org">colorizer.org</a>. It lacks in pleasing design and ease of use, plus it’s a bit buggy. It took me a while to figure out, so I’ll share what I learnt. The easiest way to get started is to enter the hex value of your main colour into the hex box, five boxes down on the right. Then scroll down past the sliders (more on those in just a moment), and you get to a bunch of different harmonious palettes, including, very helpfully for our needs, one that contains twelve different colours.</p>
 <p><strong>INSERT IMAGE HERE</strong></p>
 <p>To get the hex codes for the colours in those palettes, though, you have to drag and drop them into the squares to the right of the sliders (that’s the part that’s a bit buggy), and then read off the hex code from the hex box. A bit fiddly, but worth it. Plus, scroll down further, and there’s a more technical explanation of different colour spaces. I then copied those hex codes into ColorSlurp, which has an easier user interface and a contrast checker, which becomes important in the next step of the process.</p>
-<p><strong>12 points/hcl</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://colorspace.R-Forge.R-project.org'>colorspace</a></span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
 <h3 id="adapting-for-web-accessibility">Adapting for web accessibility</h3>
 <ul>
 <li><p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" class="uri">https://www.w3.org/WAI/standards-guidelines/wcag/</a></p></li>
@@ -2540,9 +2542,12 @@ Figure 1: HSL and HSB sliders for the pink used throughout this site. Image is a
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ek_highlight_colours</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#B55D00"</span>, <span class='st'>"#008745"</span>, <span class='st'>"#0067D4"</span>, <span class='st'>"#6D00D4"</span>, <span class='st'>"#D40067"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://colorspace.R-Forge.R-project.org'>colorspace</a></span><span class='op'>)</span>
+<span class='va'>ek_highlight_colours</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#B65B00"</span>, <span class='st'>"#008643"</span>, <span class='st'>"#005BB6"</span>, <span class='st'>"#5A00B5"</span>, <span class='st'>"#B6005B"</span><span class='op'>)</span>
+<span class='fu'><a href='https://colorspace.R-Forge.R-project.org//reference/swatchplot.html'>swatchplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>, border <span class='op'>=</span> <span class='st'>"transparent"</span><span class='op'>)</span>
 </code></pre>
 </div>
+<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2550,7 +2555,7 @@ Figure 1: HSL and HSB sliders for the pink used throughout this site. Image is a
 <span class='fu'><a href='https://rdrr.io/pkg/prismatic/man/check_color_blindness.html'>check_color_blindness</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <h2 id="putting-it-all-together">Putting it all together</h2>
 <h3 id="modifying-arrow.theme">Modifying <code>arrow.theme</code></h3>

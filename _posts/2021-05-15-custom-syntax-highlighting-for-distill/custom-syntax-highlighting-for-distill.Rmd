@@ -101,9 +101,15 @@ I was happy to stick with the groupings, grey and `null` in the default, so now 
 
 ### A brief primer on colour theory
 
-Colour theory determines which colours 'look good' together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. There are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around). 
+```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/). ADD ALT TEXT.", echo = FALSE}
+knitr::include_graphics("hsl-colour-wheel-d4006a.png")
+```
+
+
+Colour theory determines which colours 'look good' together, based on their relative position around a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. There are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). 
 
 **INSERT IMAGE HERE?**
+<https://www.pngfind.com/mpng/wmmiiT_colour-harmonies-and-schemes-reference-card-colour-complementary/>
 
 Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255.
 
@@ -117,7 +123,9 @@ knitr::include_graphics("hsl-hsb-sliders.png")
 
 ### Building a palette using colour theory
 
-There are [lots of online palette creators](https://www.elegantthemes.com/blog/resources/color-palette-generators), which will produce palettes based on various colour theory principles, given a starting colour. Personally, I think that the [canva colour wheel](https://www.canva.com/colors/color-wheel/) is a great place to start (probably because that's the one I started with!) It's pretty simple, but nicely designed and easy to use, and the page explains the basics of colour theory too.
+There are [lots of online palette creators](https://www.elegantthemes.com/blog/resources/color-palette-generators), which will produce palettes based on various colour theory principles, given a starting colour. Personally, I think that the [canva colour wheel](https://www.canva.com/colors/color-wheel/) is a great place to start (probably because that's the one I started with!) It's pretty simple, but nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
+
+**INSERT IMAGE OF WHEEL**
 
 The more I played around with the canva colour wheel, though, the clearer it was that it didn't quite meet my needs. In particular, I needed five colours, and here we only have options for palettes of up to four. 
 On pretty much the other end of the scale to the canva colour wheel, I found [colorizer.org](http://colorizer.org). It lacks in pleasing design and ease of use, plus it's a bit buggy. It took me a while to figure out, so I'll share what I learnt. The easiest way to get started is to enter the hex value of your main colour into the hex box, five boxes down on the right. Then scroll down past the sliders (more on those in just a moment), and you get to a bunch of different harmonious palettes, including, very helpfully for our needs, one that contains twelve different colours. 
@@ -126,12 +134,8 @@ On pretty much the other end of the scale to the canva colour wheel, I found [co
 
 To get the hex codes for the colours in those palettes, though, you have to drag and drop them into the squares to the right of the sliders (that's the part that's a bit buggy), and then read off the hex code from the hex box. A bit fiddly, but worth it. Plus, scroll down further, and there's a more technical explanation of different colour spaces. I then copied those hex codes into ColorSlurp, which has an easier user interface and a contrast checker, which becomes important in the next step of the process.
 
-**12 points/hcl**
 
-```{r}
-library(colorspace)
 
-```
 
 
 ### Adapting for web accessibility
@@ -150,7 +154,9 @@ library(colorspace)
 - <https://www.njtierney.com/post/2020/10/15/assess-colour/>
 
 ```{r}
-ek_highlight_colours <- c("#B55D00", "#008745", "#0067D4", "#6D00D4", "#D40067")
+library(colorspace)
+ek_highlight_colours <- c("#B65B00", "#008643", "#005BB6", "#5A00B5", "#B6005B")
+swatchplot(rev(ek_highlight_colours), border = "transparent")
 ```
 
 ```{r}
