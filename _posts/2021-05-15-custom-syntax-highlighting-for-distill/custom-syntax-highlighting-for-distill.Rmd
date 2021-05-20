@@ -205,7 +205,7 @@ knitr::include_graphics("first-colour-swatch.png")
 
 As noted at the beginning of this post, one key feature of the default syntax highlighting scheme for {distill} is that it is optimised for accessibility and colour contrast. According to the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), at the WCAG AA (minimum contrast) level, this requires that that contrast ratio between text and background colours be at least 4.5:1 for text of 14pt+ (which is the default text size for code in {distill}). The more stringent WCAG AAA (enhanced) level requires a ratio of at least 7:1.
 
-The pro version of ColorSlurp includes a contrast checker, as in Figure \@ref(fig:colorslurp-contrast), though there are many websites that also offer this. The WebAIM (Web with Accessibility in Mind), has a very handy [contrast checker](https://webaim.org/resources/contrastchecker/) which, like ColorSlurp, also includes lightness sliders for adjusting the colours until the desired contrast is reached. Darkening a colour to improve contrast keeps the hue and saturation the same but reduces the brightness or lightness component (ColorSlurp uses HSB, WebAIM uses HCL).
+The pro version of ColorSlurp includes a contrast checker, as in Figure \@ref(fig:colorslurp-contrast), though there are many websites that also offer this. The WebAIM (Web with Accessibility in Mind), has a very handy [contrast checker](https://webaim.org/resources/contrastchecker/) which, like ColorSlurp, also includes lightness sliders for adjusting the colours until the desired contrast is reached. Darkening a colour to improve contrast keeps the hue and saturation the same but reduces the brightness or lightness component (ColorSlurp uses HSB, WebAIM uses HSL).
 
 ```{r colorslurp-contrast, echo = FALSE, fig.cap = "Contrast checking in ColorSlurp"}
 knitr::include_graphics("contrast-check.png")
@@ -244,28 +244,31 @@ ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
 knitr::include_graphics("ek-syntax-highlighting-palette.png")
 ```
 
+```{r}
+par(mar = c(4, 4, 0.1, 0.1))  
+library(scales)
+scales::show_col(rev(ek_highlight_colours), ncol = 5, labels = TRUE, borders = "white", cex_label = 0.8) 
+```
+
 I'm happy with that, and that's the syntax highlighting scheme I've adopted throughout this site, despite the fact that the palette now doesn't actually include the pink that I set out to build my scheme around! However, because of the process I've followed, the pink that is in the palette does tones well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines. 
 
-I am only just beginning to learn about web accessibility, and I know my site does not yet meet all best practices, but I'm committed to improving in this area. I first became aware of the issue of web accessibility because I follow [Silvia Canelón on twitter](https://twitter.com/spcanelon) and I highly recommend you do the same! The [a11y project](https://www.a11yproject.com) and [WebAIM](https://webaim.org) are also great places to get started. 
+I am only just beginning to learn about web accessibility, and I know my site does not yet meet all best practices, but I'm committed to improving in this area. I first became aware of the issue of web accessibility because I follow [Silvia Canelón on twitter](https://twitter.com/spcanelon) and I highly recommend you do the same! The [a11y project](https://www.a11yproject.com) and [WebAIM](https://webaim.org) are great places to learn more. 
 
 ### Checking for colourblindness
 
-- <https://njt-monash-colour.netlify.app/#1>
-- <https://www.njtierney.com/post/2020/10/15/assess-colour/>
+Some visual impairments require a high colour contrast between text and background colour in order to be able to read content on the web. Another class of visual impairment worth paying attention to when designing palettes in that of colour blindness. (The WCAG note that all users should be able to access information that is conveyed by colour differences).
 
-```{r}
-library(colorspace)
-ek_highlight_colours <- c("#B65B00", "#008643", "#005BB6", "#5A00B5", "#B6005B")
-swatchplot(rev(ek_highlight_colours), border = "transparent")
-```
+[Nick Tierney](https://www.njtierney.com) has some excellent resources about colour and colourblindness and R packages for accessing these. [These comprehensive slides](https://njt-monash-colour.netlify.app/#1) cover what colour is and how we perceive it, colourblindness, how to check how palettes/plots appear to those with different types of colourblindness, the HCL space, the {colorspace} package and how to create your own palettes. He also has a [short blog post](https://www.njtierney.com/post/2020/10/15/assess-colour/) on quickly assessing colour palettes to ensure they're colourblind-friendly.
 
-```{r}
+As recommended in the above posts, I use the [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) package by [Emil Hvitfeldt](https://www.hvitfeldt.me) to check how my syntax highlighting palette appears to those with different types of colourblindness:
+
+```{r include = FALSE}
 library(prismatic)
+ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
 check_color_blindness(ek_highlight_colours)
 ```
 
-
-
+Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.
 
 ### An R-based alternative
 
