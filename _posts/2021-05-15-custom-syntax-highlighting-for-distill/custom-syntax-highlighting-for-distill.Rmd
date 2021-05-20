@@ -90,11 +90,13 @@ From there, I could open up my copy `arrow.theme` file, and manually inspected i
 
 ```{r echo = FALSE}
 library(htmltools)
-bg_col <- function(col) {
+bg_col <- function(col, text = NULL) {
+  
+  if(is.null(text)) text <- col
   
   style <- paste0("background-color: ", col, "; color: white; padding:3px")
   
-  htmltools::span(style = style, col)
+  htmltools::span(style = style, text)
 }
 ```
 
@@ -171,7 +173,7 @@ knitr::include_graphics("colour-harmonies.jpg")
 
 Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.
 
-More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness/**L**uminance/**L**uminosity). 
+More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness). 
 
 In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's a [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure \@ref(fig:hsl-hsb-sliders) for HSL and HSB sliders for my pink.
 
@@ -189,11 +191,11 @@ The problem with all the colour schemes defined in Figure \@ref(fig:colour-harmo
 
 The main pink that I use in this site has hex `r bg_col("#D4006A")`. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code. 
 
-At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure \@ref(fig:colour-theory-palette).
+At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure \@ref(fig:colour-theory-palette). In the HSB space, these colours all have a saturation of 100% and a brightness of 83%.
 
 ```{r colour-theory-palette, echo = FALSE, fig.cap = "Colours for syntax highlighting, starting from my main pink, based only on colour theory"}
 library(colorspace)
-ek_pure_highlight_colours <- c("#D4006A", "#D46A00", "#00D46A", "#006AD4", "#6A00D4")
+#ek_pure_highlight_colours <- c("#D4006A", "#D46A00", "#00D46A", "#006AD4", "#6A00D4")
 #swatchplot(ek_pure_highlight_colours, border = "transparent")
 # Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
 knitr::include_graphics("first-colour-swatch.png")
@@ -201,17 +203,50 @@ knitr::include_graphics("first-colour-swatch.png")
 
 ### Adapting for web accessibility
 
-As noted at the beginning of this post, one key feature of the default syntax highlighting scheme for {distill} is that it is optimised for accessibility and colour contrast. According to the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), this requires that that contrast ratio between text and background colours be at least 4.5:1 for text of 14pt+ (which is the default text size for code in {distill}). 
+As noted at the beginning of this post, one key feature of the default syntax highlighting scheme for {distill} is that it is optimised for accessibility and colour contrast. According to the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), at the WCAG AA (minimum contrast) level, this requires that that contrast ratio between text and background colours be at least 4.5:1 for text of 14pt+ (which is the default text size for code in {distill}). The more stringent WCAG AAA (enhanced) level requires a ratio of at least 7:1.
 
-- <https://www.w3.org/WAI/standards-guidelines/wcag/>
-- <https://webaim.org/resources/contrastchecker/>
-- <https://coolors.co/contrast-checker/112a46-acc8e5>
-- <https://www.a11yproject.com>
-- Silvia Canelón
+The pro version of ColorSlurp includes a contrast checker, as in Figure \@ref(fig:colorslurp-contrast), though there are many websites that also offer this. The WebAIM (Web with Accessibility in Mind), has a very handy [contrast checker](https://webaim.org/resources/contrastchecker/) which, like ColorSlurp, also includes lightness sliders for adjusting the colours until the desired contrast is reached. Darkening a colour to improve contrast keeps the hue and saturation the same but reduces the brightness or lightness component (ColorSlurp uses HSB, WebAIM uses HCL).
 
-- Keep hue and saturation, decrease brightness
+```{r colorslurp-contrast, echo = FALSE, fig.cap = "Contrast checking in ColorSlurp"}
+knitr::include_graphics("contrast-check.png")
+```
 
-- {coloratio} and {salonliquide}
+The `r bg_col("#D4006A", "pink")`, `r bg_col("#006AD4", "blue")` and `r bg_col("#6A00D4", "purple")` in the palette created above have a contrast ratio of better than 4.5:1 with the pure whilte background, but the `r bg_col("#D46A00", "orange")` and `r bg_col("#00D46A", "green")` do not.
+
+My first thought was to keep the pink, blue and purple the same, and to just adjust the orange and green to the necessary point. In the HSB space, that gives the palette in Figure \@ref(fig:orange-green-less-bright). 
+
+```{r orange-green-less-bright, echo  = FALSE, fig.cap= "Reducing brightness in just the orange and green to achieve desired contrasts."}
+#ek_pure_highlight_colours_og <- c("#D4006A", "#B65B00", "#008643", "#006AD4", "#6A00D4")
+#swatchplot(ek_pure_highlight_colours_og, border = "transparent")
+# Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
+knitr::include_graphics("second-colour-swatch.png")
+```
+
+It's not bad, but when I applied that palette as a syntax highlighting scheme, to my eye the pink, blue and purple looked a little too bright relative to the orange.
+
+My next thought was to darken all the colours to all share the brighness level of the least bright colour that passes the accessibility check (the green, at 53%). That gives the palette in Figure \@ref(fig:all-less-bright).
+
+```{r all-less-bright, echo  = FALSE, fig.cap= "Reducing brightness in all colours to the level of the green."}
+#ek_darker_highlight_colours <- c("#860043", "#884400", "#008643", "#004489", "#440088")
+#swatchplot(ek_darker_highlight_colours, border = "transparent")
+# Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
+knitr::include_graphics("third-colour-swatch.png")
+```
+
+I don't like that at all! It's not vibrant enough, and, although the colours all have good contrast against the white background, they don't have much contrast with each other.
+
+So, I settled on a compromise position. I reduced the brightness of the original pink, blue and purple to match the brightness of the accessibility-passing orange (71%), leaving only the green at a brightness of 53%, which it needs to pass the contrast check. That gives the palette in Figure \@ref(fig:final-palette).
+
+```{r final-palette, echo = FALSE, fig.cap = "The palette I settled on for my syntax highlighting scheme."}
+ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
+#swatchplot(rev(ek_highlight_colours), border = "transparent")
+# Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
+knitr::include_graphics("ek-syntax-highlighting-palette.png")
+```
+
+I'm happy with that, and that's the syntax highlighting scheme I've adopted throughout this site, despite the fact that the palette now doesn't actually include the pink that I set out to build my scheme around! However, because of the process I've followed, the pink that is in the palette does tones well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines. 
+
+I am only just beginning to learn about web accessibility, and I know my site does not yet meet all best practices, but I'm committed to improving in this area. I first became aware of the issue of web accessibility because I follow [Silvia Canelón on twitter](https://twitter.com/spcanelon) and I highly recommend you do the same! The [a11y project](https://www.a11yproject.com) and [WebAIM](https://webaim.org) are also great places to get started. 
 
 ### Checking for colourblindness
 
