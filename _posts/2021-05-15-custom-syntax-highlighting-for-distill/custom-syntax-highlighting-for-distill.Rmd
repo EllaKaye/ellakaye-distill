@@ -100,50 +100,6 @@ bg_col <- function(col, text = NULL) {
 }
 ```
 
-```{css echo = FALSE}
-.arrow-red {
-  background-color: #AD0000;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-brown {
-  background-color: #8F5902;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-green {
-  background-color: #20794D;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-blue {
-  background-color: #007BA5;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-purple {
-  background-color: #4758AB;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-grey {
-  background-color: #5E5E5E;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-black {
-  background-color: #111111;
-  color: white; 
-  padding: 3px;
-}
-```
-
 There are 29 types of `text-styles` in the theme, of which:
 
 - 8 are assigned a grey, `r bg_col("#5E5E5E")`, things like `Comment` and `Documentation`
@@ -244,11 +200,16 @@ ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
 knitr::include_graphics("ek-syntax-highlighting-palette.png")
 ```
 
-```{r}
-par(mar = c(4, 4, 0.1, 0.1))  
+```{r eval = TRUE, echo = TRUE, fig.width = 7, fig.asp = 0.7}
 library(scales)
-scales::show_col(rev(ek_highlight_colours), ncol = 5, labels = TRUE, borders = "white", cex_label = 0.8) 
+scales::show_col(rev(ek_highlight_colours), ncol = 5, borders = "white", labels = FALSE) 
 ```
+
+```{r eval = FALSE}
+library(prismatic)
+color(ek_highlight_colours) %>% plot()
+```
+
 
 I'm happy with that, and that's the syntax highlighting scheme I've adopted throughout this site, despite the fact that the palette now doesn't actually include the pink that I set out to build my scheme around! However, because of the process I've followed, the pink that is in the palette does tones well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines. 
 
@@ -262,7 +223,7 @@ Some visual impairments require a high colour contrast between text and backgrou
 
 As recommended in the above posts, I use the [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) package by [Emil Hvitfeldt](https://www.hvitfeldt.me) to check how my syntax highlighting palette appears to those with different types of colourblindness:
 
-```{r include = FALSE}
+```{r}
 library(prismatic)
 ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
 check_color_blindness(ek_highlight_colours)

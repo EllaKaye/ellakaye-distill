@@ -2500,51 +2500,6 @@ gtag('config', 'UA-101621242-1');
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<div class="layout-chunk" data-layout="l-body">
-<style type="text/css">
-.arrow-red {
-  background-color: #AD0000;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-brown {
-  background-color: #8F5902;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-green {
-  background-color: #20794D;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-blue {
-  background-color: #007BA5;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-purple {
-  background-color: #4758AB;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-grey {
-  background-color: #5E5E5E;
-  color: white; 
-  padding: 3px;
-}
-
-.arrow-black {
-  background-color: #111111;
-  color: white; 
-  padding: 3px;
-}
-</style>
-</div>
 <p>There are 29 types of <code>text-styles</code> in the theme, of which:</p>
 <ul>
 <li>8 are assigned a grey, <span style="background-color: #5E5E5E; color: white; padding:3px">#5E5E5E</span>, things like <code>Comment</code> and <code>Documentation</code></li>
@@ -2644,12 +2599,18 @@ Figure 8: The palette I settled on for my syntax highlighting scheme.
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mar <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4</span>, <span class='fl'>4</span>, <span class='fl'>0.1</span>, <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span>  
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://scales.r-lib.org'>scales</a></span><span class='op'>)</span>
-<span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/show_col.html'>show_col</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>, ncol <span class='op'>=</span> <span class='fl'>5</span>, labels <span class='op'>=</span> <span class='cn'>TRUE</span>, borders <span class='op'>=</span> <span class='st'>"white"</span>, cex_label <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://scales.r-lib.org'>scales</a></span><span class='op'>)</span>
+<span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/show_col.html'>show_col</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>, ncol <span class='op'>=</span> <span class='fl'>5</span>, borders <span class='op'>=</span> <span class='st'>"white"</span>, labels <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/EmilHvitfeldt/prismatic'>prismatic</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/prismatic/man/color.html'>color</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <p>I’m happy with that, and that’s the syntax highlighting scheme I’ve adopted throughout this site, despite the fact that the palette now doesn’t actually include the pink that I set out to build my scheme around! However, because of the process I’ve followed, the pink that is in the palette does tones well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines.</p>
 <p>I am only just beginning to learn about web accessibility, and I know my site does not yet meet all best practices, but I’m committed to improving in this area. I first became aware of the issue of web accessibility because I follow <a href="https://twitter.com/spcanelon">Silvia Canelón on twitter</a> and I highly recommend you do the same! The <a href="https://www.a11yproject.com">a11y project</a> and <a href="https://webaim.org">WebAIM</a> are great places to learn more.</p>
@@ -2657,6 +2618,15 @@ Figure 8: The palette I settled on for my syntax highlighting scheme.
 <p>Some visual impairments require a high colour contrast between text and background colour in order to be able to read content on the web. Another class of visual impairment worth paying attention to when designing palettes in that of colour blindness. (The WCAG note that all users should be able to access information that is conveyed by colour differences).</p>
 <p><a href="https://www.njtierney.com">Nick Tierney</a> has some excellent resources about colour and colourblindness and R packages for accessing these. <a href="https://njt-monash-colour.netlify.app/#1">These comprehensive slides</a> cover what colour is and how we perceive it, colourblindness, how to check how palettes/plots appear to those with different types of colourblindness, the HCL space, the {colorspace} package and how to create your own palettes. He also has a <a href="https://www.njtierney.com/post/2020/10/15/assess-colour/">short blog post</a> on quickly assessing colour palettes to ensure they’re colourblind-friendly.</p>
 <p>As recommended in the above posts, I use the <a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic}</a> package by <a href="https://www.hvitfeldt.me">Emil Hvitfeldt</a> to check how my syntax highlighting palette appears to those with different types of colourblindness:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/EmilHvitfeldt/prismatic'>prismatic</a></span><span class='op'>)</span>
+<span class='va'>ek_highlight_colours</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#5A00B5"</span>, <span class='st'>"#005BB6"</span>, <span class='st'>"#008643"</span>, <span class='st'>"#B65B00"</span>, <span class='st'>"#B6005B"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/prismatic/man/check_color_blindness.html'>check_color_blindness</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="custom-syntax-highlighting-for-distill_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
 <p>Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.</p>
 <h3 id="an-r-based-alternative">An R-based alternative</h3>
 <div class="layout-chunk" data-layout="l-body">
