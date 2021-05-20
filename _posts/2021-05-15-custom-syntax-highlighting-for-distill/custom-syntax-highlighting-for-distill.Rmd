@@ -1,7 +1,7 @@
 ---
 title: Custom Syntax Highlighting for {distill}
 description: |
-  A deep-dive into creating a custom theme, including considerations in choosing a good-looking and accessible colour palette
+  A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette
 author: 
   - name: Ella Kaye
     url: https://twitter.com/ellamkaye
@@ -24,7 +24,10 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  R.options = list(width = 60)
+)
 ```
 
 ```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
@@ -57,7 +60,7 @@ Read on for why and how this function was built, its somewhat clunky name and it
 
 ### In praise of the default
 
-Before I get into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below **SECTION LINK**. Also, it appears that the colours in the scheme work well together, and overall, on many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
+Before I delve into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below **SECTION LINK**. Also, it appears that the colours in the scheme work well together, and overall, on many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
 
 ### So, why change?
 When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the bright pink I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.
@@ -84,6 +87,16 @@ Once I had run that once, I commented out the lines. I don't want any future cha
 ### Closer inspection of the default
 
 From there, I could open up my copy `arrow.theme` file, and manually inspected it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com)^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/)].]. The basic version is free, though the pro version has great features for testing accessibility - more on that below. I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
+
+```{r echo = FALSE}
+library(htmltools)
+bg_col <- function(col) {
+  
+  style <- paste0("background-color: ", col, "; color: white; padding:3px")
+  
+  htmltools::span(style = style, col)
+}
+```
 
 ```{css echo = FALSE}
 .arrow-red {
@@ -131,13 +144,13 @@ From there, I could open up my copy `arrow.theme` file, and manually inspected i
 
 There are 29 types of `text-styles` in the theme, of which:
 
-- 8 are assigned a grey, [#5E5E5E]{.arrow-grey}, things like `Comment` and `Documentation`
-- 1 is off-black, [#5E5E5E]{.arrow-black}, `Variable`
-- 3 are blue, [#007BA5]{.arrow-blue}, `Other`, `ControlFlow` and `Keyword`
-- 4 are green, [#20794D]{.arrow-green}, corresponding to various types of string
-- 1 is purple, [#4758AB]{.arrow-purple}, `Function`
-- 7 are red, [#AD0000]{.arrow-red}, a mix of numeric (e.g. `BaseN`, `Float`) and things like `Alert` and `Error`
-- 1 is a brown, [#8F5902]{.arrow-brown}, for `Constant`
+- 8 are assigned a grey, `r bg_col("#5E5E5E")`, things like `Comment` and `Documentation`
+- 1 is off-black, `r bg_col("#111111")`, `Variable`
+- 3 are blue, `r bg_col("#007BA5")`, `Other`, `ControlFlow` and `Keyword`
+- 4 are green, `r bg_col("#20794D")`, corresponding to various types of string
+- 1 is purple, `r bg_col("#4758AB")`, `Function`
+- 7 are red, `r bg_col("#AD0000")`, a mix of numeric (e.g. `BaseN`, `Float`) and things like `Alert` and `Error`
+- 1 is a brown, `r bg_col("#8F5902")`, for `Constant`
 - 4 types are not assigned a colour - they are left as `null`
 
 I was happy to stick with the groupings, grey and `null` in the default, so now I knew I had to pick five colours for my theme.
@@ -146,7 +159,7 @@ I was happy to stick with the groupings, grey and `null` in the default, so now 
 
 ### A brief primer on colour theory
 
-```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3). ADD ALT TEXT.", echo = FALSE}
+```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3). ANNOTATE PICTURE WIRTH DEGREES. ADD ALT TEXT.", echo = FALSE}
 knitr::include_graphics("hsl-colour-wheel-d4006a-annotated.png")
 ```
 
@@ -158,7 +171,7 @@ knitr::include_graphics("colour-harmonies.jpg")
 
 Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.
 
-More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness/**L**uminance/**L**uminosity). It is also known, particularly in R, through the [colorspace](https://colorspace.r-forge.r-project.org/articles/colorspace.html) package, as HCL (**H**ue, **C**hroma, **L**uminance). Somewhat confusingly, the saturation component is different in HSB and HSL.
+More intuitive, however, for adjusting colours, is defining them by SB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness/**L**uminance/**L**uminosity). 
 
 In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's a [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure \@ref(fig:hsl-hsb-sliders) for HSL and HSB sliders for my pink.
 
@@ -166,27 +179,21 @@ In HSB, the hue represents the colour type and is a number measured between 0 an
 knitr::include_graphics("hsl-hsb-sliders.png")
 ```
 
+There is an R package for working with colour spaces, the intuitively named [{colorspace}](https://colorspace.r-forge.r-project.org/articles/colorspace.html). The main colour space they work with is HCL, (**H**ue, **C**hroma, **L**uminance), but, somewhat confusingly, that is different, once again, from both HSL and HSB. The HCL colour space is designed to provide a more perceptually uniform colour space than either HSB or HSL. A [vignette](https://colorspace.r-forge.r-project.org/articles/color_spaces.html) provides more details. Outside of the package, I haven't seen it used elsewhere, at least not in the myriad of sites on colour theory for designers or colour/design apps than I use or have read when preparing my theme and this post. In any case, percentual uniformity is arguably more important in choosing colour palettes for data visualisation, where the colour conveys information about the data, than in picking a few colours that look good together for a syntax highlighting scheme. Still, I mention it here because I do sometimes use {colorspace} for creating palettes for data visualisation (the package provides {ggplot2} scales) and, until I dug into it when writing this post, I didn't appreciate the difference between that space and others.
+
 ### Building a palette using colour theory
 
 It's great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the [canva colour wheel](https://www.canva.com/colors/color-wheel/). It's pretty simple, with only a few schemes, but it's nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
 
 The problem with all the colour schemes defined in Figure \@ref(fig:colour-harmonies) is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, it's sufficient to find the six colours that are 60° apart, and ignore one of them. Note that for five colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.
 
-```{css echo = FALSE}
-.my-pink {
-  background-color: #D4006A;
-  color: white; 
-  padding: 3px;
-}
-```
-
-The main pink that I use in this site has hex [#D4006A]{.my-pink}. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code. 
+The main pink that I use in this site has hex `r bg_col("#D4006A")`. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code. 
 
 At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure \@ref(fig:colour-theory-palette).
 
 ```{r colour-theory-palette, echo = FALSE, fig.cap = "Colours for syntax highlighting, starting from my main pink, based only on colour theory"}
-#library(colorspace)
-#ek_pure_highlight_colours <- c("#D4006A", "#D46A00", "#00D46A", "#006AD4", "#6A00D4")
+library(colorspace)
+ek_pure_highlight_colours <- c("#D4006A", "#D46A00", "#00D46A", "#006AD4", "#6A00D4")
 #swatchplot(ek_pure_highlight_colours, border = "transparent")
 # Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
 knitr::include_graphics("first-colour-swatch.png")
@@ -204,6 +211,7 @@ As noted at the beginning of this post, one key feature of the default syntax hi
 
 - Keep hue and saturation, decrease brightness
 
+- {coloratio} and {salonliquide}
 
 ### Checking for colourblindness
 
@@ -219,6 +227,71 @@ swatchplot(rev(ek_highlight_colours), border = "transparent")
 ```{r}
 library(prismatic)
 check_color_blindness(ek_highlight_colours)
+```
+
+
+
+
+### An R-based alternative
+
+```{r}
+library(colorspace)
+pink <- hex2RGB("#D4006A", gamma = FALSE)
+pink_hcl <- as(pink, "polarLUV")
+
+pink_h <- pink_hcl@coords[1, "H"]
+pink_c <- pink_hcl@coords[1, "C"]
+pink_l <- pink_hcl@coords[1, "L"]
+```
+
+
+```{r}
+seq_60 <- seq(from = -300, to = 300, by = 60)
+pink_60 <- seq_60 + pink_h
+
+pink_h_lower <- pink_60[which((pink_60 >= 0 & pink_60 < 60))]
+pink_h_upper <- pink_60[which((pink_60 >= 300 & pink_60 < 360))]
+```
+
+
+```{r}
+hcl_six <- qualitative_hcl(
+  6, 
+  h = c(pink_h_lower, pink_h_upper), 
+  c = pink_c, 
+  l = pink_l
+) 
+swatchplot(hcl_six, border = "transparent")
+```
+
+```{r}
+hcl_five <- hcl_six[c(6, 1, 3:5)]
+swatchplot(hcl_five, border = "transparent")
+```
+
+Check colour ration and darken if necessary
+```{r}
+library(coloratio)
+library(purrr)
+
+palette <- hcl_five
+contrasts <- map2_dbl(palette, "white", ~cr_get_ratio(.x, .y))
+min_contrast <- 4.5
+any_too_light <- any(contrasts < min_contrast)
+
+while (any_too_light) {
+  palette <- darken(palette, amount = 0.05)
+  contrasts <- map2_dbl(palette, "white", ~cr_get_ratio(.x, .y))
+  any_too_light <- any(contrasts < min_contrast)
+}
+
+swatchplot(palette, border = "transparent")
+```
+
+
+```{r}
+library(prismatic)
+check_color_blindness(palette)
 ```
 
 ## Putting it all together
