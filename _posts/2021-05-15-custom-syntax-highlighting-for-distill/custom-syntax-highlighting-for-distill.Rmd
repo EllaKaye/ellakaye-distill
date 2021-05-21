@@ -90,15 +90,23 @@ From there, I could open up my copy `arrow.theme` file, and manually inspected i
 
 ```{r echo = FALSE}
 library(htmltools)
-bg_col <- function(col, text = NULL) {
+library(coloratio)
+bg_col <- function(bg_col, text = NULL, text_col = NULL) {
   
-  if(is.null(text)) text <- col
+  if(is.null(text)) text <- bg_col
   
-  style <- paste0("background-color: ", col, "; color: white; padding:3px")
+  if(is.null(text_col)) text_col <- coloratio::cr_choose_bw(bg_col)
+  
+  style <- paste0("background-color: ", bg_col, "; color: ", text_col, "; padding:3px")
   
   htmltools::span(style = style, text)
 }
 ```
+
+```{r}
+cr_choose_bw("#00D46A")
+```
+
 
 There are 29 types of `text-styles` in the theme, of which:
 
@@ -167,7 +175,7 @@ The pro version of ColorSlurp includes a contrast checker, as in Figure \@ref(fi
 knitr::include_graphics("contrast-check.png")
 ```
 
-The `r bg_col("#D4006A", "pink")`, `r bg_col("#006AD4", "blue")` and `r bg_col("#6A00D4", "purple")` in the palette created above have a contrast ratio of better than 4.5:1 with the pure whilte background, but the `r bg_col("#D46A00", "orange")` and `r bg_col("#00D46A", "green")` do not.
+The `r bg_col("#D4006A", "pink")`, `r bg_col("#006AD4", "blue")` and `r bg_col("#6A00D4", "purple")` in the palette created above have a contrast ratio of better than 4.5:1 with the pure white background, but the `r bg_col("#D46A00", "orange")` and `r bg_col("#00D46A", "green")` do not.
 
 My first thought was to keep the pink, blue and purple the same, and to just adjust the orange and green to the necessary point. In the HSB space, that gives the palette in Figure \@ref(fig:orange-green-less-bright). 
 
@@ -200,7 +208,7 @@ ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
 knitr::include_graphics("ek-syntax-highlighting-palette.png")
 ```
 
-```{r eval = TRUE, echo = TRUE, fig.width = 7, fig.asp = 0.7}
+```{r eval = FALSE, echo = FALSE, fig.width = 7, fig.asp = 0.7}
 library(scales)
 scales::show_col(rev(ek_highlight_colours), ncol = 5, borders = "white", labels = FALSE) 
 ```
@@ -223,15 +231,26 @@ Some visual impairments require a high colour contrast between text and backgrou
 
 As recommended in the above posts, I use the [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) package by [Emil Hvitfeldt](https://www.hvitfeldt.me) to check how my syntax highlighting palette appears to those with different types of colourblindness:
 
-```{r}
+```{r eval = FALSE}
 library(prismatic)
 ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
 check_color_blindness(ek_highlight_colours)
 ```
 
+```{r check-colourblindness, echo = FALSE, fig.cap="Checking my palette for how it appears to those with various types of colourblindness. ALT TEXT."}
+knitr::include_graphics("check-colourblindness.png")
+```
+
+
 Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.
 
-### An R-based alternative
+## An R-based alternative
+
+The above sections describe the processes, both thought and practical, that I went through to derive the colour palette for my syntax highlighting scheme, and I'm happy with what I came up with. That said, as I've been writing up this blog post, I've become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below describes this alternative approach, using the [{colorspace}](https://colorspace.r-forge.r-project.org), [{coloratio}](https://matt-dray.github.io/coloratio/) and [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) packages.
+
+### Criteria 1: base scheme around `r bg_col("#D4006A")`
+
+The {colorspace} package uses the HCL color space, so the first task is to convert a hex code into its hue, chroma and luminance components, and make them available for future use, which can be done as follows:
 
 ```{r}
 library(colorspace)
@@ -243,6 +262,8 @@ pink_c <- pink_hcl@coords[1, "C"]
 pink_l <- pink_hcl@coords[1, "L"]
 ```
 
+The function from {colorspace} that is going to do the hard work of building a palette with differing hues but constant chroma and luminance is [`qualitative_hcl()`](https://colorspace.r-forge.r-project.org/reference/hcl_palettes.html). By default, you give it the number of colours you want, and it works out equally spaced hues, starting at 0°. To override this default, you can give the `h` argument a start and end value, `c(start, end)`. Again, I'm going to choose six colours, 60° apart, and discard one of them.^[Again, I want to stress that this 60° apart approach and discard one is NOT something I'd do when building a five-colour palette for a data visualisation. There, where the colours mean something in relation to the data, it's important that the hues are evenly spaced. Even for qualitative cases, such as stacked bar charts, where the colours don't mean anything, evenly spaced will be more visually appealing, as the colours are one-on-top of each other, as opposed to in a syntax highlighting scheme, where any of the colours can appear next to any of the others, so we want all pairs to look good together.] The `start` value should be in [0, 60) and the end value should be in [300, 360). Let the hue of our starting pink be `pink_h`. Then all the colours in the palette are going to have a hue `pink_h + 60 * k`  for some integer k. The following code picks the start and end values we need to pass to `h`:
+
 
 ```{r}
 seq_60 <- seq(from = -300, to = 300, by = 60)
@@ -252,6 +273,7 @@ pink_h_lower <- pink_60[which((pink_60 >= 0 & pink_60 < 60))]
 pink_h_upper <- pink_60[which((pink_60 >= 300 & pink_60 < 360))]
 ```
 
+That's most of the hard work. Now we build the palette:
 
 ```{r}
 hcl_six <- qualitative_hcl(
@@ -260,20 +282,56 @@ hcl_six <- qualitative_hcl(
   c = pink_c, 
   l = pink_l
 ) 
-swatchplot(hcl_six, border = "transparent")
+#swatchplot(hcl_six, border = "transparent")
 ```
 
-```{r}
+```{r hcl-six, fig.cap = "Six colours, with hues 60° apart and constant chroma and luminance, based around my pink."}
+knitr::include_graphics("hcl-six.png")
+```
+
+The only personal decision I make in this section is which of these six colours to discard. Removing the first of the greens gives me the palette in Figure \@ref(fig:hcl-five).
+
+```{r hcl-five, fig.cap="As in the previous figure but minus a green and rearranged", echo = FALSE}
 hcl_five <- hcl_six[c(6, 1, 3:5)]
-swatchplot(hcl_five, border = "transparent")
+#swatchplot(hcl_five, border = "transparent")
+knitr::include_graphics("hcl-five.png")
 ```
 
-Check colour ration and darken if necessary
-```{r}
+```{r eval = FALSE, echo = FALSE}
+seq_72 <- seq(from = -288, to = 288, by = 72)
+pink_72 <- seq_72 + pink_h
+
+pink_72_h_lower <- pink_72[which((pink_72 >= 0 & pink_72 < 72))]
+pink_72_h_upper <- pink_72[which((pink_72 >= 288 & pink_72 < 360))]
+
+hcl_even_five <- qualitative_hcl(
+  5, 
+  h = c(pink_72_h_lower, pink_72_h_upper), 
+  c = pink_c, 
+  l = pink_l
+) 
+swatchplot(hcl_even_five, border = "transparent")
+```
+
+### Adapting for web accessibility
+
+When I was developing my scheme, I used my trusted ColorSlurp app to adjust colours to ensure they met WCAG standards of web accessibility. In writing up this post, I since learnt about web resources to do the same (e.g. [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/)) and now, for this section, I've discovered the [{coloratio}](https://github.com/matt-dray/coloratio) and [{savonliquide}](https://github.com/feddelegrand7/savonliquide) packages that can do this in R.
+
+<aside>
+This is a beautiful thing about blogging. In the process of writing this post, I'm learning so much!
+</aside>
+
+Both packages have much to recommend them. {savonliquide} has the advantage of being on CRAN, and provides a toolbox that allows the user to implement accessibility-related concepts, including, but not limited to, contrast checking. {coloratio} is GitHub only, and only for contrast checking, but it has some additional functionality in that area above {savonliquide}, such as quick plotting of the colours in contrast, and a function, `cr_choose_bw()` that chooses which of black or white has the better contrast ratio with a user supplied colour (which, incidentally, I've used in this post to automatically choose the text colour when highlighting words with different background colours, e.g. `r bg_col("#D4006A")` vs `r bg_col("#00D46A")`).
+
+I'm going to use the `cr_get_ratio` function from `coloratio` to check the colour contrasts of each color in the palette. Because it's not vectorised, I use this in conjection with `map2_dbl` from [{purrr}](https://purrr.tidyverse.org) to get all the contrasts at once.
+
+If any of the contrasts are less than 4.5, I then call on the `darken()` function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette are sufficiently accessible. Here the code that achieves this:
+
+```{r message=FALSE, warning = FALSE}
 library(coloratio)
 library(purrr)
 
-palette <- hcl_five
+palette <- hcl_six[c(6, 1, 3:5)]
 contrasts <- map2_dbl(palette, "white", ~cr_get_ratio(.x, .y))
 min_contrast <- 4.5
 any_too_light <- any(contrasts < min_contrast)
@@ -283,15 +341,28 @@ while (any_too_light) {
   contrasts <- map2_dbl(palette, "white", ~cr_get_ratio(.x, .y))
   any_too_light <- any(contrasts < min_contrast)
 }
-
-swatchplot(palette, border = "transparent")
 ```
 
+At the end of the process, the palette looks like this:
 
-```{r}
-library(prismatic)
-check_color_blindness(palette)
+```{r hcl-darkened, fig.cap="An HCL palette where all colours have a contrast ratio of 4.5:1 or better against white", echo = FALSE}
+#swatchplot(palette, border = "transparent")
+knitr::include_graphics("hcl-darkened.png")
 ```
+
+### Checking for colourblindness
+
+As before, we use {prismatic} to check how the palette appears to those with various types of colourblindess. Whilst R can help us visualise this, we still need to use our judgement as to whether the output is acceptable. I believe, in Figure \@ref(fig:hcl-darkened-colourblind), it is.
+
+```{r hcl-darkened-colourblind, echo = FALSE, fig.cap="Checking how the darkened HCL palette appears to those with various types of colourblindness."}
+#library(prismatic)
+#check_color_blindness(palette)
+knitr::include_graphics("hcl-darkened-colourblind.png")
+```
+
+### But, do I like it?
+
+Going through the process of building a colour palette that meets my criteria purely in R, in as automated, reproducible and adaptable way as possible has been a great learning experience for me, and hopefully something that will be useful to others. I don't much like the palette it produced, though, especially in comparison to the one I came up with previously! Although the HCL-based palette probably has slightly better theoretical perceptual qualities, I prefer the vibrancy of the colours in the one I came up with before, and that's the one I've adopted on this site. 
 
 ## Putting it all together
 ### Modifying `arrow.theme`
