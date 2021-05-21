@@ -2460,7 +2460,7 @@ gtag('config', 'UA-101621242-1');
 </ul></li>
 <li><a href="#an-r-based-alternative">An R-based alternative</a>
 <ul>
-<li><a href="#criteria-1-base-scheme-around">Criteria 1: base scheme around <span style="background-color: #D4006A; color: white; padding:3px">#D4006A</span></a></li>
+<li><a href="#criteria-1-base-scheme-around-razzmatazz">Criteria 1: base scheme around <span style="color: #D4006A">razzmatazz</span></a></li>
 <li><a href="#adapting-for-web-accessibility-1">Adapting for web accessibility</a></li>
 <li><a href="#checking-for-colourblindness-1">Checking for colourblindness</a></li>
 <li><a href="#but-do-i-like-it">But, do I like it?</a></li>
@@ -2645,7 +2645,7 @@ Figure 9: Checking my palette for how it appears to those with various types of 
 <p>Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.</p>
 <h2 id="an-r-based-alternative">An R-based alternative</h2>
 <p>The above sections describe the processes, both thought and practical, that I went through to derive the colour palette for my syntax highlighting scheme, and I’m happy with what I came up with. That said, as I’ve been writing up this blog post, I’ve become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below describes this alternative approach, using the <a href="https://colorspace.r-forge.r-project.org">{colorspace}</a>, <a href="https://matt-dray.github.io/coloratio/">{coloratio}</a> and <a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic}</a> packages.</p>
-<h3 id="criteria-1-base-scheme-around">Criteria 1: base scheme around <span style="background-color: #D4006A; color: white; padding:3px">#D4006A</span></h3>
+<h3 id="criteria-1-base-scheme-around-razzmatazz">Criteria 1: base scheme around <span style="color: #D4006A">razzmatazz</span></h3>
 <p>The {colorspace} package uses the HCL color space, so the first task is to convert a hex code into its hue, chroma and luminance components, and make them available for future use, which can be done as follows:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2756,12 +2756,37 @@ Figure 13: Checking how the darkened HCL palette appears to those with various t
 <p>Going through the process of building a colour palette that meets my criteria purely in R, in as automated, reproducible and adaptable way as possible has been a great learning experience for me, and hopefully something that will be useful to others. I don’t much like the palette it produced, though, especially in comparison to the one I came up with previously! Although the HCL-based palette probably has slightly better theoretical perceptual qualities, I prefer the vibrancy of the colours in the one I came up with before, and that’s the one I’ve adopted on this site.</p>
 <h2 id="putting-it-all-together">Putting it all together</h2>
 <h3 id="modifying-arrow.theme">Modifying <code>arrow.theme</code></h3>
-<p>With all the pieces in place, it’s now just a case of swapping out the default colour codes for our own choices</p>
-<ul>
-<li><p>show code (base and tidyverse)</p></li>
-<li><p>can modify further by hand</p></li>
-<li><p>Quirk of background color, how to modify CSS instead</p></li>
-</ul>
+<p>With all the pieces in place, it’s now just a case of swapping out the default colour codes for our own choices. Although manual editing of the <code>arrow.theme</code> file we now have in our directory is possible, to aid reproducibility, we’re going to edit it using R code instead, by reading in the file, substituting the hex codes, then saving the resulting theme into a new <code>.theme</code> file. Below are two approaches, one using base R, the other in the tidyverse.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># read in the default theme</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readLines.html'>readLines</a></span><span class='op'>(</span><span class='st'>"arrow.theme"</span><span class='op'>)</span>
+
+<span class='co'># base R approach</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#AD0000"</span>, <span class='st'>"#BD005B"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># red -&gt; pink</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#8f5902"</span>, <span class='st'>"#B65D00"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># brown -&gt; orange (note lower case!)</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#007BA5"</span>, <span class='st'>"#5A00B5"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># blue -&gt; purple</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#20794D"</span>, <span class='st'>"#008643"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># green -&gt; green</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#4758AB"</span>, <span class='st'>"#005BB6"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># purple -&gt; blue</span>
+
+<span class='co'># alternatively, tidyverse approach</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://stringr.tidyverse.org'>stringr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span>
+
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readLines.html'>readLines</a></span><span class='op'>(</span><span class='st'>"arrow.theme"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#AD0000"</span>, <span class='st'>"#BD005B"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># red -&gt; pink</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#8f5902"</span>, <span class='st'>"#B65D00"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># brown -&gt; brown (note lower case!)</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#007BA5"</span>, <span class='st'>"#5A00B5"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># blue -&gt; purple</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#20794D"</span>, <span class='st'>"#008643"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># green -&gt; green</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#4758AB"</span>, <span class='st'>"#005BB6"</span><span class='op'>)</span>     <span class='co'># purple -&gt; blue</span>
+
+<span class='co'># save new theme</span>
+<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='va'>theme</span>, <span class='st'>"ek_syntax_highlighting.theme"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>I now have the file <code>ek_syntax_highlighting.theme</code> in my root directory, with my colour choices.</p>
+<p>It is, of course, possible to modify it further, either manually or by making further substutions in the code above. There is a quirk, though. If I swap one of the default hex codes for my own colour choice, that implements just fine, but if I swap any of the <code>null</code>s for a colour, that doesn’t show up when I apply the theme.</p>
 <h3 id="using-the-theme">Using the theme</h3>
 <p>Issues with <code>_site.yml</code> vs YAML in individual distill articles (and link to open issue).</p>
 <ul>

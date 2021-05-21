@@ -248,7 +248,7 @@ Thankfully, for all three main types of colourblindess, the five colours in the 
 
 The above sections describe the processes, both thought and practical, that I went through to derive the colour palette for my syntax highlighting scheme, and I'm happy with what I came up with. That said, as I've been writing up this blog post, I've become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below describes this alternative approach, using the [{colorspace}](https://colorspace.r-forge.r-project.org), [{coloratio}](https://matt-dray.github.io/coloratio/) and [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) packages.
 
-### Criteria 1: base scheme around `r bg_col("#D4006A")`
+### Criteria 1: base scheme around <span style="color: #D4006A">razzmatazz</span>
 
 The {colorspace} package uses the HCL color space, so the first task is to convert a hex code into its hue, chroma and luminance components, and make them available for future use, which can be done as follows:
 
@@ -367,13 +367,38 @@ Going through the process of building a colour palette that meets my criteria pu
 ## Putting it all together
 ### Modifying `arrow.theme`
 
-With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices
+With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices. Although manual editing of the `arrow.theme` file we now have in our directory is possible, to aid reproducibility, we're going to edit it using R code instead, by reading in the file, substituting the hex codes, then saving the resulting theme into a new `.theme` file. Below are two approaches, one using base R, the other in the tidyverse.
 
-- show code (base and tidyverse)
+```{r eval = FALSE}
 
-- can modify further by hand
+# read in the default theme
+theme <- readLines("arrow.theme")
 
-- Quirk of background color, how to modify CSS instead
+# base R approach
+theme <- gsub("#AD0000", "#BD005B", theme) # red -> pink
+theme <- gsub("#8f5902", "#B65D00", theme) # brown -> orange (note lower case!)
+theme <- gsub("#007BA5", "#5A00B5", theme) # blue -> purple
+theme <- gsub("#20794D", "#008643", theme) # green -> green
+theme <- gsub("#4758AB", "#005BB6", theme) # purple -> blue
+
+# alternatively, tidyverse approach
+library(stringr)
+library(magrittr)
+
+theme <- readLines("arrow.theme") %>%
+   str_replace_all("#AD0000", "#BD005B") %>% # red -> pink
+   str_replace_all("#8f5902", "#B65D00") %>% # brown -> brown (note lower case!)
+   str_replace_all("#007BA5", "#5A00B5") %>% # blue -> purple
+   str_replace_all("#20794D", "#008643") %>% # green -> green
+   str_replace_all("#4758AB", "#005BB6")     # purple -> blue
+
+# save new theme
+writeLines(theme, "ek_syntax_highlighting.theme")
+```
+
+I now have the file `ek_syntax_highlighting.theme` in my root directory, with my colour choices.
+
+It is, of course, possible to modify it further, either manually or by making further substutions in the code above. There is a quirk, though. If I swap one of the default hex codes for my own colour choice, that implements just fine, but if I swap any of the `null`s for a colour, that doesn't show up when I apply the theme. 
 
 ### Using the theme
 
