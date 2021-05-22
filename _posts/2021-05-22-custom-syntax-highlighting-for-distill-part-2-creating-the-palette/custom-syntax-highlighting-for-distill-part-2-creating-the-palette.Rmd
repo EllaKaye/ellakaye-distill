@@ -46,13 +46,19 @@ meta() %>%
   )
 ```
 
-In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme **LINK**](), I described why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function for [{distilltools}](https://ellakaye.github.io/distilltools). I also outlined the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
+In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme **LINK**](), I described why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function that wrapped that process for [{distilltools}](https://ellakaye.github.io/distilltools). I also outlined the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
 
 - It be based around <span style="color:#D4006A">the pink</span> that I use in my logo and elsewhere throughout this site
 - It uses colour theory to pick colours that all look appealing together
 - It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast between the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
 
-This post spins out from Part 1 with a deep-dive into the processes, both thought and practical, of choosing colours for my palette that met the above criteria.
+This post spins out from Part 1 with a deep-dive into the processes, both thought and practical, of choosing colours for my palette that meet the above criteria.
 
-This post brings two-for-one value - not only do I write up how I first went about this to derive the palette that's implemented throughout this site, I also demonstrate a totally different, entirely R-based, alternative approach to satisfying the criteria!
+This post brings two-for-one value. Not only do I write up how I first went about this to derive the palette that's implemented throughout this site, I also demonstrate a totally different, entirely R-based, alternative approach to satisfying the criteria. I much preferred the outcome of one approach to the other, but your mileage may vary.
+
+## A brief primer on colour theory
+
+## Approach 1
+
+

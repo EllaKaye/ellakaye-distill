@@ -1894,7 +1894,7 @@ d-appendix {
 
 /* Optional: embed custom fonts here with `@import`
 */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
 /* This must remain at the top of this file.                 */
 
 
@@ -1963,7 +1963,7 @@ html {
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    "LEMONMILKPro-Light", sans-serif;
-  --mono-font:       "Fira Code", monospace;
+  --mono-font:       "Fira Mono", monospace;
   --body-font:       "LEMONMILKPro-UltraLight", sans-serif;
   --navbar-font:     "LEMONMILKPro-Regular", sans-serif;  /* websites + blogs only */
 }
@@ -2312,7 +2312,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.8/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.8.3/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2428,7 +2428,7 @@ gtag('config', 'UA-101621242-1');
 <p>The function, <code>n_letter_words</code>, came about because I wanted to be able to generate row and column names for a large matrix - didn’t matter what they were, as long as they were unique. Since I was in the habit of using the built-in <code>LETTERS</code> vector to do this for small matrices, I naturally thought of using combinations of letters to do this in a larger case. In figuring out how to do this, as is so often the case, it was <a href="https://stackoverflow.com/questions/11388359/unique-combination-of-all-elements-from-two-or-more-vectors">stackoverflow</a> to the rescue. There, I learnt about <code>expand.grid</code> and could then use some tidyverse tools to get the vector I was after:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
 <span class='va'>out</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/expand.grid.html'>expand.grid</a></span><span class='op'>(</span><span class='va'>LETTERS</span>, <span class='va'>LETTERS</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>unite</span><span class='op'>(</span><span class='va'>word</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, sep <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>%&gt;%</span>

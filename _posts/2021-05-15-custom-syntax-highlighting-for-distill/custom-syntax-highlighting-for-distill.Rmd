@@ -73,12 +73,14 @@ library(dplyr)
 library(palmerpenguins)
 
 penguins %>%
-  mutate(long_flipper = case_when(
-    species == "Adelie" & flipper_length_mm > 195 ~ TRUE,
-    species == "Chinstrap" & flipper_length_mm > 200 ~ TRUE,
-    species == "Gentoo" & flipper_length_mm > 225 ~ TRUE, 
-    TRUE ~ FALSE
-  ))
+  mutate(
+    long_flipper = case_when(
+      species == "Adelie" & flipper_length_mm > 195 ~ TRUE,
+      species == "Chinstrap" & flipper_length_mm > 200 ~ TRUE,
+      species == "Gentoo" & flipper_length_mm > 225 ~ TRUE,
+      TRUE ~ FALSE
+    )
+  )
 ```
 
 This is the first in a series of two posts on implementing a custom syntax highlighting theme for a website or blog built with {distill}. Read on here for why and how this function was built, its somewhat clunky name and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package. Take a look at Part 2, **FULL NAME AND LINK**, for a deep dive into considerations about colour choices when building a syntax highlighting scheme, in respect to both colour theory and accessibility.

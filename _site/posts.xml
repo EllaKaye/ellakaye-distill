@@ -27,13 +27,13 @@
       <title>Custom Syntax Highlighting for {distill} Part 1: Modifying the Theme</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</link>
-      <description>A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette</description>
+      <description>A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette UPDATE</description>
       <category>distill</category>
       <category>distilltools</category>
       <category>colour</category>
       <category>accessibility</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</guid>
-      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/hsl-colour-wheel-d4006a-annotated.png" medium="image" type="image/png" width="750" height="750"/>
     </item>
     <item>
