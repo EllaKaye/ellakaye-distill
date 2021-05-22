@@ -50,9 +50,36 @@ meta() %>%
 
 The [{distill}](https://rstudio.github.io/distill/) package for R can be used to build easy-to-maintain websites written only in R markdown. It's the package on which this site is built.^[For more on resources and inspirations for setting up a {distill} website, see my previous post, [Welcome to my {distill} website](https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/).]
 
-**Summary of the code chunk, like in Alison's blogdown post, or call to {distilltools} function**
+I wrote a function to modify the default syntax highlighting theme, and put it in the [{distilltools}](https://ellakaye.github.io/distilltools) package. 
 
-**Code chunk to demonstrate the palette**
+Here's the function in action, to get the theme used on this site:
+
+```{r eval = FALSE}
+library(distilltools)
+modify_default_highlighting(
+  name = "ek_syntax_highlighting",
+  numbers = "#B6005B",
+  strings = "#008643",
+  functions = "#005BB6",
+  control = "#5A00B5",
+  constant = "#B65B00"
+)
+```
+
+Here's the theme in action:
+
+```{r eval = FALSE}
+library(dplyr)
+library(palmerpenguins)
+
+penguins %>%
+  mutate(long_flipper = case_when(
+    species == "Adelie" & flipper_length_mm > 195 ~ TRUE,
+    species == "Chinstrap" & flipper_length_mm > 200 ~ TRUE,
+    species == "Gentoo" & flipper_length_mm > 225 ~ TRUE, 
+    TRUE ~ FALSE
+  ))
+```
 
 Read on for why and how this function was built, its somewhat clunky name and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package, as well as considerations about colour choices, in respect to both colour theory and accessibility.
 
