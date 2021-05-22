@@ -1,7 +1,7 @@
 ---
-title: Custom Syntax Highlighting for {distill}
+title: "Custom Syntax Highlighting for {distill} Part 1: Modifying the Theme"
 description: |
-  A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette
+  A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette UPDATE
 author: 
   - name: Ella Kaye
     url: https://twitter.com/ellamkaye
@@ -66,7 +66,7 @@ modify_default_highlighting(
 )
 ```
 
-Here's the theme in action:
+And here's the theme in action:
 
 ```{r eval = FALSE}
 library(dplyr)
@@ -81,7 +81,7 @@ penguins %>%
   ))
 ```
 
-Read on for why and how this function was built, its somewhat clunky name and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package, as well as considerations about colour choices, in respect to both colour theory and accessibility.
+This is the first in a series of two posts on implementing a custom syntax highlighting theme for a website or blog built with {distill}. Read on here for why and how this function was built, its somewhat clunky name and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package. Take a look at Part 2, **FULL NAME AND LINK**, for a deep dive into considerations about colour choices when building a syntax highlighting scheme, in respect to both colour theory and accessibility.
 
 ## But first, the default
 
@@ -90,30 +90,6 @@ Read on for why and how this function was built, its somewhat clunky name and it
 Before I delve into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below **SECTION LINK**. Also, it appears that the colours in the scheme work well together, and overall, on many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
 
 ### So, why change?
-When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the bright pink I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.
-
-### Distill/pandoc documentation
-My first task was to find out whether this was possible, and if, so, how. Thankfully, the {distill} documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme, stating that can then be edited to create a custom theme. 
-
-### Finding and saving the default
-Once I had a general strategy of copying and editing an existing `.theme` file, my next task was to find the `.theme` file for the default used in {distill], because that's what I'd decided to take as my starting point.
-
-I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio^[From RStudio, go to 'File' in the menu bar, then 'New Project...'. Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project']. From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. In the RStudio project for my website, I created a new script, `syntax_highlighting.R`, in the `R` folder I have in my root directory, then ran the following to save a copy of `arrow.theme` into my website's root directory:
-
-```{r eval = FALSE}
-arrow_theme_path <- system.file(
-  "rmarkdown/templates/distill_article/resources/arrow.theme", 
-  package = "distill"
-)
-
-file.copy(arrow_theme_path, "arrow.theme")
-```
-
-Once I had run that once, I commented out the lines. I don't want any future changes in `arrow.theme` in {distill} to break what I do next.
-
-### Closer inspection of the default
-
-From there, I could open up my copy `arrow.theme` file, and manually inspected it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com)^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/)].]. The basic version is free, though the pro version has great features for testing accessibility - more on that below. I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
 
 ```{r echo = FALSE}
 library(htmltools)
@@ -130,10 +106,31 @@ bg_col <- function(bg_col, text = NULL, text_col = NULL) {
 }
 ```
 
-```{r}
-cr_choose_bw("#00D46A")
+
+When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the `r bg_col("#D4006A", text = "bright pink")` (closest colour name, the rather fun "razzmatazz") I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.
+
+### Distill/pandoc documentation
+My first task was to find out whether this was possible, and if, so, how. Thankfully, the {distill} documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme, stating that can then be edited to create a custom theme. 
+
+### Finding and saving the default
+Once I had a general strategy of copying and editing an existing `.theme` file, my next task was to find the `.theme` file for the default used in {distill}, because that's what I'd decided to take as my starting point.
+
+I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio^[From RStudio, go to 'File' in the menu bar, then 'New Project...'. Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project']. From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. In the RStudio project for my website, I created a new script, `syntax_highlighting.R`, in the `R` folder I have in my root directory, then ran the following to save a copy of `arrow.theme` into my website's root directory:
+
+```{r eval = FALSE}
+arrow_theme_path <- system.file(
+  "rmarkdown/templates/distill_article/resources/arrow.theme", 
+  package = "distill"
+)
+
+file.copy(arrow_theme_path, "arrow.theme")
 ```
 
+Once I had run that once, I commented out the lines. I don't want any future changes in `arrow.theme` in {distill} to break what I do next.
+
+### Closer inspection of the default
+
+From there, I could open up my copy of the `arrow.theme` file, and manually inspected it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com)^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/).]. The basic version is free, though the pro version has great features for testing accessibility - more on that below. I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
 
 There are 29 types of `text-styles` in the theme, of which:
 
@@ -146,9 +143,18 @@ There are 29 types of `text-styles` in the theme, of which:
 - 1 is a brown, `r bg_col("#8F5902")`, for `Constant`
 - 4 types are not assigned a colour - they are left as `null`
 
-I was happy to stick with the groupings, grey and `null` in the default, so now I knew I had to pick five colours for my theme.
+I was happy to stick with the groupings, grey, off-black and `null` in the default, so now I knew I had to pick five colours for my theme.
 
 ## Building my own palette 
+
+I had four criteria for building a colour palette to use for my syntax highlighting theme:
+
+- It be based around <span style="color:#D4006A">my pink</span>
+- It uses colour theory to pick colours that all look appealing together
+- It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast between the colours in the theme and this site's background colour (white)
+- The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
+
+I was originally going to write up how I went about building such a palette, both in terms of the thought process and tools used, as part of this post, but it was getting a little long^[As part of the process of writing the post, I learnt much more about colour theory, and alternatives to the approach that I had originally taken, and I wanted to share it all!], so I've spun it out into a separate post: ADD LINK.
 
 ### A brief primer on colour theory
 

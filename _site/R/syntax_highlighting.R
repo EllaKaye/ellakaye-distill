@@ -57,3 +57,16 @@ writeLines(theme, "ek_syntax_highlighting.theme")
 #theme[3]
 #theme[4]
 #writeLines(theme, "yellow_background.theme")
+
+# library(stringr)
+# library(magrittr)
+#
+# test_theme <- readLines("arrow.theme") %>%
+#   str_replace_all("#AD0000", "#BD005B") %>% # red -> pink
+#   str_replace_all("#8f5902", "#B65D00") %>% # brown -> brown (note lower case!)
+#   str_replace_all("#007BA5", "#90f") %>% # blue -> purple
+#   str_replace_all("#20794D", "#f60") %>% # green -> green
+#   str_replace_all("#4758AB", "#005BB6")     # purple -> blue
+#
+# writeLines(test_theme, "test.theme")
+# doesn't work with short codes

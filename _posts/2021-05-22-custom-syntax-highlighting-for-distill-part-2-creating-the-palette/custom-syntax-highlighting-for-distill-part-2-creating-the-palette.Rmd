@@ -1,0 +1,58 @@
+---
+title: "Custom Syntax Highlighting for {distill} Part 2: Creating the Palette"
+description: |
+  Post description
+author: 
+  - name: Ella Kaye
+    url: https://twitter.com/ellamkaye
+date: '2021-05-22'
+base_url: https://ellakaye.rbind.io/
+preview: IMAGE.png
+categories:
+  - TAG_1
+  - TAG_2
+twitter:
+  site: "@ellamkaye"
+  creator: "@ellamkaye"
+output:
+  distill::distill_article:
+    highlight: /Users/ellakaye/ellakaye-distill/ek_syntax_highlighting.theme
+    self_contained: false
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = TRUE,
+  message = TRUE,
+  R.options = list(width = 60)
+)
+```
+
+```{r metathis, message=FALSE, warning=FALSE, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
+  meta_viewport() %>%
+  meta_social(
+    title = "TITLE", # adding title here removes "ELLA KAYE: " from the front
+    image = "https://ellakaye.rbind.io/posts/FULL_PATH_TO_IMAGE.png", 
+    image_alt = "ALT TEXT FOR IMAGE",
+    og_type = "website",
+    og_author = c("Ella Kaye"),
+    twitter_card_type = "summary_large_image", # can also be summary
+  )
+```
+
+In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme **LINK**](), I described why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function for [{distilltools}](https://ellakaye.github.io/distilltools). I also outlined the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
+
+- It be based around <span style="color:#D4006A">the pink</span> that I use in my logo and elsewhere throughout this site
+- It uses colour theory to pick colours that all look appealing together
+- It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast between the colours in the theme and this site's background colour (white)
+- The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
+
+This post spins out from Part 1 with a deep-dive into the processes, both thought and practical, of choosing colours for my palette that met the above criteria.
+
+This post brings two-for-one value - not only do I write up how I first went about this to derive the palette that's implemented throughout this site, I also demonstrate a totally different, entirely R-based, alternative approach to satisfying the criteria!
