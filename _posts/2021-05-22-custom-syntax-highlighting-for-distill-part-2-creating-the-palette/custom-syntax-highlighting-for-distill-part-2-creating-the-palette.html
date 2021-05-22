@@ -100,12 +100,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="og:title" content="Custom Syntax Highlighting for {distill} Part 2: Creating the Palette"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Post description"/>
+  <meta property="og:image" content="https://ellakaye.rbind.io/hsl-colour-wheel-d4006a-annotated.png"/>
+  <meta property="og:image:width" content="750"/>
+  <meta property="og:image:height" content="750"/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
-  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:title" content="Custom Syntax Highlighting for {distill} Part 2: Creating the Palette"/>
   <meta property="twitter:description" content="Post description"/>
+  <meta property="twitter:image" content="https://ellakaye.rbind.io/hsl-colour-wheel-d4006a-annotated.png"/>
+  <meta property="twitter:image:width" content="750"/>
+  <meta property="twitter:image:height" content="750"/>
   <meta property="twitter:site" content="@ellamkaye"/>
   <meta property="twitter:creator" content="@ellamkaye"/>
 
@@ -118,7 +124,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/anchor-4.2.2/anchor.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/bowser-1.9.3/bowser.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/distill-2.2.21/template.v2.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/header-attrs-2.8.3/header-attrs.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/jquery-1.11.3/jquery.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/popper-2.6.0/popper.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy-bundle.umd.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy-light-border.css","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy.css","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy.umd.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["check-colourblindness.png","colour-harmonies.jpg","colour-palettes-d4006a.png","contrast-check.png","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/anchor-4.2.2/anchor.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/bowser-1.9.3/bowser.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/distill-2.2.21/template.v2.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/header-attrs-2.8.3/header-attrs.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/jquery-1.11.3/jquery.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/popper-2.6.0/popper.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy-bundle.umd.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy-light-border.css","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy.css","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/tippy-6.2.7/tippy.umd.min.js","custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/webcomponents-2.0.0/webcomponents.js","ek-syntax-highlighting-palette.png","first-colour-swatch.png","hcl-darkened-colourblind.png","hcl-darkened.png","hcl-five.png","hcl-six.png","hsl-colour-wheel-d4006a-annotated.png","hsl-colour-wheel-d4006a.png","hsl-hsb-sliders.png","second-colour-swatch.png","third-colour-swatch.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1499,6 +1505,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#a-brief-primer-on-colour-theory">A brief primer on colour theory</a></li>
+<li><a href="#approach-1">Approach 1</a>
+<ul>
+<li><a href="#building-a-palette-based-on-my-pink-using-colour-theory">Building a palette based on <span style="color:#D4006A">my pink</span>, using colour theory</a></li>
+<li><a href="#adapting-for-web-accessibility">Adapting for web accessibility</a></li>
+<li><a href="#checking-for-colourblindness">Checking for colourblindness</a></li>
+</ul></li>
+<li><a href="#an-r-based-alternative">An R-based alternative</a>
+<ul>
+<li><a href="#building-a-palette-based-on-my-pink-using-colour-theory-1">Building a palette based on <span style="color:#D4006A">my pink</span>, using colour theory</a></li>
+<li><a href="#adapting-for-web-accessibility-1">Adapting for web accessibility</a></li>
+<li><a href="#checking-for-colourblindness-1">Checking for colourblindness</a></li>
+<li><a href="#but-do-i-like-it">But, do I like it?</a></li>
+</ul></li>
+<li><a href="#back-to-part-1">Back to Part 1</a></li>
+</ul>
+</nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
 <p>In Part 1 of this series, <a href="">custom syntax highlighting for {distill}: modifying the theme <strong>LINK</strong></a>, I described why and how I went about the process of finding and modifying the default syntax highlighting for <a href="(https://rstudio.github.io/distill/)">{distill}</a> and how I created a function that wrapped that process for <a href="https://ellakaye.github.io/distilltools">{distilltools}</a>. I also outlined the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:</p>
 <ul>
 <li>It be based around <span style="color:#D4006A">the pink</span> that I use in my logo and elsewhere throughout this site</li>
@@ -1508,7 +1539,243 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>This post spins out from Part 1 with a deep-dive into the processes, both thought and practical, of choosing colours for my palette that meet the above criteria.</p>
 <p>This post brings two-for-one value. Not only do I write up how I first went about this to derive the palette that’s implemented throughout this site, I also demonstrate a totally different, entirely R-based, alternative approach to satisfying the criteria. I much preferred the outcome of one approach to the other, but your mileage may vary.</p>
+<h2 id="a-brief-primer-on-colour-theory">A brief primer on colour theory</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hsl-colour-wheel"></span>
+<img src="hsl-colour-wheel-d4006a-annotated.png" alt="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3). ANNOTATE PICTURE WIRTH DEGREES. ADD ALT TEXT." width="375" />
+<p class="caption">
+Figure 1: An HSL colour wheel. Screen shot from <a href="https://www.canva.com/colors/color-wheel/">https://www.canva.com/colors/color-wheel/</a>, annotations adapted from <a href="https://dev.to/rneha725/hsl-and-hsla-in-css-31j3">https://dev.to/rneha725/hsl-and-hsla-in-css-31j3</a>. ANNOTATE PICTURE WIRTH DEGREES. ADD ALT TEXT.
+</p>
+</div>
+</div>
+<p>Colour theory determines which colours ‘look good’ together, based on their relative position on a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure <a href="#fig:colour-harmonies">2</a>, there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:colour-harmonies"></span>
+<img src="colour-harmonies.jpg" alt="Harmonious colour combinations. Figure from [https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel](https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel) SAY MORE. ADD ALT TEXT" width="428" />
+<p class="caption">
+Figure 2: Harmonious colour combinations. Figure from <a href="https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel">https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel</a> SAY MORE. ADD ALT TEXT
+</p>
+</div>
+</div>
+<p>Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (<strong>R</strong>eg <strong>G</strong>reen <strong>B</strong>lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.</p>
+<p>More intuitive, however, for adjusting colours, is defining them by SB (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>B</strong>rightness), also known as HSV (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>V</strong>alue). Similar to HSB is HSL (<strong>H</strong>ue, <strong>S</strong>aturation, <strong>L</strong>ightness).</p>
+<p>In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it’s where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here’s a <a href="https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html">excellent article on the HSB system</a>, which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure <a href="#fig:hsl-hsb-sliders">3</a> for HSL and HSB sliders for my pink.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hsl-hsb-sliders"></span>
+<img src="hsl-hsb-sliders.png" alt="HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from [http://colorizer.org](http://colorizer.org). ADD ALT TEXT" width="1200" />
+<p class="caption">
+Figure 3: HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from <a href="http://colorizer.org">http://colorizer.org</a>. ADD ALT TEXT
+</p>
+</div>
+</div>
+<p>There is an R package for working with colour spaces, the intuitively named <a href="https://colorspace.r-forge.r-project.org/articles/colorspace.html">{colorspace}</a>. The main colour space they work with is HCL, (<strong>H</strong>ue, <strong>C</strong>hroma, <strong>L</strong>uminance), but, somewhat confusingly, that is different, once again, from both HSL and HSB. The HCL colour space is designed to provide a more perceptually uniform colour space than either HSB or HSL. A <a href="https://colorspace.r-forge.r-project.org/articles/color_spaces.html">vignette</a> provides more details. Outside of the package, I haven’t seen it used elsewhere, at least not in the myriad of sites on colour theory for designers or colour/design apps than I use or have read when preparing my theme and this post. In any case, percentual uniformity is arguably more important in choosing colour palettes for data visualisation, where the colour conveys information about the data, than in picking a few colours that look good together for a syntax highlighting scheme. Still, I mention it here because I do sometimes use {colorspace} for creating palettes for data visualisation (the package provides {ggplot2} scales) and, until I dug into it when writing this post, I didn’t appreciate the difference between that space and others.</p>
+<p>It’s great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the <a href="https://www.canva.com/colors/color-wheel/">canva colour wheel</a>. It’s pretty simple, with only a few schemes, but it’s nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch!</p>
+<h2 id="approach-1">Approach 1</h2>
+<h3 id="building-a-palette-based-on-my-pink-using-colour-theory">Building a palette based on <span style="color:#D4006A">my pink</span>, using colour theory</h3>
+<p>The problem with all the colour schemes defined in Figure <a href="#fig:colour-harmonies">2</a> is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, it’s sufficient to find the six colours that are 60° apart, and ignore one of them. Note that for five colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.</p>
+<p>The main pink that I use in this site has hex <span style="background-color: #D4006A; color: white; padding:3px">#D4006A</span>. In ColorSlurp, I started a new palette with that as a starting point, then switched to the HSB sliders, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I need is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. If you don’t use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example <a href="http://colorizer.org">http://colorizer.org</a> (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code.</p>
+<p>At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure <a href="#fig:colour-theory-palette">4</a>. In the HSB space, these colours all have a saturation of 100% and a brightness of 83%.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:colour-theory-palette"></span>
+<img src="first-colour-swatch.png" alt="Colours for syntax highlighting, starting from my main pink, based only on colour theory" width="674" />
+<p class="caption">
+Figure 4: Colours for syntax highlighting, starting from my main pink, based only on colour theory
+</p>
+</div>
+</div>
+<h3 id="adapting-for-web-accessibility">Adapting for web accessibility</h3>
+<p>As noted at the beginning of this post, one key feature of the default syntax highlighting scheme for {distill} is that it is optimised for accessibility and colour contrast. According to the <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>, at the WCAG AA (minimum contrast) level, this requires that that contrast ratio between text and background colours be at least 4.5:1 for text of 14pt+ (which is the default text size for code in {distill}). The more stringent WCAG AAA (enhanced) level requires a ratio of at least 7:1.</p>
+<p>The pro version of ColorSlurp includes a contrast checker, as in Figure <a href="#fig:colorslurp-contrast">5</a>, though there are many websites that also offer this. The WebAIM (Web with Accessibility in Mind), has a very handy <a href="https://webaim.org/resources/contrastchecker/">contrast checker</a> which, like ColorSlurp, also includes lightness sliders for adjusting the colours until the desired contrast is reached. Darkening a colour to improve contrast keeps the hue and saturation the same but reduces the brightness or lightness component (ColorSlurp uses HSB, WebAIM uses HSL).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:colorslurp-contrast"></span>
+<img src="contrast-check.png" alt="Contrast checking in ColorSlurp" width="598" />
+<p class="caption">
+Figure 5: Contrast checking in ColorSlurp
+</p>
+</div>
+</div>
+<p>The <span style="background-color: #D4006A; color: white; padding:3px">pink</span>, <span style="background-color: #006AD4; color: white; padding:3px">blue</span> and <span style="background-color: #6A00D4; color: white; padding:3px">purple</span> in the palette created above have a contrast ratio of better than 4.5:1 with the pure white background, but the <span style="background-color: #D46A00; color: black; padding:3px">orange</span> and <span style="background-color: #00D46A; color: black; padding:3px">green</span> do not.</p>
+<p>My first thought was to keep the pink, blue and purple the same, and to just adjust the orange and green to the necessary point. In the HSB space, that gives the palette in Figure <a href="#fig:orange-green-less-bright">6</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:orange-green-less-bright"></span>
+<img src="second-colour-swatch.png" alt="Reducing brightness in just the orange and green to achieve desired contrasts." width="673" />
+<p class="caption">
+Figure 6: Reducing brightness in just the orange and green to achieve desired contrasts.
+</p>
+</div>
+</div>
+<p>It’s not bad, but when I applied that palette as a syntax highlighting scheme, to my eye the pink, blue and purple looked a little too bright relative to the orange.</p>
+<p>My next thought was to darken all the colours to all share the brighness level of the least bright colour that passes the accessibility check (the green, at 53%). That gives the palette in Figure <a href="#fig:all-less-bright">7</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:all-less-bright"></span>
+<img src="third-colour-swatch.png" alt="Reducing brightness in all colours to the level of the green." width="674" />
+<p class="caption">
+Figure 7: Reducing brightness in all colours to the level of the green.
+</p>
+</div>
+</div>
+<p>I don’t like that at all! It’s not vibrant enough, and, although the colours all have good contrast against the white background, they don’t have much contrast with each other.</p>
+<p>So, I settled on a compromise position. I reduced the brightness of the original pink, blue and purple to match the brightness of the accessibility-passing orange (71%), leaving only the green at a brightness of 53%, which it needs to pass the contrast check. That gives the palette in Figure <a href="#fig:final-palette">8</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:final-palette"></span>
+<img src="ek-syntax-highlighting-palette.png" alt="The palette I settled on for my syntax highlighting scheme." width="674" />
+<p class="caption">
+Figure 8: The palette I settled on for my syntax highlighting scheme.
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/EmilHvitfeldt/prismatic'>prismatic</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/prismatic/man/color.html'>color</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>I’m happy with that, and that’s the syntax highlighting scheme I’ve adopted throughout this site, despite the fact that the palette now doesn’t actually include the pink that I set out to build my scheme around! However, because of the process I’ve followed, the pink that is in the palette does tones well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines.</p>
+<p>I am only just beginning to learn about web accessibility, and I know my site does not yet meet all best practices, but I’m committed to improving in this area. I first became aware of the issue of web accessibility because I follow <a href="https://twitter.com/spcanelon">Silvia Canelón on twitter</a> and I highly recommend you do the same! The <a href="https://www.a11yproject.com">a11y project</a> and <a href="https://webaim.org">WebAIM</a> are great places to learn more.</p>
+<h3 id="checking-for-colourblindness">Checking for colourblindness</h3>
+<p>Some visual impairments require a high colour contrast between text and background colour in order to be able to read content on the web. Another class of visual impairment worth paying attention to when designing palettes in that of colour blindness. (The WCAG note that all users should be able to access information that is conveyed by colour differences).</p>
+<p><a href="https://www.njtierney.com">Nick Tierney</a> has some excellent resources about colour and colourblindness and R packages for accessing these. <a href="https://njt-monash-colour.netlify.app/#1">These comprehensive slides</a> cover what colour is and how we perceive it, colourblindness, how to check how palettes/plots appear to those with different types of colourblindness, the HCL space, the {colorspace} package and how to create your own palettes. He also has a <a href="https://www.njtierney.com/post/2020/10/15/assess-colour/">short blog post</a> on quickly assessing colour palettes to ensure they’re colourblind-friendly.</p>
+<p>As recommended in the above posts, I use the <a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic}</a> package by <a href="https://www.hvitfeldt.me">Emil Hvitfeldt</a> to check how my syntax highlighting palette appears to those with different types of colourblindness:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/EmilHvitfeldt/prismatic'>prismatic</a></span><span class='op'>)</span>
+<span class='va'>ek_highlight_colours</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#5A00B5"</span>, <span class='st'>"#005BB6"</span>, <span class='st'>"#008643"</span>, <span class='st'>"#B65B00"</span>, <span class='st'>"#B6005B"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/prismatic/man/check_color_blindness.html'>check_color_blindness</a></span><span class='op'>(</span><span class='va'>ek_highlight_colours</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:check-colourblindness"></span>
+<img src="check-colourblindness.png" alt="Checking my palette for how it appears to those with various types of colourblindness. ALT TEXT." width="647" />
+<p class="caption">
+Figure 9: Checking my palette for how it appears to those with various types of colourblindness. ALT TEXT.
+</p>
+</div>
+</div>
+<p>Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.</p>
+<h2 id="an-r-based-alternative">An R-based alternative</h2>
+<p>The above sections describe the processes, both thought and practical, that I went through to derive the colour palette for my syntax highlighting scheme, and I’m happy with what I came up with. That said, as I’ve been writing up this blog post, I’ve become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below describes this alternative approach, using the <a href="https://colorspace.r-forge.r-project.org">{colorspace}</a>, <a href="https://matt-dray.github.io/coloratio/">{coloratio}</a> and <a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic}</a> packages. Whereas the previous approach is based on the HSB colour space, this one uses HCL.</p>
+<h3 id="building-a-palette-based-on-my-pink-using-colour-theory-1">Building a palette based on <span style="color:#D4006A">my pink</span>, using colour theory</h3>
+<p>The {colorspace} package uses the HCL color space, so the first task is to convert a hex code into its hue, chroma and luminance components, and make them available for future use, which can be done as follows:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://colorspace.R-Forge.R-project.org/'>colorspace</a></span><span class='op'>)</span>
+<span class='va'>pink</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://colorspace.R-Forge.R-project.org//reference/hex2RGB.html'>hex2RGB</a></span><span class='op'>(</span><span class='st'>"#D4006A"</span>, gamma <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='va'>pink_hcl</span> <span class='op'>&lt;-</span> <span class='fu'>as</span><span class='op'>(</span><span class='va'>pink</span>, <span class='st'>"polarLUV"</span><span class='op'>)</span>
+
+<span class='va'>pink_h</span> <span class='op'>&lt;-</span> <span class='va'>pink_hcl</span><span class='op'>@</span><span class='va'>coords</span><span class='op'>[</span><span class='fl'>1</span>, <span class='st'>"H"</span><span class='op'>]</span>
+<span class='va'>pink_c</span> <span class='op'>&lt;-</span> <span class='va'>pink_hcl</span><span class='op'>@</span><span class='va'>coords</span><span class='op'>[</span><span class='fl'>1</span>, <span class='st'>"C"</span><span class='op'>]</span>
+<span class='va'>pink_l</span> <span class='op'>&lt;-</span> <span class='va'>pink_hcl</span><span class='op'>@</span><span class='va'>coords</span><span class='op'>[</span><span class='fl'>1</span>, <span class='st'>"L"</span><span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<p>The function from {colorspace} that is going to do the hard work of building a palette with differing hues but constant chroma and luminance is <a href="https://colorspace.r-forge.r-project.org/reference/hcl_palettes.html"><code>qualitative_hcl()</code></a>. By default, you give it the number of colours you want, and it works out equally spaced hues, starting at 0°. To override this default, you can give the <code>h</code> argument a start and end value, <code>c(start, end)</code>. Again, I’m going to choose six colours, 60° apart, and discard one of them.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The <code>start</code> value should be in [0, 60) and the end value should be in [300, 360). Let the hue of our starting pink be <code>pink_h</code>. Then all the colours in the palette are going to have a hue <code>pink_h + 60 * k</code> for some integer k. The following code picks the start and end values we need to pass to <code>h</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>seq_60</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from <span class='op'>=</span> <span class='op'>-</span><span class='fl'>300</span>, to <span class='op'>=</span> <span class='fl'>300</span>, by <span class='op'>=</span> <span class='fl'>60</span><span class='op'>)</span>
+<span class='va'>pink_60</span> <span class='op'>&lt;-</span> <span class='va'>seq_60</span> <span class='op'>+</span> <span class='va'>pink_h</span>
+
+<span class='va'>pink_h_lower</span> <span class='op'>&lt;-</span> <span class='va'>pink_60</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='op'>(</span><span class='va'>pink_60</span> <span class='op'>&gt;=</span> <span class='fl'>0</span> <span class='op'>&amp;</span> <span class='va'>pink_60</span> <span class='op'>&lt;</span> <span class='fl'>60</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span>
+<span class='va'>pink_h_upper</span> <span class='op'>&lt;-</span> <span class='va'>pink_60</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='op'>(</span><span class='va'>pink_60</span> <span class='op'>&gt;=</span> <span class='fl'>300</span> <span class='op'>&amp;</span> <span class='va'>pink_60</span> <span class='op'>&lt;</span> <span class='fl'>360</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<p>That’s most of the hard work. Now we build the palette:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hcl_six</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://colorspace.R-Forge.R-project.org//reference/hcl_palettes.html'>qualitative_hcl</a></span><span class='op'>(</span>
+  <span class='fl'>6</span>, 
+  h <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pink_h_lower</span>, <span class='va'>pink_h_upper</span><span class='op'>)</span>, 
+  c <span class='op'>=</span> <span class='va'>pink_c</span>, 
+  l <span class='op'>=</span> <span class='va'>pink_l</span>
+<span class='op'>)</span> 
+<span class='co'>#swatchplot(hcl_six, border = "transparent")</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/include_graphics.html'>include_graphics</a></span><span class='op'>(</span><span class='st'>"hcl-six.png"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure"><span id="fig:hcl-six"></span>
+<img src="hcl-six.png" alt="Six colours, with hues 60° apart and constant chroma and luminance, based around my pink." width="663" />
+<p class="caption">
+Figure 10: Six colours, with hues 60° apart and constant chroma and luminance, based around my pink.
+</p>
+</div>
+</div>
+<p>The only personal decision I make in this section is which of these six colours to discard. Removing the first of the greens gives me the palette in Figure <a href="#fig:hcl-five">11</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hcl-five"></span>
+<img src="hcl-five.png" alt="As in the previous figure but minus a green and rearranged" width="662" />
+<p class="caption">
+Figure 11: As in the previous figure but minus a green and rearranged
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="adapting-for-web-accessibility-1">Adapting for web accessibility</h3>
+<p>When I was developing my scheme, I used my trusted ColorSlurp app to adjust colours to ensure they met WCAG standards of web accessibility. In writing up this post, I since learnt about web resources to do the same (e.g. <a href="https://webaim.org/resources/contrastchecker/">WebAIM contrast checker</a>) and now, for this section, I’ve discovered the <a href="https://github.com/matt-dray/coloratio">{coloratio}</a> and <a href="https://github.com/feddelegrand7/savonliquide">{savonliquide}</a> packages that can do this in R.</p>
+<aside>
+This is a beautiful thing about blogging. In the process of writing this post, I’m learning so much!
+</aside>
+<p>Both packages have much to recommend them. {savonliquide} has the advantage of being on CRAN, and provides a toolbox that allows the user to implement accessibility-related concepts, including, but not limited to, contrast checking. {coloratio} is GitHub only, and only for contrast checking, but it has some additional functionality in that area above {savonliquide}, such as quick plotting of the colours in contrast, and a function, <code>cr_choose_bw()</code> that chooses which of black or white has the better contrast ratio with a user supplied colour (which, incidentally, I’ve used in this post to automatically choose the text colour when highlighting words with different background colours, e.g. <span style="background-color: #D4006A; color: white; padding:3px">#D4006A</span> vs <span style="background-color: #00D46A; color: black; padding:3px">#00D46A</span>).</p>
+<p>I’m going to use the <code>cr_get_ratio</code> function from <code>coloratio</code> to check the colour contrasts of each color in the palette. Because it’s not vectorised, I use this in conjection with <code>map2_dbl</code> from <a href="https://purrr.tidyverse.org">{purrr}</a> to get all the contrasts at once.</p>
+<p>If any of the contrasts are less than 4.5, I then call on the <code>darken()</code> function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette are sufficiently accessible. Here the code that achieves this:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>coloratio</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://purrr.tidyverse.org'>purrr</a></span><span class='op'>)</span>
+
+<span class='va'>palette</span> <span class='op'>&lt;-</span> <span class='va'>hcl_six</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>6</span>, <span class='fl'>1</span>, <span class='fl'>3</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>)</span><span class='op'>]</span>
+<span class='va'>contrasts</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://purrr.tidyverse.org/reference/map2.html'>map2_dbl</a></span><span class='op'>(</span><span class='va'>palette</span>, <span class='st'>"white"</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/pkg/coloratio/man/cr_get_ratio.html'>cr_get_ratio</a></span><span class='op'>(</span><span class='va'>.x</span>, <span class='va'>.y</span>, quiet <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>min_contrast</span> <span class='op'>&lt;-</span> <span class='fl'>4.5</span>
+<span class='va'>any_too_light</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>contrasts</span> <span class='op'>&lt;</span> <span class='va'>min_contrast</span><span class='op'>)</span>
+
+<span class='kw'>while</span> <span class='op'>(</span><span class='va'>any_too_light</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>palette</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://colorspace.R-Forge.R-project.org//reference/lighten.html'>darken</a></span><span class='op'>(</span><span class='va'>palette</span>, amount <span class='op'>=</span> <span class='fl'>0.05</span><span class='op'>)</span>
+  <span class='va'>contrasts</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://purrr.tidyverse.org/reference/map2.html'>map2_dbl</a></span><span class='op'>(</span><span class='va'>palette</span>, <span class='st'>"white"</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/pkg/coloratio/man/cr_get_ratio.html'>cr_get_ratio</a></span><span class='op'>(</span><span class='va'>.x</span>, <span class='va'>.y</span>, quiet <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='va'>any_too_light</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>contrasts</span> <span class='op'>&lt;</span> <span class='va'>min_contrast</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>At the end of the process, the palette looks like this:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hcl-darkened"></span>
+<img src="hcl-darkened.png" alt="An HCL palette where all colours have a contrast ratio of 4.5:1 or better against white" width="662" />
+<p class="caption">
+Figure 12: An HCL palette where all colours have a contrast ratio of 4.5:1 or better against white
+</p>
+</div>
+</div>
+<h3 id="checking-for-colourblindness-1">Checking for colourblindness</h3>
+<p>As before, we use {prismatic} to check how the palette appears to those with various types of colourblindess. Whilst R can help us visualise this, we still need to use our judgement as to whether the output is acceptable. I believe, in Figure <a href="#fig:hcl-darkened-colourblind">13</a>, it is.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hcl-darkened-colourblind"></span>
+<img src="hcl-darkened-colourblind.png" alt="Checking how the darkened HCL palette appears to those with various types of colourblindness." width="647" />
+<p class="caption">
+Figure 13: Checking how the darkened HCL palette appears to those with various types of colourblindness.
+</p>
+</div>
+</div>
+<h3 id="but-do-i-like-it">But, do I like it?</h3>
+<p>Going through the process of building a colour palette that meets my criteria purely in R, in as automated, reproducible and adaptable way as possible has been a great learning experience for me, and hopefully something that will be useful to others. I don’t much like the palette it produced, though, especially in comparison to the one I came up with previously! Although the HCL-based palette probably has slightly better theoretical perceptual qualities, I prefer the vibrancy of the colours in the one I came up with before, and that’s the one I’ve adopted on this site.</p>
+<h2 id="back-to-part-1">Back to Part 1</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Again, I want to stress that this 60° apart approach and discard one is NOT something I’d do when building a five-colour palette for a data visualisation. There, where the colours mean something in relation to the data, it’s important that the hues are evenly spaced. Even for qualitative cases, such as stacked bar charts, where the colours don’t mean anything, evenly spaced will be more visually appealing, as the colours are one-on-top of each other, as opposed to in a syntax highlighting scheme, where any of the colours can appear next to any of the others, so we want all pairs to look good together.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
