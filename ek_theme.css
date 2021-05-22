@@ -273,3 +273,8 @@ This might be a problem if I ever want links on homepage matching style of rest 
 a {
   text-decoration: none!important;
 }
+
+d-article a:hover, a:focus {
+    color: #D4006A;
+    border-color: #D4006A;
+}

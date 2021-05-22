@@ -1,5 +1,5 @@
 ---
-title: "Custom Syntax Highlighting for {distill} Part 1: Modifying the Theme"
+title: "Custom Syntax Highlighting for {distill} Part 1: Modifying the default theme"
 description: |
   A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette UPDATE
 author: 
