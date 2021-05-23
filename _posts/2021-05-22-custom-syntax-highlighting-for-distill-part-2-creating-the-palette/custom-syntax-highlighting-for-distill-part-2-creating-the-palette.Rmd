@@ -65,7 +65,7 @@ bg_col <- function(bg_col, text = NULL, text_col = NULL) {
 
 In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme **LINK**](), I described why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function that wrapped that process for [{distilltools}](https://ellakaye.github.io/distilltools). I also outlined the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
 
-- It be based around <span style="color:#D4006A">the pink</span> that I use in my logo and elsewhere throughout this site
+- It be based around the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
 - It uses colour theory to pick colours that all look appealing together
 - It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast, i.e. a ratio of 4.5:1, between each of the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
@@ -76,29 +76,43 @@ This post brings two-for-one value. Not only do I write up how I first went abou
 
 ## A brief primer on colour theory
 
+### Colour Harmonies
+
 ```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3). ANNOTATE PICTURE WIRTH DEGREES. ADD ALT TEXT.", echo = FALSE}
 knitr::include_graphics("hsl-colour-wheel-d4006a-annotated.png")
 ```
 
-Colour theory determines which colours 'look good' together, based on their relative position on a colour wheel, somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure \@ref(fig:colour-harmonies), there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle. 
+Colour theory determines which colours 'look good' together, based on their relative position on a colour wheel, such as that in Figure \@ref(fig:hsl-colour-wheel), somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure \@ref(fig:colour-harmonies), there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle. 
 
 ```{r colour-harmonies, echo = FALSE, fig.cap = "Harmonious colour combinations. Figure from [https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel](https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel) SAY MORE. ADD ALT TEXT"}
 knitr::include_graphics("colour-harmonies.jpg")
 ```
 
+### Colour Spaces
+
+#### HSB and HSL
+
 Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.
 
-More intuitive, however, for adjusting colours, is defining them by HSB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness). 
+More intuitive, however, for adjusting colours, is defining them by HSB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). HSB is a simple transformation of the RGB space. Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness). HSL is considered an improved over HSB in terms of its perceptual qualities.
 
-In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's a [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. And since a picture here is worth very many words, see Figure \@ref(fig:hsl-hsb-sliders) for HSL and HSB sliders for my pink.
+In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's a [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. The differences between HSB and HSL are also illustrated in Figure \@ref(fig:hsl-hsb-sliders).
 
 ```{r hsl-hsb-sliders, echo = FALSE, fig.cap="HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from [http://colorizer.org](http://colorizer.org). ADD ALT TEXT"}
 knitr::include_graphics("hsl-hsb-sliders.png")
 ```
 
-There is an R package for working with colour spaces, the intuitively named [{colorspace}](https://colorspace.r-forge.r-project.org/articles/colorspace.html). The main colour space they work with is HCL, (**H**ue, **C**hroma, **L**uminance), but, somewhat confusingly, that is different, once again, from both HSL and HSB. The HCL colour space is designed to provide a more perceptually uniform colour space than either HSB or HSL. A [vignette](https://colorspace.r-forge.r-project.org/articles/color_spaces.html) provides more details. Outside of the package, I haven't seen it used elsewhere, at least not in the myriad of sites on colour theory for designers or colour/design apps than I use or have read when preparing my theme and this post. In any case, percentual uniformity is arguably more important in choosing colour palettes for data visualisation, where the colour conveys information about the data, than in picking a few colours that look good together for a syntax highlighting scheme. Still, I mention it here because I do sometimes use {colorspace} for creating palettes for data visualisation (the package provides {ggplot2} scales) and, until I dug into it when writing this post, I didn't appreciate the difference between that space and others.
-
 It's great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the [canva colour wheel](https://www.canva.com/colors/color-wheel/). It's pretty simple, with only a few schemes, but it's nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
+
+#### HCL
+
+Whilst websites on colour theory for designers tend to focus on either the HSB or HSL spaces, and it's HSB or HSL that tend to be built into design and colour software and apps, both spaces suffer from a lack of perceptual uniformity. The RGB rainbow palette is [notorious](https://colorspace.r-forge.r-project.org/articles/endrainbow.html) for this. In general, RBG/HSB/HSL palettes are not a good choice for statistical graphics and data visualisation, where colour conveys meaning. For these purposes, the HCL colour space (**H**ue, **C**hroma, **L**uminance) offers a much better alternative. It is much more suitable for capturing human colour perception. 
+
+There is an R package for working with the HCL colour space, the intuitively named [{colorspace}](https://colorspace.r-forge.r-project.org/articles/colorspace.html. It has many excellent vignettes, including one about the [HCL space](https://colorspace.r-forge.r-project.org/articles/color_spaces.html) and its perceptual superiority over other colour spaces. The package also provides [colour palettes](https://colorspace.r-forge.r-project.org/articles/hcl_palettes.html) and scales for [{ggplot2}](https://colorspace.r-forge.r-project.org/articles/ggplot2_color_scales.html).
+
+I haven't seen it used elsewhere, at least not in the myriad of sites on colour theory for designers or colour/design apps than I use or have read when preparing my theme and this post. **I WANT HUE**
+
+In any case, percentual uniformity is arguably more important in choosing colour palettes for data visualisation, where the colour conveys information about the data, than in picking a few colours that look good together for a syntax highlighting scheme. Still, I mention it here because I do sometimes use {colorspace} for creating palettes for data visualisation (the package provides {ggplot2} scales) and, until I dug into it when writing this post, I didn't appreciate the difference between that space and others.
 
 ## Approach 1
 
