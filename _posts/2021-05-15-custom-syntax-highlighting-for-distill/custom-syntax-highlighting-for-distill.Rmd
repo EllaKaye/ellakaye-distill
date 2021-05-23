@@ -1,13 +1,13 @@
 ---
 title: "Custom Syntax Highlighting for {distill} Part 1: Modifying the default theme"
 description: |
-  A deep-dive into creating a custom theme, including considerations in choosing an appealing and accessible colour palette UPDATE
+  Why (and why not) to modify the default theme, how I went about it and wrapped the process in a {distilltools} function.
 author: 
   - name: Ella Kaye
     url: https://twitter.com/ellamkaye
 date: '2021-05-15'
 base_url: https://ellakaye.rbind.io/
-preview: IMAGE.png
+preview: theme-in-action.png
 categories:
   - distill
   - distilltools
@@ -37,9 +37,9 @@ meta() %>%
   meta_name("github-repo" = "ellakaye/ellakaye-distill") %>%
   meta_viewport() %>%
   meta_social(
-    title = "TITLE", # adding title here removes "ELLA KAYE: " from the front
+    title = "Custom Syntax Highlighting for {distill} Part 1: Modifying the default theme", # adding title here removes "ELLA KAYE: " from the front
     image = "https://ellakaye.rbind.io/posts/FULL_PATH_TO_IMAGE.png", 
-    image_alt = "ALT TEXT FOR IMAGE",
+    image_alt = "A picture of some R code with a syntax highlighting scheme applied",
     og_type = "website",
     og_author = c("Ella Kaye"),
     twitter_card_type = "summary_large_image", # can also be summary
@@ -66,7 +66,7 @@ modify_default_highlighting(
 )
 ```
 
-And here's the theme in action:
+And here's the theme in action:^[Note that if you're viewing this post through the [distillery](https://distillery.rbind.io), then my custom syntax highlighting doesn't apply - you need to read this post on [my website ADD LINK TO POST]()]
 
 ```{r eval = FALSE}
 library(dplyr)
@@ -109,7 +109,7 @@ bg_col <- function(bg_col, text = NULL, text_col = NULL) {
 ```
 
 
-When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the `r bg_col("#D4006A", text = "bright pink")` (closest colour name, the rather fun "razzmatazz") I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours.
+When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the `r bg_col("#D4006A", text = "bright pink")` (closest colour name, the rather fun "razzmatazz") I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours. 
 
 ### Distill/pandoc documentation
 My first task was to find out whether this was possible, and if, so, how. Thankfully, the {distill} documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme, stating that can then be edited to create a custom theme. 
@@ -151,7 +151,7 @@ I was happy to stick with the groupings, grey, off-black and `null` in the defau
 
 I had four criteria for building a colour palette to use for my syntax highlighting theme:
 
-- It be based around <span style="color:#D4006A">the pink</span> that I use in my logo and elsewhere throughout this site
+- It be based around the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
 - It uses colour theory to pick colours that all look appealing together
 - It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast between the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
@@ -168,7 +168,7 @@ knitr::include_graphics("ek-syntax-highlighting-palette.png")
 ## Putting it all together
 ### Modifying `arrow.theme`
 
-With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices. Although manual editing of the `arrow.theme` file we now have in our directory is possible, to aid reproducibility, we're going to edit it using R code instead, by reading in the file, substituting the hex codes, then saving the resulting theme into a new `.theme` file. Below are two approaches, one using base R, the other in the tidyverse.
+With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices. Although manual editing of the `arrow.theme` file we now have in our directory is possible, to aid reproducibility, we're going to edit it using R code instead, by reading in the file, substituting the hex codes, then saving the resulting theme into a new `.theme` file. Below are two approaches, one using base R, the other in the tidyverse, that I put in my `syntax_highlighting.R` script.
 
 ```{r eval = FALSE}
 
@@ -177,7 +177,7 @@ theme <- readLines("arrow.theme")
 
 # base R approach
 theme <- gsub("#AD0000", "#BD005B", theme) # red -> pink
-theme <- gsub("#8f5902", "#B65D00", theme) # brown -> orange (note lower case!)
+theme <- gsub("#8f5902", "#B65D00", theme) # brown -> orange 
 theme <- gsub("#007BA5", "#5A00B5", theme) # blue -> purple
 theme <- gsub("#20794D", "#008643", theme) # green -> green
 theme <- gsub("#4758AB", "#005BB6", theme) # purple -> blue
@@ -188,7 +188,7 @@ library(magrittr)
 
 theme <- readLines("arrow.theme") %>%
    str_replace_all("#AD0000", "#BD005B") %>% # red -> pink
-   str_replace_all("#8f5902", "#B65D00") %>% # brown -> brown (note lower case!)
+   str_replace_all("#8f5902", "#B65D00") %>% # brown -> brown 
    str_replace_all("#007BA5", "#5A00B5") %>% # blue -> purple
    str_replace_all("#20794D", "#008643") %>% # green -> green
    str_replace_all("#4758AB", "#005BB6")     # purple -> blue
@@ -201,16 +201,30 @@ I now have the file `ek_syntax_highlighting.theme` in my root directory, with my
 
 It is, of course, possible to modify it further, either manually or by making further substutions in the code above. There is a quirk, though. If I swap one of the default hex codes for my own colour choice, that implements just fine, but if I swap any of the `null`s for a colour, that doesn't show up when I apply the theme. 
 
-### Using the theme
-
-Issues with `_site.yml` vs YAML in individual distill articles (and link to open issue).
-
-- `_site.yml` vs `.Rmd`
-
 ## Wrapping in a {distilltools} function
 
-- NEED TO WRITE THE FUNCTION AND PUT IT IN DISTILLTOOLS!
-- `modify_default_highlighting_theme()`
-- New package from R Markdown team, so this one likely to be depreciated
-- Clunky function name on purpose
+- New package from R Markdown team, so this function likely to be depreciated
+- `modify_default_highlighting()`
+- Rather modest in scope, replaces 5 colours with 5 other colours, *not8 a fully-featured, flexible function (though can still modify the .theme file)
+- Clunky function name on purpose - not to clash with whatever the Rmd team create
 - Still need to follow the steps in the previous section to use the theme.
+
+## Using the theme
+
+According to the [{distill} documentation](https://rstudio.github.io/distill/#syntax-highlighting), you can apply a syntax highlighting theme with the following YAML:
+
+```
+---
+output:
+  distill::distill_article:
+    highlight: my_highlighting.theme
+---  
+```
+
+Here, the available options for `highlight` include `default`, `rstudio` (the default RStudio editor theme), and the `haddock`, `kate`, `monochrome`, `pygments` and `tango` [pandoc highlighting themes](https://www.garrickadenbuie.com/blog/pandoc-syntax-highlighting-examples/). Also, most importantly for us, it can also take the path to a `.theme` file.
+
+Presumably, we should be able to add this to our `_site.yml` file to have the theme apply site wide (though note you'll have to rebuild the site and re-knit any posts where you want to it apply). However, that's not working for me. I have raised an [issue](https://github.com/rstudio/distill/issues/370) about it. If you face the same problem, it would be helpful if you could comment there too.
+
+There is a workaround, though, which is that the above YAML can also be included in individual .Rmd articles, in which case the theme applies just fine, though note that if your `.theme` file is in you root directory, you'll need to give the full path to it. And if it sounds like a bit of a pain to have to add that every time you write a new post, consider creating a template for your posts, including those lines, and then starting new posts with the {distilltools} function [`create_post_from_template()`](https://ellakaye.github.io/distilltools/reference/create_post_from_template.html).^[Note that the `create_post_from_template()` function is likely to get wrapped into {distill} itself, or its functionality included in distill::create_post()`, and will be depreciated from {distilltools} if so. (I have had some discussion with the {distill} team about this and will be submitting a PR in the near future.)]
+
+

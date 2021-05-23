@@ -1,16 +1,17 @@
 ---
 title: "Custom Syntax Highlighting for {distill} Part 2: Creating the Palette"
 description: |
-  Post description
+  How to create an appealing and accessible colour palette for a syntax highlighting scheme
 author: 
   - name: Ella Kaye
     url: https://twitter.com/ellamkaye
 date: '2021-05-22'
 base_url: https://ellakaye.rbind.io/
-preview: IMAGE.png
+preview: ek-syntax-highlighting-palette.png
 categories:
-  - TAG_1
-  - TAG_2
+  - distill
+  - colour
+  - accessibility
 twitter:
   site: "@ellamkaye"
   creator: "@ellamkaye"
