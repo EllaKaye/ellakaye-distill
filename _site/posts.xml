@@ -17,9 +17,10 @@
       <title>Custom Syntax Highlighting for {distill} Part 2: Creating the Palette</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2021-05-22-custom-syntax-highlighting-for-distill-part-2-creating-the-palette</link>
-      <description>Post description</description>
-      <category>TAG_1</category>
-      <category>TAG_2</category>
+      <description>How to create an appealing and accessible colour palette for a syntax highlighting scheme</description>
+      <category>distill</category>
+      <category>colour</category>
+      <category>accessibility</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-22-custom-syntax-highlighting-for-distill-part-2-creating-the-palette</guid>
       <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ellakaye.rbind.io/posts/2021-05-22-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/ek-syntax-highlighting-palette.png" medium="image" type="image/png" width="1348" height="686"/>
@@ -28,7 +29,7 @@
       <title>Custom Syntax Highlighting for {distill} Part 1: Modifying the default theme</title>
       <dc:creator>Ella Kaye</dc:creator>
       <link>https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill</link>
-      <description>Why (and why not) to modify the default theme, how I went about it and wrapped the process in a {distilltools} function.</description>
+      <description>A guide to modifying the default {distill} syntax highlighting theme, including colour choice considerations, and its implementation in {distilltools}</description>
       <category>distill</category>
       <category>distilltools</category>
       <category>colour</category>

@@ -5,35 +5,35 @@
       "title": "About Me",
       "author": [],
       "contents": "\n\n\n\nHello! I am a PhD student in Statistics at the University of Warwick. I am part of the OxWaSP programme. I am interested in Applied Statistics, particularly as applied in the Social Sciences. I am currently working on a project analysing data from applications to undergraduate statistics courses in the Statistics department at Warwick. I am supervised by Dr Julia Brettschneider and Dr Anastasia Papavasiliou.\nI love R! I use it daily in my PhD work for analysing and visualising data, as well as for personal projects. This website is built using the {distill} package, alongside my and John Paul Helveston’s (very much still in development) package {distilltools}. I am also the author, along with Prof David Firth of the {BradleyTerryScalable package}, which is available on GitHub.\nI love the R community! I am the previous co-organiser of the Oxford R User Group and also a member of the Warwick R User Group and R-Ladies Coventry. I get great pleasure from sharing what I know/am learning about R with others, particularly by speaking at R-Ladies and R User Group meetups. Here are some talks I’ve given. Please get in touch if you’d like me to speak at your group. I find being asked to speak on a topic is a good excuse for me to learn something about it!\nPrior to the PhD, my academic path has taken me from a BA in Mathematics and Philosophy (University of Oxford), through an MA in History and Philosophy of Science and Technology (University of Toronto), an MPhil in Mathematics Education (University of Cambridge) and an MSc in Applied Statistics (University of Oxford). I also have a PGCE in Secondary Mathematics, have taught at secondary school, and worked in market research.\n\n\n\n",
-      "last_modified": "2021-05-22T17:23:03+01:00"
+      "last_modified": "2021-05-23T13:34:19+01:00"
     },
     {
       "path": "index.html",
       "title": "ELLA KAYE",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Posts\n          Talks\n          Projects\n          \n          \n          \n          \n          \n          \n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            ELLA KAYE\n          \n          \n            \n              Hello and welcome to my personal website!\n              I am a PhD student in Statistics at the University of Warwick and an R enthusiast.\n            \n            \n              Hello and welcome to my personal website!\n              I am a PhD student in Statistics at the University of Warwick and an R enthusiast.\n            \n          \n\n          \n            \n              \n                  \n                    \n                       Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                       GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                       LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                       Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                     Twitter\n                  \n                \n                                \n                  \n                     GitHub\n                  \n                \n                                \n                  \n                     LinkedIn\n                  \n                \n                                \n                  \n                     Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-05-22T17:23:03+01:00"
+      "last_modified": "2021-05-23T13:34:19+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-22T17:23:04+01:00"
+      "last_modified": "2021-05-23T13:34:20+01:00"
     },
     {
       "path": "projects.html",
       "title": "Projects",
       "author": [],
       "contents": "\n\n\n\n\n{distilltools}\n\n\nThe {distilltools} R package is a collection of tools to support the creation and styling of content on blogs/wesbites made with the {distill} package.\n\n\n\n\n\n\nTidyTuesday\n\n\nMy (infrequent) contributions to #TidyTuesday\n\n\n\n\n\n\n{BradleyTerryScalable}\n\n\nAn R pacakge for fitting the Bradley-Terry model to potentially large and sparse networks for paired comparison data.\n\n\n\n\n\n\n{EMK}\n\n\nA personal R package of a collection of miscellaneous functions I find useful.\n\n\n\n\n\n\n\n",
-      "last_modified": "2021-05-22T17:23:04+01:00"
+      "last_modified": "2021-05-23T13:34:20+01:00"
     },
     {
       "path": "talks.html",
       "title": "Talks",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-05-22T17:23:05+01:00"
+      "last_modified": "2021-05-23T13:34:20+01:00"
     }
   ],
   "collections": ["posts/posts.json", "talks/talks.json"]

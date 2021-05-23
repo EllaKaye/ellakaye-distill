@@ -67,7 +67,7 @@ In Part 1 of this series, [custom syntax highlighting for {distill}: modifying t
 
 - It be based around <span style="color:#D4006A">the pink</span> that I use in my logo and elsewhere throughout this site
 - It uses colour theory to pick colours that all look appealing together
-- It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast between the colours in the theme and this site's background colour (white)
+- It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast, i.e. a ratio of 4.5:1, between each of the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
 
 This post spins out from Part 1 with a deep-dive into the processes, both thought and practical, of choosing colours for my palette that meet the above criteria.
