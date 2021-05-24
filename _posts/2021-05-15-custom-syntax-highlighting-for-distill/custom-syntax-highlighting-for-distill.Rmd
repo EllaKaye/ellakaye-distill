@@ -64,7 +64,7 @@ modify_default_highlighting(
   numeric = "#B6005B", # replaces the default red
   strings = "#008643", # replaces the default green
   functions = "#005BB6", # replaces the default purple
-  control = "#5A00B5", # replaces the default blue
+  control = "#5B00B6", # replaces the default blue
   constant = "#B65B00" # replaces the default brown
 )
 ```
@@ -171,7 +171,7 @@ I was originally going to write up how I went about building such a palette, bot
 
 At the end of the process, the palette for my syntax highlighting scheme is as in Figure \@ref(fig:ek-syntax-highlighting-palette).
 
-```{r ek-syntax-highlighting-palette, echo = FALSE, fig.cap="The color palette used for syntax highlighting throughout this site."}
+```{r ek-syntax-highlighting-palette, echo = FALSE, fig.cap="The color palette used for syntax highlighting throughout this site.", fig.alt="A swatch of five colours, a bright pink, orange, green, blue and purple."}
 knitr::include_graphics("ek-syntax-highlighting-palette.png")
 ```
 

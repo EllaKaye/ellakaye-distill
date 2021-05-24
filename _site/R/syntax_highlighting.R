@@ -12,9 +12,9 @@ theme <- readLines("arrow.theme")
 # Now this is done once, keep above lines commented and don't rerun!
 
 # brighter version
-theme <- gsub("#AD0000", "#BD005B", theme) # red -> pink
-theme <- gsub("#8f5902", "#B65D00", theme) # brown -> brown (note lower case!)
-theme <- gsub("#007BA5", "#5A00B5", theme) # blue -> purple
+theme <- gsub("#AD0000", "#B6005B", theme) # red -> pink
+theme <- gsub("#8f5902", "#B65B00", theme) # brown -> brown (note lower case!)
+theme <- gsub("#007BA5", "#5B00B6", theme) # blue -> purple
 theme <- gsub("#20794D", "#008643", theme) # green -> green
 theme <- gsub("#4758AB", "#005BB6", theme) # purple -> blue
 
