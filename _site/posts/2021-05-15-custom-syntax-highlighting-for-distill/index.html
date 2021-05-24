@@ -105,8 +105,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:description" content="A guide to modifying the default {distill} syntax highlighting theme, including colour choice considerations, and its implementation in {distilltools}"/>
 <meta property="og:url" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/"/>
 <meta property="og:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/more-theme-in-action.png"/>
-<meta property="og:image:width" content="1356"/>
-<meta property="og:image:height" content="1092"/>
+<meta property="og:image:width" content="1850"/>
+<meta property="og:image:height" content="1470"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="ELLA KAYE"/>
 
@@ -116,8 +116,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:description" content="A guide to modifying the default {distill} syntax highlighting theme, including colour choice considerations, and its implementation in {distilltools}"/>
 <meta property="twitter:url" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/"/>
 <meta property="twitter:image" content="https://ellakaye.rbind.io/posts/2021-05-15-custom-syntax-highlighting-for-distill/more-theme-in-action.png"/>
-<meta property="twitter:image:width" content="1356"/>
-<meta property="twitter:image:height" content="1092"/>
+<meta property="twitter:image:width" content="1850"/>
+<meta property="twitter:image:height" content="1470"/>
 <meta property="twitter:site" content="@ellamkaye"/>
 <meta property="twitter:creator" content="@ellamkaye"/>
 
@@ -2562,7 +2562,7 @@ gtag('config', 'UA-101621242-1');
 <p>At the end of the process, the palette for my syntax highlighting scheme is as in Figure <a href="#fig:ek-syntax-highlighting-palette">1</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span id="fig:ek-syntax-highlighting-palette"></span>
-<img src="ek-syntax-highlighting-palette.png" alt="A swatch of five colours, a bright pink, orange, green, blue and purple." width="674" />
+<img src="ek-syntax-highlighting-palette.png" alt="A swatch of five colours, a bright pink, orange, green, blue and purple." width="560" />
 <p class="caption">
 Figure 1: The color palette used for syntax highlighting throughout this site.
 </p>
@@ -2576,10 +2576,10 @@ Figure 1: The color palette used for syntax highlighting throughout this site.
 <span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readLines.html'>readLines</a></span><span class='op'>(</span><span class='st'>"arrow.theme"</span><span class='op'>)</span>
 
 <span class='co'># base R approach</span>
-<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#AD0000"</span>, <span class='st'>"#BD005B"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># red -&gt; pink</span>
-<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#8f5902"</span>, <span class='st'>"#B65D00"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># brown -&gt; orange </span>
-<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#007BA5"</span>, <span class='st'>"#5A00B5"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># blue -&gt; purple</span>
-<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#20794D"</span>, <span class='st'>"#008643"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># green -&gt; green</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#AD0000"</span>, <span class='st'>"#B6005B"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># red -&gt; pink</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#8f5902"</span>, <span class='st'>"#B65B00"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># brown -&gt; brown </span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#007BA5"</span>, <span class='st'>"#5B00B6"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># blue -&gt; purple</span>
+<span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#20794D"</span>, <span class='st'>"#B65B00"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># green -&gt; green</span>
 <span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"#4758AB"</span>, <span class='st'>"#005BB6"</span>, <span class='va'>theme</span><span class='op'>)</span> <span class='co'># purple -&gt; blue</span>
 
 <span class='co'># alternatively, tidyverse approach</span>
@@ -2587,9 +2587,9 @@ Figure 1: The color palette used for syntax highlighting throughout this site.
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span>
 
 <span class='va'>theme</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readLines.html'>readLines</a></span><span class='op'>(</span><span class='st'>"arrow.theme"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#AD0000"</span>, <span class='st'>"#BD005B"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># red -&gt; pink</span>
-   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#8f5902"</span>, <span class='st'>"#B65D00"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># brown -&gt; brown </span>
-   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#007BA5"</span>, <span class='st'>"#5A00B5"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># blue -&gt; purple</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#AD0000"</span>, <span class='st'>"#B6005B"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># red -&gt; pink</span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#8f5902"</span>, <span class='st'>"#B65B00"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># brown -&gt; brown </span>
+   <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#007BA5"</span>, <span class='st'>"#5B00B6"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># blue -&gt; purple</span>
    <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#20794D"</span>, <span class='st'>"#008643"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># green -&gt; green</span>
    <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='op'>(</span><span class='st'>"#4758AB"</span>, <span class='st'>"#005BB6"</span><span class='op'>)</span>     <span class='co'># purple -&gt; blue</span>
 

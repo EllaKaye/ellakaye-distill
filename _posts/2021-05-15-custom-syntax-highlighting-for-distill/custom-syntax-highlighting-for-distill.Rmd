@@ -185,10 +185,10 @@ With all the pieces in place, it's now just a case of swapping out the default c
 theme <- readLines("arrow.theme")
 
 # base R approach
-theme <- gsub("#AD0000", "#BD005B", theme) # red -> pink
-theme <- gsub("#8f5902", "#B65D00", theme) # brown -> orange 
-theme <- gsub("#007BA5", "#5A00B5", theme) # blue -> purple
-theme <- gsub("#20794D", "#008643", theme) # green -> green
+theme <- gsub("#AD0000", "#B6005B", theme) # red -> pink
+theme <- gsub("#8f5902", "#B65B00", theme) # brown -> brown 
+theme <- gsub("#007BA5", "#5B00B6", theme) # blue -> purple
+theme <- gsub("#20794D", "#B65B00", theme) # green -> green
 theme <- gsub("#4758AB", "#005BB6", theme) # purple -> blue
 
 # alternatively, tidyverse approach
@@ -196,9 +196,9 @@ library(stringr)
 library(magrittr)
 
 theme <- readLines("arrow.theme") %>%
-   str_replace_all("#AD0000", "#BD005B") %>% # red -> pink
-   str_replace_all("#8f5902", "#B65D00") %>% # brown -> brown 
-   str_replace_all("#007BA5", "#5A00B5") %>% # blue -> purple
+   str_replace_all("#AD0000", "#B6005B") %>% # red -> pink
+   str_replace_all("#8f5902", "#B65B00") %>% # brown -> brown 
+   str_replace_all("#007BA5", "#5B00B6") %>% # blue -> purple
    str_replace_all("#20794D", "#008643") %>% # green -> green
    str_replace_all("#4758AB", "#005BB6")     # purple -> blue
 
