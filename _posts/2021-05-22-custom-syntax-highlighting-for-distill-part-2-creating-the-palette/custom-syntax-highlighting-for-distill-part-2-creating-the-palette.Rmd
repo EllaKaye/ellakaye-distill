@@ -62,8 +62,10 @@ bg_col <- function(bg_col, text = NULL, text_col = NULL) {
 }
 ```
 
+## Part 1 recap and Part 2 overview
+In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme **LINK**](), I describe why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function that wrapped that process for [{distilltools}](https://ellakaye.github.io/distilltools). I discuss the default syntax highlighting theme used on {distill} sites, and how we can modify it by replacing the five colours used there with five colours of our choosing.
 
-In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme **LINK**](), I describe why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function that wrapped that process for [{distilltools}](https://ellakaye.github.io/distilltools). I also outline the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
+I also outline the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
 
 - It be based around the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
 - It uses colour theory to pick colours that all look appealing together
@@ -76,7 +78,7 @@ This post brings two-for-one value. Not only do I write up how I first went abou
 
 ## A brief primer on colour theory
 
-### Colour Harmonies
+### Colour harmonies
 
 ```{r hsl-colour-wheel, fig.cap="An HSL colour wheel. Screen shot from [https://www.canva.com/colors/color-wheel/](https://www.canva.com/colors/color-wheel/), annotations adapted from [https://dev.to/rneha725/hsl-and-hsla-in-css-31j3](https://dev.to/rneha725/hsl-and-hsla-in-css-31j3).", fig.alt="A circle filled with hues of red at the top (0 degrees), moving smoothly through orange, yellow (60 degrees), green (120 degrees), cyan (180 degrees), blue (240 degrees) and magenta(300 degrees) as you rotate clockwise round the circle. The colours are more saturated towards the edge of the circle and greyer towards the centre.", echo = FALSE}
 knitr::include_graphics("hsl-colour-wheel-d4006a-annotated.png")
@@ -88,7 +90,7 @@ Colour theory determines which colours 'look good' together, based on their rela
 knitr::include_graphics("colour-harmonies.jpg")
 ```
 
-### Colour Spaces
+### Colour spaces
 
 #### RGB, HSB and HSL
 
@@ -102,11 +104,11 @@ In HSB, the hue represents the colour type and is a number measured between 0 an
 knitr::include_graphics("hsl-hsb-sliders.png")
 ```
 
-It's great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the [canva colour wheel](https://www.canva.com/colors/color-wheel/). It's pretty simple, with only a few schemes, but it's nicely designed and easy to use, and the page explains the basics of colour theory too. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
+It's great to play around with an HSL or HSB colour wheel to get a sense of how harmonious colour schemes are built, and how the colours in them relate to each other on the wheel. I really like the [canva colour wheel](https://www.canva.com/colors/color-wheel/). It's pretty simple, with only a few schemes, but it's nicely designed and easy to use, and the page explains the basics of colour theory too. It's a fun way to start building a palette. I like how you can pull the dots around the wheel and see how the colours relate, and if you click on a colour in the palette, there are HSL sliders too. Plus, as you move colours around, the background of the page changes colour, which is a nice touch! 
 
 #### HCL
 
-Whilst websites on colour theory for designers tend to focus on either the HSB or HSL spaces, and it's HSB or HSL that tend to be built into design and colour software and apps, both spaces suffer from a lack of perceptual uniformity. The RGB rainbow palette is [notorious](https://colorspace.r-forge.r-project.org/articles/endrainbow.html) for this. In general, RBG/HSB/HSL palettes are not a good choice for statistical graphics and data visualisation, where colour conveys meaning. For these purposes, the HCL colour space (**H**ue, **C**hroma, **L**uminance) offers a much better alternative. It is much more suitable for capturing human colour perception. 
+Whilst websites on colour theory for designers tend to focus on either the HSB or HSL spaces, and it's HSB or HSL wheels/sliders that tend to be built into design and colour software and apps, both spaces suffer from a lack of perceptual uniformity. The RGB rainbow palette is [notorious](https://colorspace.r-forge.r-project.org/articles/endrainbow.html) for this. In general, RBG/HSB/HSL palettes are not a good choice for statistical graphics and data visualisation, where colour conveys meaning. For these purposes, the HCL colour space (**H**ue, **C**hroma, **L**uminance) offers a much better alternative. It is much more suitable for capturing human colour perception. 
 
 There is an R package for working with the HCL colour space, the intuitively named [{colorspace}](https://colorspace.r-forge.r-project.org/articles/colorspace.html). It has many excellent vignettes, including one about the [HCL space](https://colorspace.r-forge.r-project.org/articles/color_spaces.html) and its perceptual superiority over other colour spaces. The package also provides [colour palettes](https://colorspace.r-forge.r-project.org/articles/hcl_palettes.html) and [scales for {ggplot2}](https://colorspace.r-forge.r-project.org/articles/ggplot2_color_scales.html). There is also support for [HCL palettes in base R](https://developer.r-project.org/Blog/public/2019/04/01/hcl-based-color-palettes-in-grdevices/). The HCL space is also used on [I want hue](http://medialab.github.io/iwanthue/), a site about colours aimed at data scientists, which allows you to generate and refine palettes of optimally distinct colours.
 
@@ -116,17 +118,17 @@ knitr::include_graphics("pink-in-HCL.png")
 
 I haven't seen the HCL space used elsewhere, at least not in the myriad of sites on colour theory for designers or colour/design apps than I use or have read when preparing my theme and this post. Perceptual uniformity is arguably more important in choosing colour palettes for data visualisation, where the colour conveys information about the data, than in picking a few colours that look good together for a syntax highlighting scheme. 
 
-## Approach 1
+## Approach 1: ColorSlurp and HSB
 
 ### Building a palette based on my <span style="color:#D4006A">pink</span>, using colour theory
 
-The problem with all the colour schemes defined in Figure \@ref(fig:colour-harmonies) is that they use a maximum of four colours, and we need five. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, it's sufficient to find the six colours that are 60° apart, and ignore one of them. Note that for five colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.
+As I discuss in Part 1 of this series, I know that I need a palette of five colours to replace the five colours used in the default syntax highlighting scheme that comes with {distill}. The problem with all the colour schemes defined in Figure \@ref(fig:colour-harmonies) is that they use a maximum of four colours. But not to worry! We know from colour theory that we can find 12 colours in harmony by taking evenly spaced colours around the HSL or HSB wheel, i.e. colours whose hues are 30° apart, given fixed values for saturation and brightness/lightness. Since we only need five colours, it's sufficient to find the six colours that are 60° apart, and ignore one of them. Note that for five colours to appear harmonious, we have to respect these angles, not choose five colours that are 72° apart.
 
-The main pink that I use in this site has hex `r bg_col("#D4006A")`. I use a great little Mac app called [ColorSlurp](https://colorslurp.com) for building and assessing colour palettes. The basic version is free, though the pro version has great features for testing accessibility - more on below. In ColorSlurp, I started a new palette with #D4006A as a starting point, then, making sure I was in HSB mode, and found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I needed is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated that for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. 
+The main pink that I use in this site has hex `r bg_col("#D4006A")`. I use a great little Mac app called [ColorSlurp](https://colorslurp.com) for building and assessing colour palettes. The basic version is free, though the pro version has great features for testing accessibility - more on that below. In ColorSlurp, I started a new palette with #D4006A as a starting point, then, making sure I was in HSB mode, found its HSB values are 330°, 100%, 83%. Leaving the S and B sliders where they are, the next colour I needed is 60° around the circle, i.e. at 30°, so I moved the H slider to that value and added the resulting orange to the palette. I then repeated that for 90°, 150°, 210° and 270°, giving me two shades of green, a blue and a purple. As I only need five colours, I discarded one of the greens, keeping the one at 150°, which is complementary to my main pink. 
 
-If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code. 
+If you don't use ColorSlurp or a similar app, there are many online options for building a palette in this way, for example [http://colorizer.org](http://colorizer.org) (add a new color to the palette by clicking on the next square down to the right of the sliders). In both ColorSlurp and on colorizer.org, once you have defined a colour by its HSB values, you can read off the hex code, for ease of use in R. 
 
-At the end of this stage of the process, based purely on colour theory, my syntax highlighting colour scheme now stood as in Figure \@ref(fig:colour-theory-palette). In the HSB space, these colours all have a saturation of 100% and a brightness of 83%.
+At the end of this stage of the process, based purely on my pink and colour theory, my syntax highlighting palette now stood as in Figure \@ref(fig:colour-theory-palette). In the HSB space, these colours all have a saturation of 100% and a brightness of 83%.
 
 ```{r colour-theory-palette, echo = FALSE, fig.cap = "Colours for syntax highlighting, starting from my main pink, based only on colour theory", fig.alt="A swatch of five colours, very bright and vibrant shades of pink, orange, green, blue and purple."}
 library(colorspace)
@@ -148,7 +150,7 @@ knitr::include_graphics("contrast-check.png")
 
 The `r bg_col("#D4006A", "pink")`, `r bg_col("#006AD4", "blue")` and `r bg_col("#6A00D4", "purple")` in the palette created above have a contrast ratio of better than 4.5:1 with the pure white background, but the `r bg_col("#D46A00", "orange")` and `r bg_col("#00D46A", "green")` do not.
 
-My first thought was to keep the pink, blue and purple the same, and to just adjust the orange and green to a bit better than the necessary point. In the HSB space, that gives the palette in Figure \@ref(fig:orange-green-less-bright). 
+My first thought was to keep the pink, blue and purple the same, and to just reduce the brightness of the orange and green until the contrast ratio was a bit better than required. In the HSB space, that gives the palette in Figure \@ref(fig:orange-green-less-bright). 
 
 ```{r orange-green-less-bright, echo  = FALSE, fig.cap= "Reducing brightness in just the orange and green to achieve desired contrasts.", fig.alt="A swatch of five colours, very bright and vibrant shades of pink, blue and purple, with less-bright shades of orange and green"}
 #ek_pure_highlight_colours_og <- c("#D4006A", "#B65B00", "#008643", "#006AD4", "#6A00D4")
@@ -159,7 +161,7 @@ knitr::include_graphics("second-colour-swatch.png")
 
 It's not bad, but when I applied that palette as a syntax highlighting scheme, to my eye the pink, blue and purple looked a little too bright relative to the orange.
 
-My next thought was to reduce the brightness on all the colours to tje level of the least bright colour that passes the accessibility check (the green, at 53%). That gives the palette in Figure \@ref(fig:all-less-bright).
+My next thought was to reduce the brightness on all the colours to the level of the least bright colour that passes the accessibility check (the green, at 53%). That gives the palette in Figure \@ref(fig:all-less-bright).
 
 ```{r all-less-bright, echo  = FALSE, fig.cap= "Reducing brightness in all colours to the level of the green.", fig.alt = "A swatch of five colours, less bright versions of all five colours in the original palette."}
 #ek_darker_highlight_colours <- c("#860043", "#884400", "#008643", "#004489", "#440088")
@@ -168,18 +170,18 @@ My next thought was to reduce the brightness on all the colours to tje level of 
 knitr::include_graphics("third-colour-swatch.png")
 ```
 
-That looks way too dark for my liking! I don't think it's vibrant enough, and, although the colours all have good contrast against the white background, they don't have much contrast with each other.
+That looks way too dark for my liking. I don't think it's vibrant enough, and, although the colours all have good contrast against the white background, they don't have much contrast with each other.
 
-So, I settled on a compromise position. I reduced the brightness of the original pink, blue and purple to match the brightness of the accessibility-passing orange (71%), leaving only the green at a brightness of 53%, which it needs to pass the contrast check. That gives the palette in Figure \@ref(fig:final-palette).
+So, I settled on a compromise position. I reduced the brightness of the original pink, blue and purple for 83% to match the brightness of the accessibility-passing orange (71%), leaving only the green at a brightness of 53%, which it needs to pass the contrast check. That gives the palette in Figure \@ref(fig:final-palette).
 
 ```{r final-palette, echo = FALSE, fig.cap = "The palette I settled on for my syntax highlighting scheme.", fig.alt="A swatch of five colours, a pink, orange, green, blue and purple, all quite bright, but still all with a contrast ratio of 4.5:1 or better against white."}
-ek_highlight_colours <- c("#5A00B5", "#005BB6", "#008643", "#B65B00", "#B6005B")
+ek_highlight_colours <- c("#5B00B6", "#005BB6", "#008643", "#B65B00", "#B6005B")
 #swatchplot(rev(ek_highlight_colours), border = "transparent")
 # Using the above code gives too much white around the swatches, so I ran the code, took a screen shot to crop it, then include that image back in.
 knitr::include_graphics("ek-syntax-highlighting-palette.png")
 ```
 
-I'm happy with that, and that's the syntax highlighting scheme I've adopted throughout this site, despite the fact that the palette now doesn't actually include the pink that I set out to build my scheme around! However, because of the process I've followed, the pink that is in the palette does tones well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines. 
+I'm happy with that, and that's the syntax highlighting scheme I've adopted throughout this site, despite the fact that the palette now doesn't actually include the pink that I set out to build my scheme around! However, because of the process I've followed, the pink that is in the palette does tone well with the brighter pink and I think my site still has a consistent look. In the end, it was more important that all the colours in the palette looked consistent together and met accessibility guidelines. 
 
 I am only just beginning to learn about web accessibility, and I know my site does not yet meet all best practices, but I'm committed to improving in this area. I first became aware of the issue of web accessibility because I follow [Silvia Canelón on twitter](https://twitter.com/spcanelon) and I highly recommend you do the same! The [a11y project](https://www.a11yproject.com) and [WebAIM](https://webaim.org) are great places to learn more. 
 
@@ -203,11 +205,11 @@ knitr::include_graphics("check-colourblindness.png")
 
 Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.
 
-## An R-based alternative
+## Approach 2: An R-based HCL alternative
 
 The above sections describe the processes, both thought and practical, that I went through to derive the colour palette for my syntax highlighting scheme, and I'm happy with what I came up with. As I was deriving my scheme, I was working in ColorSlurp and only had a cursory knowledge of the differences between the HSB, HSL and HCL colour spaces.
 
-However, as I've been writing up this blog post, I've become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below describes this alternative approach, using the [{colorspace}](https://colorspace.r-forge.r-project.org), [{coloratio}](https://matt-dray.github.io/coloratio/) and [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) packages. Whereas the previous approach is based on the HSB colour space, this one uses HCL.
+However, as I was writing up this blog post, I become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below is this alternative approach, using the [{colorspace}](https://colorspace.r-forge.r-project.org), [{coloratio}](https://matt-dray.github.io/coloratio/) and [{prismatic}](https://emilhvitfeldt.github.io/prismatic/) packages. Also, whereas the previous approach is based on the HSB colour space, this one uses HCL.
 
 ### Building a palette based on my <span style="color:#D4006A">pink</span>, using colour theory
 
@@ -223,7 +225,7 @@ pink_c <- pink_hcl@coords[1, "C"]
 pink_l <- pink_hcl@coords[1, "L"]
 ```
 
-The function from {colorspace} that is going to do the hard work of building a palette with differing hues but constant chroma and luminance is [`qualitative_hcl()`](https://colorspace.r-forge.r-project.org/reference/hcl_palettes.html). By default, you give it the number of colours you want, and it works out equally spaced hues, starting at 0°. To override this default, you can give the `h` argument a start and end value, `c(start, end)`. Again, I'm going to choose six colours, 60° apart, and discard one of them.^[Again, I want to stress that this 60° apart approach and discard one is NOT something you should do when building a five-colour palette for a data visualisation. There, where the colours mean something in relation to the data, it's important that the hues are evenly spaced. Even for qualitative cases, the perceptual uniformity of five evenly-spaced colours is preferable. However, for a syntax highlighting scheme, where any of the colours can appear next to any of the others, and we want all pairs to look good together, and the colours convey no meaning, I think the six-at-sixty-degrees-discard-one approach is preferable.] The `start` value should be in [0, 60) and the end value should be in [300, 360). Let the hue of our starting pink be `pink_h`. Then all the colours in the palette are going to have a hue `pink_h + 60 * k`  for some integer k. The following code picks the start and end values we need to pass to `h`:
+The function from {colorspace} that is going to do the hard work of building a palette with differing hues but constant chroma and luminance is [`qualitative_hcl()`](https://colorspace.r-forge.r-project.org/reference/hcl_palettes.html). By default, you give it the number of colours you want, and it works out equally spaced hues, starting at 0°. To override this default, you can give the `h` argument a start and end value, `c(start, end)`. Again, I'm going to choose six colours, 60° apart, and discard one of them.^[Again, I want to stress that this 60° apart approach and discard one is NOT something you should do when building a five-colour palette for a data visualisation. There, where the colours mean something in relation to the data, it's important that the hues are evenly spaced. Even for qualitative data, the perceptual uniformity of five evenly-spaced colours is preferable. However, for a syntax highlighting scheme, where any of the colours can appear next to any of the others, and we want all pairs to look good together, and the colours convey no meaning, based on my current and still somewhat limited knowledge of colour theory, I think the six-at-sixty-degrees-discard-one approach is preferable (though I could probably be persuaded otherwise if anyone has a compelling case for an evenly-spaced 5 colours in this context too).] The `start` value should be in [0, 60) and the end value should be in [300, 360). Let the hue of our starting pink be `pink_h`. Then all the colours in the palette are going to have a hue `pink_h + 60 * k`  for some integer k. The following code picks the start and end values we need to pass to `h`:
 
 
 ```{r}
@@ -243,16 +245,16 @@ hcl_six <- qualitative_hcl(
   c = pink_c, 
   l = pink_l
 ) 
-#swatchplot(hcl_six, border = "transparent")
 ```
 
-```{r hcl-six, fig.cap = "Six colours, with hues 60° apart and constant chroma and luminance, based around my pink."}
+```{r hcl-six, echo = FALSE, fig.cap = "Six colours, with hues 60° apart and constant chroma and luminance, based around my pink.", fig.alt="A swatch of six colours in the HCL space, a brown, two greens, a blue, magenta, and my pink"}
+#swatchplot(hcl_six, border = "transparent")
 knitr::include_graphics("hcl-six.png")
 ```
 
 The only personal decision I make in this section is which of these six colours to discard. Removing the first of the greens gives me the palette in Figure \@ref(fig:hcl-five).
 
-```{r hcl-five, fig.cap="As in the previous figure but minus a green and rearranged", echo = FALSE}
+```{r hcl-five, fig.cap="As in the previous figure but minus a green and rearranged", fig.alt="A swatch of five colours in the HCL space, my pink, a brown, green, blue and magenta.", echo = FALSE}
 hcl_five <- hcl_six[c(6, 1, 3:5)]
 #swatchplot(hcl_five, border = "transparent")
 knitr::include_graphics("hcl-five.png")
@@ -283,11 +285,11 @@ When I was developing my scheme, I used my trusted ColorSlurp app to adjust colo
 This is a beautiful thing about blogging. In the process of writing this post, I'm learning so much!
 </aside>
 
-Both packages have much to recommend them. {savonliquide} has the advantage of being on CRAN, and provides a toolbox that allows the user to implement accessibility-related concepts, including, but not limited to, contrast checking. {coloratio} is GitHub only, and only for contrast checking, but it has some additional functionality in that area above {savonliquide}, such as quick plotting of the colours in contrast, and a function, `cr_choose_bw()` that chooses which of black or white has the better contrast ratio with a user supplied colour (which, incidentally, I've used in this post to automatically choose the text colour when highlighting words with different background colours, e.g. `r bg_col("#D4006A")` vs `r bg_col("#00D46A")`).
+Both packages have much to recommend them. {savonliquide} has the advantage of being on CRAN, and provides a toolbox that allows the user to implement accessibility-related concepts, including, but not limited to, contrast checking. {coloratio} is GitHub only, and only for contrast checking, but it has some additional functionality in that area above {savonliquide}, such as quick plotting of the colours in contrast, and a function, `cr_choose_bw()` that chooses which of black or white has the better contrast ratio with a user supplied colour (which, incidentally, I use to automatically choose the text colour when highlighting words with different background colours, e.g. `r bg_col("#D4006A")` vs `r bg_col("#00D46A")`).
 
-I'm going to use the `cr_get_ratio` function from `coloratio` to check the colour contrasts of each color in the palette. Because it's not vectorised, I use this in conjection with `map2_dbl` from [{purrr}](https://purrr.tidyverse.org) to get all the contrasts at once.
+Below, I use the `cr_get_ratio` function from `coloratio` to check the colour contrasts of each color in the palette. Because it's not vectorised, I use this in conjunction with `map2_dbl` from [{purrr}](https://purrr.tidyverse.org) to get all the contrasts at once.
 
-If any of the contrasts are less than 4.5, I then call on the `darken()` function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette are sufficiently accessible. Here the code that achieves this:
+If any of the contrasts are less than 4.5, I then call on the `darken()` function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette have a contrast ratio of at least 4.5:1 compared to white. Here the code that achieves this:
 
 ```{r message=FALSE, warning = FALSE}
 library(coloratio)
@@ -307,7 +309,7 @@ while (any_too_light) {
 
 At the end of the process, the palette looks like this:
 
-```{r hcl-darkened, fig.cap="An HCL palette where all colours have a contrast ratio of 4.5:1 or better against white", echo = FALSE}
+```{r hcl-darkened, fig.cap="An HCL palette where all colours have a contrast ratio of 4.5:1 or better against white", fig.alt = "A swatch of five colours, pink, brown, green, blue, magenta, all slightly darker than in the previous figure.", echo = FALSE}
 #swatchplot(palette, border = "transparent")
 knitr::include_graphics("hcl-darkened.png")
 ```
@@ -316,7 +318,7 @@ knitr::include_graphics("hcl-darkened.png")
 
 As before, we use {prismatic} to check how the palette appears to those with various types of colourblindess. Whilst R can help us visualise this, we still need to use our judgement as to whether the output is acceptable. I believe, in Figure \@ref(fig:hcl-darkened-colourblind), it is.
 
-```{r hcl-darkened-colourblind, echo = FALSE, fig.cap="Checking how the darkened HCL palette appears to those with various types of colourblindness."}
+```{r hcl-darkened-colourblind, echo = FALSE, fig.cap="Checking how the darkened HCL palette appears to those with various types of colourblindness.", fig.alt="Four colour palettes. One shows the darkened HCL palette from the previous post as is, the other three show how that palette appears to those with deuteranopia, protanopia and tritanopia. Under all those conditions, the five colours are distinguishable."}
 #library(prismatic)
 #check_color_blindness(palette)
 knitr::include_graphics("hcl-darkened-colourblind.png")
@@ -324,10 +326,11 @@ knitr::include_graphics("hcl-darkened-colourblind.png")
 
 ### But, do I like it?
 
-Going through the process of building a colour palette that meets my criteria purely in R, in as automated, reproducible and adaptable way as possible has been a great learning experience for me, and hopefully something that will be useful to others. I don't much like the palette it produced, though, especially in comparison to the one I came up with previously! Although the HCL-based palette probably has slightly better theoretical perceptual qualities, I prefer the vibrancy of the colours in the one I came up with before, and that's the one I've adopted on this site. 
+Going through the process of building a colour palette that meets my criteria purely in R, in as automated, reproducible and adaptable way as possible has been a great learning experience for me, and hopefully something that will be useful to others. I don't much like the palette it produced, though, especially in comparison to the one I came up with previously. Although the HCL-based palette probably has slightly better theoretical perceptual qualities, I prefer the vibrancy of the colours in the palette I came up with using my first approach, and that's the one I've adopted on this site. 
 
 ## Back to Part 1
 
+Now that I have chosen my colour palette, head back to [Part 1 LINK]() for details of how to modify the default {distill} syntax highlighting theme to incorporate them, and how to apply the custom theme to a {distill} site.
 
 
 
