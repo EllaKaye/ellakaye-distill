@@ -94,13 +94,13 @@ penguins %>%
   )
 ```
 
-This is the first in a series of two posts on implementing a custom syntax highlighting theme for a website or blog built with {distill}. Read on here for why and how this function was built, what it does and doesn't do, and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package. This post also outlines the criteria that were important to me when choosing colours for my theme, but take a look at Part 2, **FULL NAME AND LINK**, for a deep dive into considerations about colour choices, in respect to both colour theory and accessibility, and how I ensured my criteria were met.
+This is the first in a series of two posts on implementing a custom syntax highlighting theme for a website or blog built with {distill}. Read on here for why and how this function was built, what it does and doesn't do, and its inclusion in the [{distilltools}](https://github.com/EllaKaye/distilltools) package. This post also outlines the criteria that were important to me when choosing colours for my theme, but take a look at Part 2, [custom syntax highlighting for {distill}: creating the palette](https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/), for a deep dive into considerations about colour choices, in respect to both colour theory and accessibility, and how I ensured my criteria were met.
 
 ## But first, the default
 
 ### In praise of the default
 
-Before I delve into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below and in [Part 2 **LINK**](). Also, it appears that the colours in the scheme work well together, and overall, on the many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
+Before I delve into how to create a custom syntax highlighting scheme, I want to take a minute to admire the default. The authors of {distill}, in particular [Alison Hill](https://alison.rbind.io), have thought and worked hard to ensure that {distill} provides a good user experience, both for the site's author AND for those reading it. One of the key considerations for the latter is a default syntax highlighting scheme with colours that are optimised for accessibility and colour contrast. I say more about what that means below and in [Part 2](https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/). Also, it appears that the colours in the scheme work well together, and overall, on the many {distill} websites where I've seen the scheme used, I think it looks really good! For a great example of the default in action, check out this [code-chunk-heavy post](https://themockup.blog/posts/2021-03-07-creating-a-custom-gt-function-for-aligning-first-row-text-and-testing-it-with-testthat/) by [Tom Mock](https://twitter.com/thomas_mock).
 
 ### So, why change?
 
@@ -143,7 +143,7 @@ Once I had run that once, I commented out the lines. I don't want any future cha
 
 ### Closer inspection of the default
 
-From there, I could open up my copy of the `arrow.theme` file, and manually inspect it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com).^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/).] The basic version is free, though the pro version has great features for testing accessibility - more on that in [Part 2 LINK](). I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
+From there, I could open up my copy of the `arrow.theme` file, and manually inspect it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com).^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/).] The basic version is free, though the pro version has great features for testing accessibility - more on that in [Part 2](https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/). I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
 
 There are 29 types of `text-styles` in the theme, of which:
 
@@ -167,7 +167,7 @@ I had four criteria for building a colour palette to use for my syntax highlight
 - It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast, i.e. a ratio of 4.5:1, between each of the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
 
-I was originally going to write up how I went about building such a palette, both in terms of the thought process and tools used, as part of this post, but it was getting a little long^[As part of the process of writing the post, I learnt much more about colour theory, and alternatives to the approach that I had originally taken, and I wanted to share it all!], so I've spun it out into a separate post: ADD LINK.
+I was originally going to write up how I went about building such a palette, both in terms of the thought process and tools used, as part of this post, but it was getting a little long^[As part of the process of writing the post, I learnt much more about colour theory, and alternatives to the approach that I had originally taken, and I wanted to share it all!], so I've spun it out into a separate post,[custom syntax highlighting for {distill} part 2: creating the palette ](https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/).
 
 At the end of the process, the palette for my syntax highlighting scheme is as in Figure \@ref(fig:ek-syntax-highlighting-palette).
 
