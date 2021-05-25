@@ -15,6 +15,7 @@ categories:
 twitter:
   site: "@ellamkaye"
   creator: "@ellamkaye"
+bibliography: bibliography.bib
 output:
   distill::distill_article:
     highlight: /Users/ellakaye/ellakaye-distill/ek_syntax_highlighting.theme
@@ -110,7 +111,7 @@ It's great to play around with an HSL or HSB colour wheel to get a sense of how 
 
 Whilst websites on colour theory for designers tend to focus on either the HSB or HSL spaces, and it's HSB or HSL wheels/sliders that tend to be built into design and colour software and apps, both spaces suffer from a lack of perceptual uniformity. The RGB rainbow palette is [notorious](https://colorspace.r-forge.r-project.org/articles/endrainbow.html) for this. In general, RBG/HSB/HSL palettes are not a good choice for statistical graphics and data visualisation, where colour conveys meaning. For these purposes, the HCL colour space (**H**ue, **C**hroma, **L**uminance) offers a much better alternative. It is much more suitable for capturing human colour perception. 
 
-There is an R package for working with the HCL colour space, the intuitively named [{colorspace}](https://colorspace.r-forge.r-project.org/articles/colorspace.html). It has many excellent vignettes, including one about the [HCL space](https://colorspace.r-forge.r-project.org/articles/color_spaces.html) and its perceptual superiority over other colour spaces. The package also provides [colour palettes](https://colorspace.r-forge.r-project.org/articles/hcl_palettes.html) and [scales for {ggplot2}](https://colorspace.r-forge.r-project.org/articles/ggplot2_color_scales.html). There is also support for [HCL palettes in base R](https://developer.r-project.org/Blog/public/2019/04/01/hcl-based-color-palettes-in-grdevices/). The HCL space is also used on [I want hue](http://medialab.github.io/iwanthue/), a site about colours aimed at data scientists, which allows you to generate and refine palettes of optimally distinct colours.
+There is an R package for working with the HCL colour space, the intuitively named [{colorspace}](https://colorspace.r-forge.r-project.org/articles/colorspace.html) [@Zeileis:2020]. It has many excellent vignettes, including one about the [HCL space](https://colorspace.r-forge.r-project.org/articles/color_spaces.html) and its perceptual superiority over other colour spaces. The package also provides [colour palettes](https://colorspace.r-forge.r-project.org/articles/hcl_palettes.html) and [scales for {ggplot2}](https://colorspace.r-forge.r-project.org/articles/ggplot2_color_scales.html). There is also support for [HCL palettes in base R](https://developer.r-project.org/Blog/public/2019/04/01/hcl-based-color-palettes-in-grdevices/). The HCL space is also used on [I want hue](http://medialab.github.io/iwanthue/), a site about colours aimed at data scientists, which allows you to generate and refine palettes of optimally distinct colours.
 
 ```{r pink-in-hcl, echo = FALSE, fig.cap="My pink on the Luminance-Chroma plane in the HCL space. Image is a screenshot from [http://hclwizard.org](http://hclwizard.org:3000/hclcolorpicker/).", fig.alt="A triangle of HCL space, with bright pink on the far right, transitioning towards light grey on the top left corner and black on the bottom left corner."}
 knitr::include_graphics("pink-in-HCL.png")
@@ -172,7 +173,7 @@ knitr::include_graphics("third-colour-swatch.png")
 
 That looks way too dark for my liking. I don't think it's vibrant enough, and, although the colours all have good contrast against the white background, they don't have much contrast with each other.
 
-So, I settled on a compromise position. I reduced the brightness of the original pink, blue and purple for 83% to match the brightness of the accessibility-passing orange (71%), leaving only the green at a brightness of 53%, which it needs to pass the contrast check. That gives the palette in Figure \@ref(fig:final-palette).
+So, I settled on a compromise position. I reduced the brightness of the original pink, blue and purple for 83% to match the brightness of the accessibility-passing orange (71%), leaving only the green at a brightness of 53%, which it needs to pass the contrast check. This gives the palette in Figure \@ref(fig:final-palette). To my eye, the green doesn't appear considerably more dark/less bright than the other four colours. If anything, the greens in Figures \@ref(fig:colour-theory-palette) and \@ref(fig:all-less-bright), which both have uniform brighness, look a little too bright compared to the other colours. I guess this is a result of the lack of perceptual uniformity of the HSB space. 
 
 ```{r final-palette, echo = FALSE, fig.cap = "The palette I settled on for my syntax highlighting scheme.", fig.alt="A swatch of five colours, a pink, orange, green, blue and purple, all quite bright, but still all with a contrast ratio of 4.5:1 or better against white."}
 ek_highlight_colours <- c("#5B00B6", "#005BB6", "#008643", "#B65B00", "#B6005B")
