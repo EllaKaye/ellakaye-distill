@@ -38,7 +38,7 @@ meta() %>%
   meta_viewport() %>%
   meta_social(
     title = "Custom Syntax Highlighting for {distill} Part 1: Modifying the default theme", # adding title here removes "ELLA KAYE: " from the front
-    image = "https://ellakaye.rbind.io/posts/21-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/theme-in-action.png", 
+    image = "https://ellakaye.rbind.io/posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/theme-in-action.png", 
     image_alt = "A picture of some R code with a syntax highlighting scheme applied",
     og_type = "website",
     og_author = c("Ella Kaye"),
