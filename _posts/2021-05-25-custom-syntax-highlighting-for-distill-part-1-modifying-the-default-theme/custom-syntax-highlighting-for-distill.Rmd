@@ -38,7 +38,7 @@ meta() %>%
   meta_viewport() %>%
   meta_social(
     title = "Custom Syntax Highlighting for {distill} Part 1: Modifying the default theme", # adding title here removes "ELLA KAYE: " from the front
-    image = "https://ellakaye.rbind.io/posts/FULL_PATH_TO_IMAGE.png", 
+    image = "https://ellakaye.rbind.io/posts/21-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/theme-in-action.png", 
     image_alt = "A picture of some R code with a syntax highlighting scheme applied",
     og_type = "website",
     og_author = c("Ella Kaye"),
@@ -48,9 +48,9 @@ meta() %>%
 
 ## TL;DR
 
-The [{distill}](https://rstudio.github.io/distill/) package for R can be used to build easy-to-maintain websites written only in R Markdown. It's the package on which this site is built.^[For more on resources and inspirations for setting up a {distill} website, see my previous post, [Welcome to my {distill} website](https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/).]
+The [{distill}](https://rstudio.github.io/distill/) package for R can be used to build easy-to-maintain websites written only in R Markdown, such as this one.^[For more on resources and inspirations for setting up a {distill} website, see my previous post, [Welcome to my {distill} website](https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/).]
 
-I wrote a function to modify the default syntax highlighting theme and put it in the [{distilltools}](https://ellakaye.github.io/distilltools) package. 
+I wrote a function to modify the default syntax highlighting theme. This `modify_default_highlighting` function is now part of the [{distilltools}](https://ellakaye.github.io/distilltools) package. 
 
 Here's the function in action, to get the theme used on this site:
 
@@ -120,15 +120,15 @@ bg_col <- function(bg_col, text = NULL, text_col = NULL) {
 ```
 
 
-When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the `r bg_col("#D4006A", text = "bright pink")` (closest [colour name](https://chir.ag/projects/name-that-color/#D4006A), the rather fun "razzmatazz") I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours. 
+When I used the default syntax highlighting theme on my site I found, to my eye, that the red used for numeric variables clashed with the `r bg_col("#D4006A", text = "bright pink")` (closest [colour name](https://chir.ag/projects/name-that-color/#D4006A) "razzmatazz") I've used in my logo and elsewhere throughout the site. So, I decided to tweak the default theme swapping the red for my pink and, to match it, more vibrant versions of the remaining colours. 
 
 ### Distill/pandoc documentation
-My first task was to find out whether this was possible, and if, so, how. Thankfully, the {distill} documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme, stating that can then be edited to create a custom theme. 
+My first task was to find out whether this was possible, and if, so, how. Thankfully, the {distill} documentation contains a section on [syntax highlighting](https://rstudio.github.io/distill/#syntax-highlighting), showing that there is an option to give `distill_article` a path to a custom `.theme` file. The [linked pandoc documentation on syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting) demonstrates how to use pandoc in the command line to save a personal version of the `pygments` highlighting theme. The documentation points out that that copy of the pygments `.theme` file can then be edited to create a custom theme. 
 
 ### Finding and saving the default
 Once I had a general strategy of copying and editing an existing `.theme` file, my next task was to find the `.theme` file for the default used in {distill}, because that's what I'd already decided to take as my starting point.
 
-I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio.^[From RStudio, go to 'File' in the menu bar, then 'New Project...' Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project'] From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. In the RStudio project for my website, I created a new script, `syntax_highlighting.R`, in the `R` folder I have in my root directory, then ran the following to save a copy of `arrow.theme` into my website's root directory:
+I cloned the [distill repo from GitHub](https://github.com/rstudio/distill) and opened it in RStudio.^[From RStudio, go to 'File' in the menu bar, then 'New Project...' Chose 'Version Control', then 'Git', then enter `https://github.com/rstudio/distill.git` as the 'Repository URL:' and click 'Create Project'] From there I began my detective work with one of my favourite RStudio features, 'Find in Files' (⇧ + ⌘ + <kbd>f</kbd> on a Mac), which searches across all files in a project. I searched for "highlight" and followed various trails until I discovered that the default is called `arrow.theme` and is stored in `inst/rmarkdown/templates/distill_article/resources/`. Thankfully, because it's in the `inst` folder, the file is accessible to users who have the {distill} package installed. In the RStudio project for my website, I created a new script, `syntax_highlighting.R`, in the `R` folder I have in my root directory, then I ran the following to save a copy of `arrow.theme` into my website's root directory:
 
 ```{r eval = FALSE}
 arrow_theme_path <- system.file(
@@ -139,11 +139,11 @@ arrow_theme_path <- system.file(
 file.copy(arrow_theme_path, "arrow.theme")
 ```
 
-Once I had run that once, I commented out the lines. I don't want any future changes in `arrow.theme` in {distill} to break what I do next.
+When I had run that once, I commented out the above lines. I don't want any future changes in `arrow.theme` in {distill} to break what I do next.
 
 ### Closer inspection of the default
 
-From there, I could open up my copy of the `arrow.theme` file, and manually inspect it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com).^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/).] The basic version is free, though the pro version has great features for testing accessibility - more on that in [Part 2](https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/). I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
+From there I could open up my copy of the `arrow.theme` file and manually inspect it. I use a great Mac app for building colour palettes, [ColorSlurp](https://colorslurp.com).^[I don't have experience of colour apps on other operating systems, but a quick search for ColorSlurp alternatives suggest there are [a bunch to pick from](https://alternativeto.net/software/colorslurp/).] The basic version is free, though the pro version has useful features for testing accessibility - more on that in [Part 2](https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/). I set up a new palette in ColorSlurp and, for each hex colour code I encountered, I saved it there.
 
 There are 29 types of `text-styles` in the theme, of which:
 
@@ -162,8 +162,8 @@ I was happy to stick with the groupings, grey, off-black and `null` in the defau
 
 I had four criteria for building a colour palette to use for my syntax highlighting theme:
 
-- It be based around the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
-- It uses colour theory to pick colours that all look appealing together
+- It be based on the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
+- It uses colour theory to pick colours that look appealing together
 - It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast, i.e. a ratio of 4.5:1, between each of the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
 
@@ -177,7 +177,7 @@ knitr::include_graphics("ek-syntax-highlighting-palette.png")
 
 ## Modifying `arrow.theme`
 
-With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices. Although it's possible to manually edit the `arrow.theme` file we now have in our directory, to aid reproducibility, and with a view to writing this up as a function, I edited it using R code instead. I read in the file, substituted the hex codes, then saved the resulting theme into a new `.theme` file. Below are two approaches, one using base R, the other in the tidyverse, that I put in my `syntax_highlighting.R` script.
+With all the pieces in place, it's now just a case of swapping out the default colour codes for our own choices. Although it's possible to manually edit the `arrow.theme` file we now have in our directory, to aid reproducibility, and with a view to writing this up as a function, I edited it using R code instead. I read in the file, substituted the hex codes, then saved the resulting theme into a new `ek_syntax_highlighting.theme` file (leaving `arrow.theme` unchanged). Below are two approaches, one using base R, the other in the tidyverse, that I put in my `syntax_highlighting.R` script.
 
 ```{r eval = FALSE}
 
@@ -208,15 +208,15 @@ writeLines(theme, "ek_syntax_highlighting.theme")
 
 I now have the file `ek_syntax_highlighting.theme` in my root directory, with my colour choices.
 
-It is, of course, possible to modify it further, either manually or by making further substutions in the code above. There is a quirk, though. If I swap one of the default hex codes for my own colour choice, that implements just fine, but if I swap any of the `null`s for a colour, that doesn't show up when I apply the theme. 
+It is, of course, possible to modify it further, either manually or by making further substutions in the code above. There is a quirk, though: if I swap one of the default hex codes for my own colour choice, that implements just fine, but if I swap any of the `null`s for a colour, that doesn't show up when I apply the theme. 
 
 ## Wrapping in a {distilltools} function
 
 When I figure out code to do something that I think I might want to do again, or think others might find useful, I generally like to write it up as a function, and that's what I've done with the above, wrapping it in a function called `modify_default_highlighting` and putting it in the  [{distilltools}](https://ellakaye.github.io/distilltools) package. {distilltools} is in the very early stages of development, an (expanding) collection of tools to support the creation and styling of content on websites created using {distill}. 
 
-When I first announced the package, I included in the 'future functionality' section of the package README the intention to add a `create_highlight_theme` function. I don't think what I've done is quite versitile or fully-featured enough to warrant that name. Instead, I called it  `modify_default_highlighting` because that's all it does, allowing you to swap out the five colours in the default scheme for five colours of your choosing. It does, however, create a `.theme` file in your working directory, that can be further edited manually (or with your own R code), if further modifications are desired. 
+When I first announced the package, I included in the 'future functionality' section of the package README the intention to add a `create_highlight_theme` function. I don't think what I've done is quite versatile or fully-featured enough to warrant that name. Instead, I called it  `modify_default_highlighting` because that's all it does, allowing you to swap out the five colours in the default scheme for five colours of your choosing. It does, however, create a `.theme` file in your working directory, that can be further edited manually, or with your own R code, if further modifications are desired. 
 
-The first argument to `modify_default_highlighting` is `name`, the name you want to give your theme (which will create the file `name.theme`). It then takes five colour arguments, which can be specified either in the hex form "#RRGGBB" or as a named color (as long as the name is in [grDevices::colors()](https://rdrr.io/r/grDevices/colors.html)). For a list of the colour names available in R, see page 3 of the [R color cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf) for a one page summary, or [Colors in R](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) for a slightly less visually overwhelming list. The final argument, `overwrite` (defaults to `TRUE`) specifies whether to overwrite `name.theme` if it already exists in the working directory. Here's the function in action again, this time using colour names (note that I have not tested the visual properties of this as a palette, just dropped in some colour names into the function):
+The first argument to `modify_default_highlighting` is `name`, the name you want to give your theme (which will create the file `name.theme`). It then takes five colour arguments, which can be specified either in the hex form "#RRGGBB" or as a named colour, from the colour names in [grDevices::colors()](https://rdrr.io/r/grDevices/colors.html). For a list of the colour names available in R, see page 3 of the [R color cheatsheet](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf) for a one page summary, or [Colors in R](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) for a slightly less visually overwhelming list. The final argument, `overwrite` (defaults to `TRUE`) specifies whether to overwrite `name.theme` if it already exists in the working directory. Here's the function in action again, this time using colour names (note that I have not tested the visual properties of this as a palette, just dropped in some colour names into the function):
 
 ```{r eval = FALSE}
 library(distilltools)

@@ -40,7 +40,7 @@ meta() %>%
   meta_viewport() %>%
   meta_social(
     title = "Custom Syntax Highlighting for {distill} Part 2: Creating the Palette", # adding title here removes "ELLA KAYE: " from the front
-    image = "https://ellakaye.rbind.io/posts/FULL_PATH_TO_IMAGE.png", 
+    image = "https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette.png", 
     image_alt = "A swatch of five colours, a pink, orange, green, blue and purple, all quite bright, but still all with a contrast ratio of 4.5:1 or better against white.",
     og_type = "website",
     og_author = c("Ella Kaye"),
@@ -64,18 +64,16 @@ bg_col <- function(bg_col, text = NULL, text_col = NULL) {
 ```
 
 ## Part 1 recap and Part 2 overview
-In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme](https://ellakaye.rbind.io/posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/), I describe why and how I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function that wrapped that process for [{distilltools}](https://ellakaye.github.io/distilltools). I discuss the default syntax highlighting theme used on {distill} sites, and how we can modify it by replacing the five colours used there with five colours of our choosing.
+In Part 1 of this series, [custom syntax highlighting for {distill}: modifying the theme](https://ellakaye.rbind.io/posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/), I describe how and why I went about the process of finding and modifying the default syntax highlighting for [{distill}]((https://rstudio.github.io/distill/)) and how I created a function that wrapped that process for [{distilltools}](https://ellakaye.github.io/distilltools). I discuss the default syntax highlighting theme used on {distill} sites, and how we can modify it by replacing the five colours used there with five colours of our choosing.
 
 I also outline the four criteria that were important to me as I went about choosing colours for my own syntax highlighting theme:
 
-- It be based around the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
-- It uses colour theory to pick colours that all look appealing together
+- It be based on the <span style="color:#D4006A">pink</span> that I use in my logo and elsewhere throughout this site
+- It uses colour theory to pick colours that look appealing together
 - It meets [WCAG web accessibility guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), by ensuring sufficient colour contrast, i.e. a ratio of 4.5:1, between each of the colours in the theme and this site's background colour (white)
 - The colours in the palette are colourblind-friendly, i.e. still distinguishable to people with various difference types of colourblindness.
 
-This post spins out from Part 1 with a deep-dive into the processes, both thought and practical, of choosing colours for my palette that meet the above criteria.
-
-This post brings two-for-one value. Not only do I write up how I first went about this to derive the palette that's implemented throughout this site, I also demonstrate a different, entirely R-based, approach to satisfying the criteria, which I decided to try out after learning more about different colour spaces as I was writing up this post. I much preferred the outcome of one approach to the other, but your mileage may vary.
+This post spins out from Part 1 with a brief primer on colour theory and then a deep-dive into the processes, both thought and practical, of choosing colours for my palette that meet the above criteria. I show how I first went about this to derive the palette that's implemented throughout this site. I also demonstrate a different, entirely R-based, approach to satisfying the criteria, which I decided to try out after learning more about different colour spaces as I was writing up this post. I much preferred the outcome of one approach to the other, but your mileage may vary.
 
 ## A brief primer on colour theory
 
@@ -85,7 +83,7 @@ This post brings two-for-one value. Not only do I write up how I first went abou
 knitr::include_graphics("hsl-colour-wheel-d4006a-annotated.png")
 ```
 
-Colour theory determines which colours 'look good' together, based on their relative position on a colour wheel, such as that in Figure \@ref(fig:hsl-colour-wheel), somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure \@ref(fig:colour-harmonies), there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analagous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle. 
+Colour theory determines which colours 'look good' together, based on their relative position on a colour wheel, such as that in Figure \@ref(fig:hsl-colour-wheel), somewhat analogously, I think, to how certain musical intervals sound more pleasing/harmonious than others, depending on the ratio of their frequencies. As shown in Figure \@ref(fig:colour-harmonies), there are various different types of colour palettes that are in colour harmony, such as complementary (comprised of colours opposite each other on the wheel), analogous (three colours side by side) and triadic (three colours evenly spaced around the wheel). Note that all the colour schemes are derived from the same twelve colours, spaced evenly around a circle. 
 
 ```{r colour-harmonies, echo = FALSE, fig.cap = "Harmonious colour combinations. Figure from [https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel](https://www.widewalls.ch/magazine/color-theory-basics-elements-color-wheel).", fig.alt="Six wheels each split into 12 equal segments of different colours, equally spaced round the colour wheel. Each wheel highlights two, three or four of these colours that look harmonious together."}
 knitr::include_graphics("colour-harmonies.jpg")
@@ -95,11 +93,11 @@ knitr::include_graphics("colour-harmonies.jpg")
 
 #### RGB, HSB and HSL
 
-Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**eg **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.
+Another aspect of colour theory relates to colour spaces, and different ways that colours can be defined. The best known, at least in the context of designing for the web, is RGB (**R**ed **G**reen **B**lue), which defines a colour by how much of each of those three primary colours it contains, in a range of 0-255. It is the hexidecimal representations of these three numbers that combine to make up the hex code for a colour.
 
 More intuitive, however, for adjusting colours, is defining them by HSB (**H**ue, **S**aturation, **B**rightness), also known as HSV (**H**ue, **S**aturation, **V**alue). HSB is a simple transformation of the RGB space. Similar to HSB is HSL (**H**ue, **S**aturation, **L**ightness), though HSL is considered an improved over HSB in terms of its perceptual qualities.
 
-In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's a [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. The differences between HSB and HSL are also illustrated in Figure \@ref(fig:hsl-hsb-sliders).
+In HSB, the hue represents the colour type and is a number measured between 0 and 360°; it's where you are on the colour wheel, ignoring how bright or intense the colour is. Saturation describes the intensity or richness of the hue, measured between 0 and 100%. 100% is the richest version of the colour and 0% is a shade of grey. Brightness measures, you guessed it, the brightness of the colour. Again, it ranges from 0 to 100%, with 0% being black and 100% being a very bright colour (here, black is not the opposite of white). Here's an [excellent article on the HSB system](https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html), which also explains how it differs from HSL. The differences between HSB and HSL are also illustrated in Figure \@ref(fig:hsl-hsb-sliders).
 
 ```{r hsl-hsb-sliders, echo = FALSE, fig.cap="HSL and HSB sliders for the pink used throughout this site. Image is a screenshot from [http://colorizer.org](http://colorizer.org).", fig.alt="Two sets of three colour sliders, one for HSL the other for HSB. Both have the same scale for hue. In HSL, the saturation runs from grey to bright pink. In HSB with saturation runs from white to bright pink. In HSL, the lightness runs from black to white, via the bright pink. In HSB, the Brightness runs from black to bright pink."}
 knitr::include_graphics("hsl-hsb-sliders.png")
@@ -282,15 +280,11 @@ swatchplot(hcl_even_five, border = "transparent")
 
 When I was developing my scheme, I used my trusted ColorSlurp app to adjust colours to ensure they met WCAG standards of web accessibility. In writing up this post, I since learnt about web resources to do the same (e.g. [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/)) and now, for this section, I've discovered the [{coloratio}](https://github.com/matt-dray/coloratio) and [{savonliquide}](https://github.com/feddelegrand7/savonliquide) packages that can do this in R.
 
-<aside>
-This is a beautiful thing about blogging. In the process of writing this post, I'm learning so much!
-</aside>
-
 Both packages have much to recommend them. {savonliquide} has the advantage of being on CRAN, and provides a toolbox that allows the user to implement accessibility-related concepts, including, but not limited to, contrast checking. {coloratio} is GitHub only, and only for contrast checking, but it has some additional functionality in that area above {savonliquide}, such as quick plotting of the colours in contrast, and a function, `cr_choose_bw()` that chooses which of black or white has the better contrast ratio with a user supplied colour (which, incidentally, I use to automatically choose the text colour when highlighting words with different background colours, e.g. `r bg_col("#D4006A")` vs `r bg_col("#00D46A")`).
 
-Below, I use the `cr_get_ratio` function from `coloratio` to check the colour contrasts of each color in the palette. Because it's not vectorised, I use this in conjunction with `map2_dbl` from [{purrr}](https://purrr.tidyverse.org) to get all the contrasts at once.
+Below, I use the `cr_get_ratio` function from `coloratio` to check the colour contrasts of each colour in the palette. Because it's not vectorised, I use this in conjunction with `map2_dbl` from [{purrr}](https://purrr.tidyverse.org) to get all the contrasts at once.
 
-If any of the contrasts are less than 4.5, I then call on the `darken()` function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette have a contrast ratio of at least 4.5:1 compared to white. Here the code that achieves this:
+If any of the contrasts are less than 4.5, I then call on the `darken()` function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette have a contrast ratio of at least 4.5:1 compared to white. Here is the code that achieves this:
 
 ```{r message=FALSE, warning = FALSE}
 library(coloratio)
