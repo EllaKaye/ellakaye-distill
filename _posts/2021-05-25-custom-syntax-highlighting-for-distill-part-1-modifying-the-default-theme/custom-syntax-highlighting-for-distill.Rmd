@@ -21,6 +21,7 @@ output:
     highlight: ek_syntax_highlighting.theme
     self_contained: false
     toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
