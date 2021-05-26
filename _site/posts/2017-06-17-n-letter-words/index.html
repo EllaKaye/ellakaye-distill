@@ -54,34 +54,34 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #d40067; } /* Alert */
+code span.al { color: #b6005b; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
 code span.at { } /* Attribute */
-code span.bn { color: #d40067; } /* BaseN */
+code span.bn { color: #b6005b; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #6600d4; } /* ControlFlow */
-code span.ch { color: #008747; } /* Char */
-code span.cn { color: #c15500; } /* Constant */
+code span.cf { color: #5b00b6; } /* ControlFlow */
+code span.ch { color: #008643; } /* Char */
+code span.cn { color: #b65b00; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
 code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
 code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-code span.dt { color: #d40067; } /* DataType */
-code span.dv { color: #d40067; } /* DecVal */
-code span.er { color: #d40067; } /* Error */
+code span.dt { color: #b6005b; } /* DataType */
+code span.dv { color: #b6005b; } /* DecVal */
+code span.er { color: #b6005b; } /* Error */
 code span.ex { } /* Extension */
-code span.fl { color: #d40067; } /* Float */
-code span.fu { color: #0077ce; } /* Function */
+code span.fl { color: #b6005b; } /* Float */
+code span.fu { color: #005bb6; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #6600d4; } /* Keyword */
+code span.kw { color: #5b00b6; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #6600d4; } /* Other */
-code span.pp { color: #d40067; } /* Preprocessor */
+code span.ot { color: #5b00b6; } /* Other */
+code span.pp { color: #b6005b; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
-code span.ss { color: #008747; } /* SpecialString */
-code span.st { color: #008747; } /* String */
+code span.ss { color: #008643; } /* SpecialString */
+code span.st { color: #008643; } /* String */
 code span.va { color: #111111; } /* Variable */
-code span.vs { color: #008747; } /* VerbatimString */
+code span.vs { color: #008643; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
@@ -137,7 +137,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["EMK-hex.png","n-letter-words_files/anchor-4.2.2/anchor.min.js","n-letter-words_files/bowser-1.9.3/bowser.min.js","n-letter-words_files/distill-2.2.21/template.v2.js","n-letter-words_files/header-attrs-2.7/header-attrs.js","n-letter-words_files/jquery-1.11.3/jquery.min.js","n-letter-words_files/popper-2.6.0/popper.min.js","n-letter-words_files/tippy-6.2.7/tippy-bundle.umd.min.js","n-letter-words_files/tippy-6.2.7/tippy-light-border.css","n-letter-words_files/tippy-6.2.7/tippy.css","n-letter-words_files/tippy-6.2.7/tippy.umd.min.js","n-letter-words_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["EMK-hex.png","n-letter-words_files/anchor-4.2.2/anchor.min.js","n-letter-words_files/bowser-1.9.3/bowser.min.js","n-letter-words_files/distill-2.2.21/template.v2.js","n-letter-words_files/header-attrs-2.7/header-attrs.js","n-letter-words_files/header-attrs-2.8.3/header-attrs.js","n-letter-words_files/header-attrs-2.8/header-attrs.js","n-letter-words_files/jquery-1.11.3/jquery.min.js","n-letter-words_files/popper-2.6.0/popper.min.js","n-letter-words_files/tippy-6.2.7/tippy-bundle.umd.min.js","n-letter-words_files/tippy-6.2.7/tippy-light-border.css","n-letter-words_files/tippy-6.2.7/tippy.css","n-letter-words_files/tippy-6.2.7/tippy.umd.min.js","n-letter-words_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -1894,7 +1894,7 @@ d-appendix {
 
 /* Optional: embed custom fonts here with `@import`
 */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
 /* This must remain at the top of this file.                 */
 
 
@@ -1944,7 +1944,7 @@ d-appendix {
 
 :root {
   --color-background:   white;
-  --color-primary:      #D40067;
+  --color-primary:      #D4006A;
   --color-secondary:    #0079D1;
 }
 
@@ -1963,7 +1963,7 @@ html {
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    "LEMONMILKPro-Light", sans-serif;
-  --mono-font:       "Fira Code", monospace;
+  --mono-font:       "Fira Mono", monospace;
   --body-font:       "LEMONMILKPro-UltraLight", sans-serif;
   --navbar-font:     "LEMONMILKPro-Regular", sans-serif;  /* websites + blogs only */
 }
@@ -1997,14 +1997,14 @@ d-appendix {
   --title-size:       18px;
   --text-color:       black; /*rgba(255, 255, 255, 0.8);*/
   --text-size:        18px;
-  --hover-color:      #D40067; /*white;*/
+  --hover-color:      #D4006A; /*white;*/
   --bkgd-color:       white; /*#0F2E3D;*/
 }
 
 .distill-site-footer {
   --text-color:       /*rgba(255, 255, 255, 0.8);*/
   --text-size:        15px;
-  --hover-color:      #D40067;
+  --hover-color:      #D4006A;
   --bkgd-color:       white; /*#0F2E3D;*/
 }
 
@@ -2022,7 +2022,7 @@ h1, h2, h3 {
 
 /*
 .btn-outline-dark {
-    background-color: #D40067;
+    background-color: #D4006A;
     color: white;
     border: 10px;
     border-color: black;
@@ -2044,9 +2044,9 @@ h1, h2, h3 {
 /* styling for icon-link buttons (see distilltools::icon_link()) */
 .icon-link {
     background-color: transparent;
-    color: #D40067;
+    color: #D4006A;
     border: 1px solid;
-    border-color: #D40067;
+    border-color: #D4006A;
     padding: 5px .4rem 5px .4rem;
     /*margin: 4px;*/
     margin-top: 4px;
@@ -2056,8 +2056,8 @@ h1, h2, h3 {
 }
 
 .icon-link:hover {
-    background-color: #D40067;
-    border-color: #D40067;
+    background-color: #D4006A;
+    border-color: #D4006A;
     color: white;
 }
 
@@ -2124,28 +2124,28 @@ https://ijeamaka-anyene.netlify.app
 .list-group-item targets when window is narrow
 */
 .btn-outline-dark{
-   color:#D40067;
-   border-color:#D40067;
+   color:#D4006A;
+   border-color:#D4006A;
    font-family: "LEMONMILKPro-Light", sans-serif;
  }
 
 .btn-outline-dark:hover {
-    background-color: #D40067;
-    border-color:#D40067;
+    background-color: #D4006A;
+    border-color:#D4006A;
     color: white;
     font-family: "LEMONMILKPro-Light", sans-serif;
     border: none;
 }
 
 .list-group-item {
-   color:#D40067;
-   border-color:#D40067;
+   color:#D4006A;
+   border-color:#D4006A;
    font-family: "LEMONMILKPro-Light", sans-serif;
  }
 
 .list-group-item:hover {
-    background-color: #D40067;
-    border-color:#D40067;
+    background-color: #D4006A;
+    border-color:#D4006A;
     color: white;
     font-family: "LEMONMILKPro-Light", sans-serif;
     border: none;
@@ -2156,6 +2156,11 @@ but doesn't seem to affect links throughout the rest of the site.
 This might be a problem if I ever want links on homepage matching style of rest of site, but this hacky fix will do for now*/
 a {
   text-decoration: none!important;
+}
+
+d-article a:hover, a:focus {
+    color: #D4006A;
+    border-color: #D4006A;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2312,7 +2317,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.8.3/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2428,7 +2433,7 @@ gtag('config', 'UA-101621242-1');
 <p>The function, <code>n_letter_words</code>, came about because I wanted to be able to generate row and column names for a large matrix - didn’t matter what they were, as long as they were unique. Since I was in the habit of using the built-in <code>LETTERS</code> vector to do this for small matrices, I naturally thought of using combinations of letters to do this in a larger case. In figuring out how to do this, as is so often the case, it was <a href="https://stackoverflow.com/questions/11388359/unique-combination-of-all-elements-from-two-or-more-vectors">stackoverflow</a> to the rescue. There, I learnt about <code>expand.grid</code> and could then use some tidyverse tools to get the vector I was after:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
 <span class='va'>out</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/expand.grid.html'>expand.grid</a></span><span class='op'>(</span><span class='va'>LETTERS</span>, <span class='va'>LETTERS</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>unite</span><span class='op'>(</span><span class='va'>word</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>, sep <span class='op'>=</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
