@@ -2609,7 +2609,7 @@ Figure 10: Checking my palette for how it appears to those with various types of
 <p>Thankfully, for all three main types of colourblindess, the five colours in the palette are distinguishable, so no further adjustments are necessary.</p>
 <h2 id="approach-2-an-r-based-hcl-alternative">Approach 2: An R-based HCL alternative</h2>
 <p>The above sections describe the processes, both thought and practical, that I went through to derive the colour palette for my syntax highlighting scheme, and I’m happy with what I came up with. As I was deriving my scheme, I was working in ColorSlurp and only had a cursory knowledge of the differences between the HSB, HSL and HCL colour spaces.</p>
-<p>However, as I was writing up this blog post, I become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below is this alternative approach, using the <a href="https://colorspace.r-forge.r-project.org">{colorspace}</a>, <a href="https://matt-dray.github.io/coloratio/">{coloratio}</a> by <a href="https://www.matt-dray.com">Matt Dray</a> and <a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic}</a> packages. Also, whereas the previous approach is based on the HSB colour space, this one uses HCL.</p>
+<p>However, as I was writing up this blog post, I become increasingly curious about alternative approaches I might have taken. In particular, could I have come up with a scheme that met my criteria entirely in R? Given the incredible ecosystem that R is, it should be no surprise that the answer turned out to be yes! So, below is this alternative approach, using the <a href="https://colorspace.r-forge.r-project.org">{colorspace}</a>, <a href="https://matt-dray.github.io/coloratio/">{coloratio}</a> and <a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic}</a> packages. Also, whereas the previous approach is based on the HSB colour space, this one uses HCL.</p>
 <h3 id="building-a-palette-based-on-my-pink-using-colour-theory-1">Building a palette based on my <span style="color:#D4006A">pink</span>, using colour theory</h3>
 <p>The {colorspace} package uses the HCL color space, so the first task was to convert a hex code into its hue, chroma and luminance components, and make them available for future use, which can be done as follows:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2658,7 +2658,19 @@ Figure 11: Six colours, with hues 60° apart and constant chroma and luminance, 
 </p>
 </div>
 </div>
-<p>[<strong>UPDATE: May 27th 2021:</strong> Since publishing this post, Achim Zeileis, the author of the {colorspace} package, got in touch with me on <a href="https://twitter.com/AchimZeileis/status/1397580619857682437">twitter</a> to offer a bit more insight into what’s going on with this palette. The <code>hcl_six</code> palette does not, in fact, have constant chroma. Not all combinations of Hue/Chroma/Luminance exist in HCL space. At the luminance of my pink (~46) not many other hues can have such high chroma (~118), as demonstrated in Figure <a href="#fig:hclplot">12</a>.</p>
+<p>The only personal decision I make in this section is which of these six colours to discard. Removing the first of the greens gives me the palette in Figure <a href="#fig:hcl-five">12</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:hcl-five"></span>
+<img src="hcl-five.png" alt="A swatch of five colours in the HCL space, my pink, a brown, green, blue and magenta." width="662" />
+<p class="caption">
+Figure 12: As in the previous figure but minus a green and rearranged
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>[<strong>UPDATE: May 27th 2021:</strong> Since publishing this post, Achim Zeileis, the author of the {colorspace} package, got in touch with me on <a href="https://twitter.com/AchimZeileis/status/1397580619857682437">twitter</a> to offer a bit more insight into what’s going on with this palette. The <code>hcl_six</code> palette does not, in fact, have constant chroma. Not all combinations of Hue/Chroma/Luminance exist in HCL space. At the luminance of my pink (~46) not many other hues can have such high chroma (~118), as demonstrated in Figure <a href="#fig:hclplot">13</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://colorspace.R-Forge.R-project.org//reference/hclplot.html'>hclplot</a></span><span class='op'>(</span><span class='va'>hcl_six</span><span class='op'>)</span>
@@ -2667,25 +2679,13 @@ Figure 11: Six colours, with hues 60° apart and constant chroma and luminance, 
 <div class="figure"><span id="fig:hclplot"></span>
 <img src="custom-syntax-highlighting-for-distill-part-2-creating-the-palette_files/figure-html5/hclplot-1.png" alt="A partially filled colour wheel for a luminance of 47 in HCL space, showing hues of orange, red and purple with high chroma, but with no greens or yellows of high chroma." width="624" />
 <p class="caption">
-Figure 12: Hues and Chromas in HCL space at the Luminance of my pink
+Figure 13: Hues and Chromas in HCL space at the Luminance of my pink
 </p>
 </div>
 </div>
 <p><code>qualitative_hcl()</code> struggles in such circumstances, though does try to keep the luminance of the palette constant.]</p>
-<p>The only personal decision I make in this section is which of these six colours to discard. Removing the first of the greens gives me the palette in Figure <a href="#fig:hcl-five">13</a>.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span id="fig:hcl-five"></span>
-<img src="hcl-five.png" alt="A swatch of five colours in the HCL space, my pink, a brown, green, blue and magenta." width="662" />
-<p class="caption">
-Figure 13: As in the previous figure but minus a green and rearranged
-</p>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
 <h3 id="adapting-for-web-accessibility-1">Adapting for web accessibility</h3>
-<p>When I was developing my scheme, I used my trusted ColorSlurp app to adjust colours to ensure they met WCAG standards of web accessibility. In writing up this post, I since learnt about web resources to do the same (e.g. <a href="https://webaim.org/resources/contrastchecker/">WebAIM contrast checker</a>) and now, for this section, I’ve discovered the <a href="https://github.com/matt-dray/coloratio">{coloratio}</a> and <a href="https://github.com/feddelegrand7/savonliquide">{savonliquide}</a> packages that can do this in R.</p>
+<p>When I was developing my scheme, I used my trusted ColorSlurp app to adjust colours to ensure they met WCAG standards of web accessibility. In writing up this post, I since learnt about web resources to do the same (e.g. <a href="https://webaim.org/resources/contrastchecker/">WebAIM contrast checker</a>) and now, for this section, I’ve discovered the <a href="https://github.com/matt-dray/coloratio">{coloratio}</a> by <a href="https://www.matt-dray.com">Matt Dray</a> and <a href="https://github.com/feddelegrand7/savonliquide">{savonliquide}</a> by <a href="https://ihaddadenfodil.com">Mohamed El Fodil Ihaddaden</a> packages that can do this in R.</p>
 <p>Both packages have much to recommend them. {savonliquide} has the advantage of being on CRAN, and provides a toolbox that allows the user to implement accessibility-related concepts, including, but not limited to, contrast checking. {coloratio} is GitHub only, and only for contrast checking, but it has some additional functionality in that area above {savonliquide}, such as quick plotting of the colours in contrast, and a function, <code>cr_choose_bw()</code> that chooses which of black or white has the better contrast ratio with a user supplied colour (which, incidentally, I use to automatically choose the text colour when highlighting words with different background colours, e.g. <span style="background-color: #D4006A; color: white; padding:3px">#D4006A</span> vs <span style="background-color: #00D46A; color: black; padding:3px">#00D46A</span>).</p>
 <p>Below, I use the <code>cr_get_ratio</code> function from <code>coloratio</code> to check the colour contrasts of each colour in the palette. Because it’s not vectorised, I use this in conjunction with <code>map2_dbl</code> from <a href="https://purrr.tidyverse.org">{purrr}</a> to get all the contrasts at once.</p>
 <p>If any of the contrasts are less than 4.5, I then call on the <code>darken()</code> function from {colorspace}, which adjusts each colour in the palette to make it, you guessed it, a bit darker, therefore improving the contrast ratio. I loop over these checking and darkening iterations until all colours in the palette have a contrast ratio of at least 4.5:1 compared to white. Here is the code that achieves this:</p>
