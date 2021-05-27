@@ -18,7 +18,7 @@ twitter:
 bibliography: bibliography.bib
 output:
   distill::distill_article:
-    highlight: /Users/ellakaye/ellakaye-distill/ek_syntax_highlighting.theme
+    highlight: ek_syntax_highlighting.theme
     self_contained: false
     toc: true
     toc_float: true
