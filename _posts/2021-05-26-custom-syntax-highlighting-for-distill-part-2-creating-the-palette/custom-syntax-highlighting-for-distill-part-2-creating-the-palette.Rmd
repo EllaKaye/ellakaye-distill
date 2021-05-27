@@ -247,10 +247,43 @@ hcl_six <- qualitative_hcl(
 ) 
 ```
 
+```{r eval = FALSE, echo = FALSE}
+hcl_six
+
+brown <- hex2RGB("#A16000", gamma = FALSE)
+brown_hcl <- as(brown, "polarLUV")
+brown_hcl
+
+green1 <- hex2RGB("#008200", gamma = FALSE)
+green1_hcl <- as(green1, "polarLUV")
+green1_hcl
+
+green2 <- hex2RGB("#00936E", gamma = FALSE)
+green2_hcl <- as(green2, "polarLUV")
+green2_hcl
+
+blue <- hex2RGB("#0082DB", gamma = FALSE)
+blue_hcl <- as(blue, "polarLUV")
+blue_hcl
+
+purple <- hex2RGB("#BA00DF", gamma = FALSE)
+purple_hcl <- as(purple, "polarLUV")
+purple_hcl
+```
+
+
 ```{r hcl-six, echo = FALSE, fig.cap = "Six colours, with hues 60° apart and constant chroma and luminance, based around my pink.", fig.alt="A swatch of six colours in the HCL space, a brown, two greens, a blue, magenta, and my pink"}
 #swatchplot(hcl_six, border = "transparent")
 knitr::include_graphics("hcl-six.png")
 ```
+
+[**UPDATE: May 27th 2021:** Since publishing this post, Achim Zeileis, the author of the {colorspace} package, got in touch with me on [twitter](https://twitter.com/AchimZeileis/status/1397580619857682437) to offer a bit more insight into what's going on with this palette. The `hcl_six` palette does not, in fact, have constant chroma. Not all combinations of Hue/Chroma/Luminance exist in HCL space. At the luminance of my pink (~46) not many other hues can have such high chroma (~118), as demonstrated in Figure \@ref(fig:hclplot). 
+
+```{r hclplot, fig.cap="Hues and Chromas in HCL space at the Luminance of my pink", fig.alt="A partially filled colour wheel for a luminance of 47 in HCL space, showing hues of orange, red and purple with high chroma, but with no greens or yellows of high chroma."}
+hclplot(hcl_six)
+```
+
+`qualitative_hcl()` struggles in such circumstances, though does try to keep the luminance of the palette constant.]
 
 The only personal decision I make in this section is which of these six colours to discard. Removing the first of the greens gives me the palette in Figure \@ref(fig:hcl-five).
 
