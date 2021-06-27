@@ -65,7 +65,7 @@ This post is not a guide on how to get a {distill} site up an running. There are
 
 - There's a great [building a blog with distill](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/) post from Tom Mock
 
-- And one on [building a {distill} website](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/) from Lisa Lendway
+- And one on [building a {distill} website](https://lisalendway.netlify.app/posts/2020-12-09-buildingdistill/) from Lisa Lendway
 
 ### Next steps
 

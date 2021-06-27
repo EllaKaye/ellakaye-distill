@@ -12,7 +12,7 @@
       <link>https://ellakaye.rbind.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Custom Syntax Highlighting for {distill} Part 2: Creating the Palette</title>
       <dc:creator>Ella Kaye</dc:creator>
@@ -22,7 +22,7 @@
       <category>colour</category>
       <category>accessibility</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette</guid>
-      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/ek-syntax-highlighting-palette.png" medium="image" type="image/png" width="1120" height="542"/>
     </item>
     <item>
@@ -47,7 +47,7 @@
       <category>distilltools</category>
       <category>R package development</category>
       <guid>https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website</guid>
-      <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/distill-logo.png" medium="image" type="image/png" width="735" height="852"/>
     </item>
     <item>
