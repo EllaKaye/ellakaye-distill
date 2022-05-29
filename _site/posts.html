@@ -86,6 +86,7 @@ code span.vs { color: #008643; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
   <title>ELLA KAYE: Posts</title>
 
@@ -457,7 +458,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -2291,7 +2292,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.8.3/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, orientation=auto"/>
   <meta name="description" content="Ella Kaye&#39;s Blog Posts"/>
   <meta name="github-repo" content="ellakaye/ellakaye-distill"/>
@@ -2377,7 +2378,7 @@ function init_posts_list() {
     var src = $(img).attr('data-src');
     if (src) {
       $(img).attr('src', src);
-      $(img).load(function() {
+      $(img).on("load", function() {
         img.removeAttribute('data-src');
       });
     }
@@ -2542,7 +2543,7 @@ function init_posts_list() {
 <a href="posts/2021-05-08-welcome-to-my-distill-website/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["distill","distilltools","R package development"]}</script>
 <div class="metadata">
-<div class="publishedDate">May 7, 2021</div>
+<div class="publishedDate">May 8, 2021</div>
 </div>
 <div class="thumbnail">
 <img src="posts/2021-05-08-welcome-to-my-distill-website/distill-logo.png"/>
@@ -2650,7 +2651,8 @@ function init_posts_list() {
 
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

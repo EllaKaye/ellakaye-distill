@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://ellakaye.rbind.io/about.html</loc>
-    <lastmod>2021-05-12T09:27:02+01:00</lastmod>
+    <lastmod>2022-05-29T11:02:27+01:00</lastmod>
   </url>
   <url>
     <loc>https://ellakaye.rbind.io/</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://ellakaye.rbind.io/posts/2021-05-26-custom-syntax-highlighting-for-distill-part-2-creating-the-palette/</loc>
-    <lastmod>2021-05-27T11:08:21+01:00</lastmod>
+    <lastmod>2021-05-27T11:08:22+01:00</lastmod>
   </url>
   <url>
     <loc>https://ellakaye.rbind.io/posts/2021-05-25-custom-syntax-highlighting-for-distill-part-1-modifying-the-default-theme/</loc>
