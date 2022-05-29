@@ -42,4 +42,4 @@ meta() %>%
 
 Hello and welcome to my personal website! 
 
-I am a PhD student in Statistics at the University of Warwick and an R enthusiast. 
+I am a postgraduate researcher in Statistics at the University of Warwick and an R enthusiast. 
