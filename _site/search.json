@@ -5,35 +5,35 @@
       "title": "About Me",
       "author": [],
       "contents": "\n\n\n\nHello! I am a postgraduate researcher in Statistics at the University\nof Warwick. I am part of the OxWaSP programme. I am interested\nin Applied Statistics, particularly as applied in the Social Sciences. I\nam currently working on a project about student educational\ntrajectories, analysing data from applications to undergraduate\nstatistics courses in the Statistics department at Warwick. I am\nsupervised by Dr\nJulia Brettschneider and Dr\nAnastasia Papavasiliou.\nI love R! I use it daily in my research for analysing and visualising\ndata, as well as for personal projects. This website is built using the\n{distill} package,\nalongside my and John Paul\nHelveston’s (very much still in development) package {distilltools}. I am\nalso the author, along with Prof\nDavid Firth of the {BradleyTerryScalable package}, which is\navailable on GitHub.\nI love the R community! I am a co-founder and co-organiser of\nRainbowR a community that supports, promotes and connects LGBTQ+ people\nwho code in the R language (RainbowR is currently in the process of\nbeing revived after a few years of dormancy - more details soon!). I am\nalso the previous co-organiser of the Oxford R User\nGroup and also a member of the Warwick R User Group\nand R-Ladies\nCoventry. I get great pleasure from sharing what I know/am learning\nabout R with others, particularly by speaking at R-Ladies and R User\nGroup meetups. Here are some talks I’ve\ngiven. Please get in touch if you’d like me to speak at your group. I\nfind being asked to speak on a topic is a good excuse for me to learn\nsomething about it!\nPrior to my current studies, my academic path has taken me from a BA\nin Mathematics and Philosophy (University of Oxford), through an MA in\nHistory and Philosophy of Science and Technology (University of\nToronto), an MPhil in Mathematics Education (University of Cambridge)\nand an MSc in Applied Statistics (University of Oxford). I also have a\nPGCE in Secondary Mathematics, have taught at secondary school, and\nworked in market research.\n\n\n\n",
-      "last_modified": "2022-05-29T11:04:17+01:00"
+      "last_modified": "2022-06-24T10:31:34+01:00"
     },
     {
       "path": "index.html",
       "title": "ELLA KAYE",
       "author": [],
       "contents": "\n\n          \n          \n          \n          \n          ELLA KAYE\n          \n          \n          About\n          Posts\n          Talks\n          Projects\n          \n          \n          \n          \n          \n          \n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            ELLA KAYE\n          \n          \n            \n              Hello and welcome to my personal website!\n              I am a postgraduate researcher in Statistics at the\n              University of Warwick and an R enthusiast.\n            \n            \n              Hello and welcome to my personal website!\n              I am a postgraduate researcher in Statistics at the\n              University of Warwick and an R enthusiast.\n            \n          \n\n          \n            \n              \n                  \n                    \n                       Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                       GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                       LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                       Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                     Twitter\n                  \n                \n                                \n                  \n                     GitHub\n                  \n                \n                                \n                  \n                     LinkedIn\n                  \n                \n                                \n                  \n                     Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2022-05-29T11:08:41+01:00"
+      "last_modified": "2022-06-24T10:31:34+01:00"
     },
     {
       "path": "posts.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-29T11:05:16+01:00"
+      "last_modified": "2022-06-24T10:31:35+01:00"
     },
     {
       "path": "projects.html",
       "title": "Projects",
       "author": [],
       "contents": "\n\n\n\n\n{distilltools}\n\n\nThe {distilltools} R package is a collection of tools to support the creation and styling of content on blogs/wesbites made with the {distill} package.\n\n\n\n\n\n\nTidyTuesday\n\n\nMy (infrequent) contributions to #TidyTuesday\n\n\n\n\n\n\n{BradleyTerryScalable}\n\n\nAn R pacakge for fitting the Bradley-Terry model to potentially large and sparse networks for paired comparison data.\n\n\n\n\n\n\n{EMK}\n\n\nA personal R package of a collection of miscellaneous functions I find useful.\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-05-29T11:04:19+01:00"
+      "last_modified": "2022-06-24T10:31:35+01:00"
     },
     {
       "path": "talks.html",
       "title": "Talks",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-29T11:05:29+01:00"
+      "last_modified": "2022-06-24T10:31:36+01:00"
     }
   ],
   "collections": ["posts/posts.json", "talks/talks.json"]
